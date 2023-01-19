@@ -1,12 +1,10 @@
 name: test
-on: [push]
-  workflow_dispatch:
-
+on: [push, workflow_dispatch]
 jobs:
   test:
     runs-on: Ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - run: |
-        cd ./hw1; (python3 script.py -g all)
+          cd ./hw1; (python3 script.py -g all)
       - run: echo "This job's status is ${{ job.status }}."
