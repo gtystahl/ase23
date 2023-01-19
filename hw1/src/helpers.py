@@ -3,13 +3,10 @@ import sys
 import re
 import config
 
-Seed = config.Seed
-
 def rint(lo, hi):
   return math.floor(0.5 + rand(lo, hi))
 
 def rand(lo, hi):
-  global Seed
 
   if not lo:
     lo = 0
@@ -17,9 +14,9 @@ def rand(lo, hi):
   if not hi:
     hi = 1
 
-  Seed = (16807 * Seed) % 2147483647
+  config.Seed = (16807 * config.Seed) % 2147483647
 
-  return lo + (hi - lo) * Seed / 2147483647
+  return lo + (hi - lo) * config.Seed / 2147483647
 
 def rnd(n, nPlaces=0):
   mult = 0

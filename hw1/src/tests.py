@@ -3,20 +3,17 @@ from sym import SYM
 from helpers import *
 import config
 
-the = config.the
-
 def oo(t):
   print(t)
 
 def generator():
-  global Seed, the
   num1 = NUM()
   num2 = NUM()
 
-  Seed = the["seed"]
+  config.Seed = config.the["seed"]
   for i in range(1, 10 ** 3):
     num1.add( rand(0, 1) )
-  Seed = the["seed"]
+  config.Seed = config.the["seed"]
   for i in range(1, 10 ** 3):
     num2.add( rand(0, 1) )
 
