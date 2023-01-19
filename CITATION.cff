@@ -1,0 +1,15 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: Homework and Projects for ASE 2023
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Gregory Tystahl
+    email: gttystahl@ncsu.edu
+    affiliation: PhD Student at NC State
+repository-code: 'https://github.com/gtystahl/ase23'
+license: Unlicense
