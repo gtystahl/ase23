@@ -21,9 +21,11 @@ class SYM():
         self.mode = x
 
   def mid(self, x=0):
+    # print("Ran sym mid")
     return self.mode
 
   def div(self, x=0):
+    # print("Ran syn div")
     def fun(p):
       return p * math.log(p, 2)
 

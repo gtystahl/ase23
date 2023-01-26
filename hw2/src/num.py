@@ -23,11 +23,13 @@ class NUM():
       self.hi = max(n, self.hi)
 
   def mid(self, x=0):
+    # print("Ran numbers mid")
     return self.mu
 
   def div(self, x=0):
+    # print("Ran numbers div")
     # return (self.m2 < 0 or self.n < 2) and 0 or (self.m2 / (self.n - 1)) ** 0.5 # Fixed (Maybe)
     return 0 if (self.m2 < 0 or self.n < 2) else (self.m2 / (self.n - 1)) ** 0.5
 
   def rnd(self, x, n):
-    x if x == "?" else rnd(x,n)
+    return x if x == "?" else rnd(x,n)

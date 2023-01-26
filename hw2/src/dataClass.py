@@ -1,6 +1,8 @@
 from helpers import *
 from row import ROW
 from cols import COLS
+from num import NUM
+from sym import SYM
 
 class DATA():
     def __init__(self, src):
@@ -37,11 +39,15 @@ class DATA():
     def stats(self, what, cols, nPlaces):
         # Needs work
         def f(k, col):
+            # classInfo = str(type(col)).split(" ")[1].split(".")[-1][:-2]
             if what:
                 # return col.rnd(getmetatable(col)[what](col), nPlaces), col.txt
-                return col.rnd(getattr(globals()[col](), what), nPlaces), col.txt
+                # res = getattr(globals()[classInfo](), what)()
+                res = getattr(col, what)()
+                return col.rnd(res, nPlaces), col.txt
             else:
-                return col.rnd(getattr(globals()[col](), what), nPlaces), col.txt
+                res = getattr(col, "mid")()
+                return col.rnd(res, nPlaces), col.txt
                 # return col.rnd(getmetatable(col)["mid"](col), nPlaces), col.txt
         fun = f
         if cols:

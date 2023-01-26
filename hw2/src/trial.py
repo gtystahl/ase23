@@ -1,11 +1,10 @@
-import re
+class A:
+    def __init__(self):
+        pass
 
-s = "false"
+    def sampleFunc(self, arg):
+        print("Called arg with ", arg)
 
-res = re.match("^\s*(.+)\s*$", s)
-# res = re.match("(.)", s)
-# res = re.search("(.+)", s)
+getattr(globals()['A'](), 'sampleFunc')()
 
-res2 = "hello"
-res2 = res2[1:2]
 print("done")

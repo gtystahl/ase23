@@ -45,5 +45,9 @@ def readDataCSV():
 def checkStats():
   data = DATA(config.the["file"])
   for k, cols in enumerate([data.cols.y, data.cols.x]):
-    print(k, "mid", data.stats("mid", cols, 2))
-    print(k, "div", data.stats("div", cols, 2))
+    if k == 0:
+      k = "y"
+    else:
+      k = "x"
+    print(k, "\tmid", "\t" + str(data.stats("mid", cols, 2)))
+    print("", "\tdiv", "\t" + str(data.stats("div", cols, 2)))

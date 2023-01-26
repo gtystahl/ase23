@@ -25,9 +25,9 @@ def main(options: dict, HELP, funs):
           config.Seed = options["seed"]
           if funs[what]() == False:
             fails = fails + 1
-            print("❌ fail:",what)
+            print("❌ fail:", "\t" + what)
           else:
-            print("✅ pass:",what)
+            print("✅ pass:","\t" + what)
     exit(fails)
 
 egs = {}
