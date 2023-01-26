@@ -7,4 +7,6 @@ jobs:
       - uses: actions/checkout@v3
       - run: |
           cd ./hw1/src; (python3 script.py -g all)
+      - run: | 
+          cd ./hw2/src; (python3 data.py -g all)
       - run: echo "This job's status is ${{ job.status }}."

@@ -1,3 +1,5 @@
+# This file holds all of global data needed across all of the other files
+
 global the, Help, Seed
 
 the,Help = {},"""

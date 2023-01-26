@@ -1,5 +1,7 @@
 import math
 
+# This file holds the SYM class
+
 class SYM():
   def __init__(self, at=0, txt=""):
     self.at = at
@@ -10,6 +12,7 @@ class SYM():
     self.mode = None
 
   def add(self, x):
+    # Adds another sym value to itself
     if x != "?":
       self.n = self.n + 1
       if x in self.has.keys():
@@ -21,11 +24,11 @@ class SYM():
         self.mode = x
 
   def mid(self, x=0):
-    # print("Ran sym mid")
+    # Returns the mode of the sym
     return self.mode
 
   def div(self, x=0):
-    # print("Ran syn div")
+    # Returns the entropy of the sym
     def fun(p):
       return p * math.log(p, 2)
 
@@ -36,4 +39,5 @@ class SYM():
     return -e
 
   def rnd(self, x, n=0):
+    # Returns x because syms cannot be rounded
     return x

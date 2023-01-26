@@ -4,6 +4,8 @@ from cols import COLS
 from num import NUM
 from sym import SYM
 
+# Holds the DATA class and methods
+
 class DATA():
     def __init__(self, src):
         self.rows = []
@@ -18,17 +20,16 @@ class DATA():
                 MAP({}, fun)
     
     def add(self, t):
+        # Adds the row t to the columns and rows of this data object
         if self.cols:
-            # print(type(t))
             t = t if "ROW" in str(type(t)) else ROW(t)
-            # t = t if t.cells else ROW(t)
-            # print(type(t))
             self.rows.append(t)
             self.cols.add(t)
         else:
             self.cols = COLS(t)
 
     def clone(self, init):
+        # Clones this data into another data object
         data = DATA(self.cols.names)
         if init:
             MAP(init, lambda x: data.add(x))
@@ -37,18 +38,15 @@ class DATA():
         return data
 
     def stats(self, what, cols, nPlaces):
-        # Needs work
+        # This runs the what (method) on the cols to the nPlaces
         def f(k, col):
-            # classInfo = str(type(col)).split(" ")[1].split(".")[-1][:-2]
+            # Gets the result of the what method and returns it rounded to nPlaces
             if what:
-                # return col.rnd(getmetatable(col)[what](col), nPlaces), col.txt
-                # res = getattr(globals()[classInfo](), what)()
                 res = getattr(col, what)()
                 return col.rnd(res, nPlaces), col.txt
             else:
                 res = getattr(col, "mid")()
                 return col.rnd(res, nPlaces), col.txt
-                # return col.rnd(getmetatable(col)["mid"](col), nPlaces), col.txt
         fun = f
         if cols:
             return kap(cols, fun)

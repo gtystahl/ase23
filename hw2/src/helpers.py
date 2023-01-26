@@ -5,24 +5,20 @@ import config
 import os
 from pathlib import Path
 
+# This holds all of the supporting functions that are used by some of the other files
+
 def rint(lo, hi):
+  # This gets a random integer between the high and low
   return math.floor(0.5 + rand(lo, hi))
 
-def rand(lo, hi):
-
-  if not lo:
-    lo = 0
-  
-  if not hi:
-    hi = 1
-
+def rand(lo=0, hi=1):
+  # Gets a random number between the high and low numbers
   config.Seed = (16807 * config.Seed) % 2147483647
-
   return lo + (hi - lo) * config.Seed / 2147483647
 
 def rnd(n, nPlaces=0):
+  # Returns n rounded to the nPlaces
   mult = 0
-  
   if nPlaces:
     mult = 10 ** nPlaces
   else:
@@ -30,52 +26,55 @@ def rnd(n, nPlaces=0):
 
   return math.floor(n * mult + 0.5) / mult
 
-def MAP(t, fun): # MAP and kap seem wrong
+def MAP(t, fun):
+  # This maps function fun over items in t
   u = {}
   for k, v in t:
     v, k = fun(v)
     if k:
+      # Has to be this because its a dictionary
       u[k] = v
     else:
+
       u[len(u)] = v
   return u
 
-def kap(t, fun): # MAP and kap seem wrong
+def kap(t, fun):
+  # Like map but requires fun to be fun(k, v) not just v
   u = {}
   for k, v in enumerate(t):
     v, k = fun(k, v)
     if k:
       u[k] = v
     else:
+      # Has to be this because its a dictionary
       u[len(u)] = v
   return u
 
 def sort(t:list, fun):
+  # Sorts t using the function fun as the key
   t.sort(fun)
 
 def keys(t):
+  # Returns a list of sorted table keys
   return sort(kap(t, lambda a, b: a))
 
 def csv(sFilename, fun):
-  # cur_path = os.path.dirname(__file__)
-  # file_path = os.path.relpath(sFilename, cur_path)
-  # sFilename = sFilename.split("/")[-1]
+  # Opens the csv file sFilename and runs the function fun on what is found in the csv
   file_path = Path(sFilename)
   file_path = file_path.absolute()
   file_path = file_path.resolve()
-  # file_path = file_path.absolute()
   f = open(file_path, "r")
   rl = f.readlines()
   f.close()
   for line in rl:
     t = []
     for s1 in re.findall("([^,]+)", line):
-      # print(s1, end=", ")
       t.append(coerce(s1))
     fun(t)
-    # print()
 
 def coerce(s):
+  # Convert to python data types from strings
   def fun(s1):
     if s1 == "true" or s1 == "True":
       return True
@@ -95,6 +94,7 @@ def coerce(s):
   return res
 
 def settings(s):
+  # Parses the help to get possible the command line arguements
   t={}
   res = re.findall("\n[\s]+[-][\S]+[\s]+[-][-]([\S]+)[^\n]+= ([\S]+)", s)
   for k,v in res:
@@ -102,6 +102,7 @@ def settings(s):
   return t
 
 def cli(options):
+  # Parses the settings parse to put into python understandable form
   for k,v in options.items():
     v = str(v)
     for n, x in enumerate(sys.argv):

@@ -6,11 +6,13 @@
 #  \ \___,_\\ \__/.\_\\ \__\\ \__/.\_\
 #   \/__,_ / \/__/\/_/ \/__/ \/__/\/_/    
 
+# This is the main file of hw2. All tests are run here and all the meat is created in the other files
   
 from tests import *
 import config
 
 def main(options: dict, HELP, funs):
+  # This function runs the tests specified by the user on the run (defined in -h or --help)
     saved, fails = {}, 0
     for k,v in cli(settings(HELP)).items(): 
       options[k] = v
@@ -32,8 +34,11 @@ def main(options: dict, HELP, funs):
 
 egs = {}
 def eg(key,string,fun):
+  # This is the base function for creating tests which will be run in main
   global egs
   egs[key]=fun
+
+  # It also adds a way to call that test function into the help
   config.Help = config.Help + ("  -g  %s\t%s\n" % (key,string))
 
 eg("the", "show settings", lambda: oo(config.the))
