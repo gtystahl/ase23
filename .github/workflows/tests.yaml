@@ -7,9 +7,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
-          cd ./src/hw1; (python3 script.py -g all) > ../../etc/out/scriptOut.txt
+          cd ./src/hw1; (python3 script.py -g all) > ../../etc/out/scriptOut.txt; cat ../../etc/out/scriptOut.txt;
       - run: | 
-          cd ./src/hw2; (python3 data.py -g all) > ../../etc/out/dataOut.txt
+          cd ./src/hw2; (python3 data.py -g all) > ../../etc/out/dataOut.txt; cat ../../etc/out/dataOut.txt;
       - run: |
           echo ${{github.token}} > token.txt;
           git config --global user.name gtystahl
