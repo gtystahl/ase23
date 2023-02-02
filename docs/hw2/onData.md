@@ -1,3 +1,3 @@
-### How to run (From hw2)
+### How to run (From top of repo)
 
-'cd src; python3 data.py -g all'
+'cd src/hw2/; python3 data.py -g all'
