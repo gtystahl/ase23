@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: |
-          cd ./hw1/src; (python3 script.py -g all)
+          cd ./src/hw1; (python3 script.py -g all) > ../../etc/out/scriptOut.txt
       - run: | 
-          cd ./hw2/src; (python3 data.py -g all)
+          cd ./src/hw2; (python3 data.py -g all) > ../../etc/out/dataOut.txt
       - run: echo "This job's status is ${{ job.status }}."
