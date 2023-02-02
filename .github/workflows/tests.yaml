@@ -13,7 +13,7 @@ jobs:
       - run: |
           echo ${{github.token}} > token.txt;
           git config --global user.name gtystahl
-          git config --global user.email ${{ secrets.TEST_SECRET }}
+          git config --global user.email ${{ secrets.SPECIAL_STUFF }}
           gh auth login --with-token < token.txt;
           rm token.txt;
           git add etc/out/*;
