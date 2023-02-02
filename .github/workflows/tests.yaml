@@ -11,6 +11,7 @@ jobs:
           cd ./src/hw2; (python3 data.py -g all) > ../../etc/out/dataOut.txt
       - run: |
           echo ${{github.token}} > token.txt;
+          git config --global user.name gtystahl
           gh auth login --with-token < token.txt;
           rm token.txt;
           git add etc/out/*;
