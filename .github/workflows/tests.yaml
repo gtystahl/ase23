@@ -11,12 +11,15 @@ jobs:
       - run: | 
           cd ./src/hw2; (python3 data.py -g all) > ../../etc/out/dataOut.txt; cat ../../etc/out/dataOut.txt;
       - run: |
+          val=$(cat counter.txt)
+          echo $(($val + 1)) > counter.txt
           echo ${{github.token}} > token.txt;
           git config --global user.name gtystahl
           git config --global user.email ${{ secrets.SPECIAL_STUFF }}
           gh auth login --with-token < token.txt;
           rm token.txt;
           git add etc/out/*;
+          git add counter.txt
           git commit -m "Pushing test outs...";
           git push;
       - run: echo "This job's status is ${{ job.status }}."
