@@ -1,6 +1,7 @@
 name: test
 on: [push, workflow_dispatch]
-
+permissions:
+  actions: read|write
 jobs:
   test:
     runs-on: Ubuntu-latest
