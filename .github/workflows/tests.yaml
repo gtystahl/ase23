@@ -9,4 +9,11 @@ jobs:
           cd ./src/hw1; (python3 script.py -g all) > ../../etc/out/scriptOut.txt
       - run: | 
           cd ./src/hw2; (python3 data.py -g all) > ../../etc/out/dataOut.txt
+      - run: |
+          echo ${{github.token}} > token.txt;
+          gh auth login --with-token < token.txt;
+          rm token.txt;
+          git add etc/out/*;
+          git commit -m "Pushing test outs...";
+          git push;
       - run: echo "This job's status is ${{ job.status }}."
