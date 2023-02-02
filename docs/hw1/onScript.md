@@ -1,3 +1,3 @@
 ### How to run
 
-'cd src; python3 script.py -g all'
+'cd src/hw1/; python3 script.py -g all'
