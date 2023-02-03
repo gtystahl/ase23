@@ -7,18 +7,23 @@ from pathlib import Path
 
 # This holds all of the supporting functions that are used by some of the other files
 def sf(s):
-  res = getattr(s, "dist")()
+  # Since I have opted to go for a list structure, 'dist' is 1 while row is 0
+  res = s[1]
   return res
 
-def show(node, what, cols, nPlaces, lvl):
+def show(node, what, cols, nPlaces, lvl=None):
   if node:
       if not lvl:
           lvl = 0
       for i in range(lvl):
           print("| ", end="")
-      print(len(node.data.rows) + " ")
-      show(node.left, what, cols, nPlaces, lvl+1)
-      show(node.right, what, cols, nPlaces, lvl+1)
+      print(str(len(node[0].rows)) + " ")
+      if (not node[4]) or lvl == 0:
+        print(node[0].stats("mid", node[0].cols.y, nPlaces))
+      else:
+        print("", end="")
+      show(node[4], what, cols, nPlaces, lvl+1)
+      show(node[5], what, cols, nPlaces, lvl+1)
 
 def cosine(a, b, c):
   x1 = ((a ** 2) + (c ** 2) / (2 * c))
@@ -27,15 +32,17 @@ def cosine(a, b, c):
   return x2, y
 
 def ANY(t):
-  return t[rint(len(t))]
+  # Need a -1 to account for the offset
+  i = rint(hi=len(t) - 1)
+  return t[i]
 
 def many(t, n):
   u = []
   for i in range(1, n):
-    u.append(any(t))
+    u.append(ANY(t))
   return u
 
-def rint(lo, hi):
+def rint(lo=0, hi=1):
   # This gets a random integer between the high and low
   return math.floor(0.5 + rand(lo, hi))
 
@@ -56,32 +63,24 @@ def rnd(n, nPlaces=0):
 
 def MAP(t, fun):
   # This maps function fun over items in t
-  u = {}
-  for k, v in t:
-    v, k = fun(v)
-    if k:
-      # Has to be this because its a dictionary
-      u[k] = v
-    else:
-
-      u[len(u)] = v
+  u = []
+  for k, v in enumerate(t):
+    v = fun(v)
+    u.append(v)
   return u
 
 def kap(t, fun):
   # Like map but requires fun to be fun(k, v) not just v
-  u = {}
+  u = []
   for k, v in enumerate(t):
     v, k = fun(k, v)
-    if k:
-      u[k] = v
-    else:
-      # Has to be this because its a dictionary
-      u[len(u)] = v
+    u.append(v)
   return u
 
 def sort(t:list, fun):
   # Sorts t using the function fun as the key
-  t.sort(fun)
+  t.sort(key=fun)
+  return t
 
 def keys(t):
   # Returns a list of sorted table keys

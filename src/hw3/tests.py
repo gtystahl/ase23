@@ -36,6 +36,7 @@ def readDataCSV():
 
 def checkClone():
   data1 = DATA(config.the["file"])
+  # print(data1.rows)
   data2 = data1.clone(data1.rows)
   return len(data1.rows) == len(data2.rows) and \
     data1.cols.y[0].w == data2.cols.y[0].w and \
@@ -47,7 +48,8 @@ def checkAround():
   print(0, 0, data.rows[1].cells)
   for n,t in enumerate(data.around(data.rows[0])):
     if n % 50 == 0:
-      print(n, rnd(t.dist, 2), t.rows.cells)
+      # Same change here as in sf in helpers.py
+      print(n, rnd(t[1], 2), t[0].cells)
   return True
 
 def checkHalf():

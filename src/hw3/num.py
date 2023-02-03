@@ -11,8 +11,8 @@ class NUM():
     self.n = 0
     self.mu = 0
     self.m2 = 0
-    self.lo = -math.inf
-    self.hi = math.inf
+    self.lo = math.inf
+    self.hi = -math.inf
     self.w = -1 if re.search("-$", self.txt) else 1
 
   def add(self, n):
@@ -38,7 +38,12 @@ class NUM():
     return x if x == "?" else rnd(x,n)
   
   def norm(self, n):
-    return n if n == "?" else (n - self.lo)/(self.hi - self.lo + 1e-32)
+    top = (n - self.lo)
+    bottom = (self.hi - self.lo + 1e-32)
+    bottom2 = (self.hi - self.lo + 1E-32)
+    res = top / bottom2
+    
+    return n if n == "?" else res
   
   def dist(self, n1, n2):
     if n1 == "?" and n2 == "?":
