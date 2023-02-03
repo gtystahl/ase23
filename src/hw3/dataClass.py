@@ -58,6 +58,7 @@ class DATA():
             return kap(self.cols.y, fun)
         
     def better(self, row1, row2):
+        # Checks to see if one row dominates the other via zitzler
         s1 = 0
         s2 = 0
         ys = self.cols.y
@@ -70,6 +71,7 @@ class DATA():
         return (s1 / len(ys)) < (s2 / len(ys))
     
     def dist(self, row1, row2, cols=None):
+        # Gets the distance between row1 and row2 between 0 to 1
         n = 0
         d = 0
         if not cols:
@@ -81,15 +83,17 @@ class DATA():
         return (d/n) ** (1 / config.the["p"])
     
     def around(self, row1, rows=None, cols=None):
+        # Sorts the rows by distance to row1
         def f(row2):
             row = row2
             dist = self.dist(row1, row2, cols)
             return {"row": row, "dist": dist}
         if not rows:
             rows = self.rows
-        return sort(MAP(rows, f), sf) # Might need to change
+        return sort(MAP(rows, f), sf)
     
     def half(self, rows=None, cols=None, above=None):
+        # Divides the data in two using two far points
         def project(row):
             x2, y = cosine(dist(row, A), dist(row, B), c)
             return {"row": row, "dist": x2}
@@ -108,7 +112,6 @@ class DATA():
         
         # Python keeps it as a float so convert to int
         index = int(config.the["Far"] * len(rows) // 1)
-        # [0] because of sf return
         B = self.around(A, some)[index]["row"]
 
         c = dist(A, B)
@@ -128,6 +131,7 @@ class DATA():
         
 
     def cluster(self, rows=None, min=None, cols=None, above=None):
+        # Returns rows recursivly halved to find data that is similar to each other
         if not rows:
             rows = self.rows
         
@@ -144,7 +148,7 @@ class DATA():
                 "left": None, 
                 "right": None}
 
-        if len(rows) > 2 * min: # There is no way this node stuff works
+        if len(rows) > 2 * min:
             left, right, node["A"], node["B"], node["mid"], _ = self.half(rows, cols, above)
 
             node["left"] = self.cluster(left, min, cols, node["A"])
@@ -152,6 +156,7 @@ class DATA():
         return node
     
     def sway(self, rows=None, min=None, cols=None, above=None):
+        # Returns the best half recursively
         if not rows:
             rows = self.rows
         
@@ -168,7 +173,7 @@ class DATA():
                 "left": None, 
                 "right": None}
 
-        if len(rows) > 2 * min: # There is no way this node stuff works
+        if len(rows) > 2 * min:
             left, right, node["A"], node["B"], node["mid"], _ = self.half(rows, cols, above)
 
             if self.better(node["B"], node["A"]):

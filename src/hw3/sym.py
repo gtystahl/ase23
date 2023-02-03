@@ -43,6 +43,8 @@ class SYM():
     return x
   
   def dist(self, s1, s2):
+    # Returns the distance between two syms
+    # Since you cannot calculate it, it returns either a 1 if they are the same or 0 if they are not
     if s1 == "?" or s2 == "?":
       return 1
     

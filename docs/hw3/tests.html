@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>tests.py</title>
+  <link rel="stylesheet" href="pycco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div class='section'>
+    <div class='docs'><h1>tests.py</h1></div>
+  </div>
+  <div class='clearall'>
+  <div class='section' id='section-0'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-0'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">num</span> <span class="kn">import</span> <span class="n">NUM</span>
+<span class="kn">from</span> <span class="nn">sym</span> <span class="kn">import</span> <span class="n">SYM</span>
+<span class="kn">from</span> <span class="nn">dataClass</span> <span class="kn">import</span> <span class="n">DATA</span>
+<span class="kn">from</span> <span class="nn">helpers</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">config</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-1'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-1'>#</a>
+      </div>
+      <p>This is the file that holds the functions for all of the tests</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-2'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-2'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">oo</span><span class="p">(</span><span class="n">t</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-3'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-3'>#</a>
+      </div>
+      <p>This is the regular settings testing function to make sure things are working</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>  <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-4'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-4'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">checkSyms</span><span class="p">():</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-5'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-5'>#</a>
+      </div>
+      <p>Checks to make sure the syms are working</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>  <span class="n">sym</span> <span class="o">=</span> <span class="n">SYM</span><span class="p">()</span>
+  <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="s2">&quot;c&quot;</span><span class="p">]:</span>
+    <span class="n">sym</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+  <span class="k">return</span> <span class="s2">&quot;a&quot;</span> <span class="o">==</span> <span class="n">sym</span><span class="o">.</span><span class="n">mid</span><span class="p">()</span> <span class="ow">and</span> <span class="mf">1.379</span> <span class="o">==</span> <span class="n">rnd</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">div</span><span class="p">())</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-6'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-6'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">checkNums</span><span class="p">():</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-7'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-7'>#</a>
+      </div>
+      <p>Checks to make sure the nums are working</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>  <span class="n">num</span> <span class="o">=</span> <span class="n">NUM</span><span class="p">()</span>
+  <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]:</span>
+    <span class="n">num</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+  <span class="k">return</span> <span class="mi">11</span><span class="o">/</span><span class="mi">7</span> <span class="o">==</span> <span class="n">num</span><span class="o">.</span><span class="n">mid</span><span class="p">()</span> <span class="ow">and</span> <span class="mf">0.787</span> <span class="o">==</span> <span class="n">rnd</span><span class="p">(</span><span class="n">num</span><span class="o">.</span><span class="n">div</span><span class="p">())</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-8'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-8'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">readDataCSV</span><span class="p">():</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-9'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-9'>#</a>
+      </div>
+      <p>Reads data from a csv and puts it into a DATA format for analysis.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>  <span class="n">data</span> <span class="o">=</span> <span class="n">DATA</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">the</span><span class="p">[</span><span class="s2">&quot;file&quot;</span><span class="p">])</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-10'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-10'>#</a>
+      </div>
+      <p>I changed the 1 to a zero because of python indexing starting at 0</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>  <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">rows</span><span class="p">)</span> <span class="o">==</span> <span class="mi">398</span> <span class="ow">and</span> \
+    <span class="n">data</span><span class="o">.</span><span class="n">cols</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">w</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">and</span> \
+    <span class="n">data</span><span class="o">.</span><span class="n">cols</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">at</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> \
+    <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">cols</span><span class="o">.</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-11'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-11'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">checkClone</span><span class="p">():</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-12'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-12'>#</a>
+      </div>
+      <p>Checks to make sure the data can be cloned to another one if needed</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>  <span class="n">data1</span> <span class="o">=</span> <span class="n">DATA</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">the</span><span class="p">[</span><span class="s2">&quot;file&quot;</span><span class="p">])</span>
+  <span class="n">data2</span> <span class="o">=</span> <span class="n">data1</span><span class="o">.</span><span class="n">clone</span><span class="p">(</span><span class="n">data1</span><span class="o">.</span><span class="n">rows</span><span class="p">)</span>
+  <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">data1</span><span class="o">.</span><span class="n">rows</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">data2</span><span class="o">.</span><span class="n">rows</span><span class="p">)</span> <span class="ow">and</span> \
+    <span class="n">data1</span><span class="o">.</span><span class="n">cols</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">w</span> <span class="o">==</span> <span class="n">data2</span><span class="o">.</span><span class="n">cols</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">w</span> <span class="ow">and</span> \
+    <span class="n">data1</span><span class="o">.</span><span class="n">cols</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">at</span> <span class="o">==</span> <span class="n">data2</span><span class="o">.</span><span class="n">cols</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">at</span> <span class="ow">and</span> \
+    <span class="nb">len</span><span class="p">(</span><span class="n">data1</span><span class="o">.</span><span class="n">cols</span><span class="o">.</span><span class="n">x</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">data2</span><span class="o">.</span><span class="n">cols</span><span class="o">.</span><span class="n">x</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-13'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-13'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">checkAround</span><span class="p">():</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-14'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-14'>#</a>
+      </div>
+      <p>Checks to see which rows are arround the one in question</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>  <span class="n">data</span> <span class="o">=</span> <span class="n">DATA</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">the</span><span class="p">[</span><span class="s2">&quot;file&quot;</span><span class="p">])</span>
+  <span class="nb">print</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">rows</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">cells</span><span class="p">)</span>
+  <span class="k">for</span> <span class="n">n</span><span class="p">,</span><span class="n">t</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">rows</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">50</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">rnd</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="s2">&quot;dist&quot;</span><span class="p">],</span> <span class="mi">2</span><span class="p">),</span> <span class="n">t</span><span class="p">[</span><span class="s2">&quot;row&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">cells</span><span class="p">)</span>
+  <span class="k">return</span> <span class="kc">True</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-15'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-15'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">checkHalf</span><span class="p">():</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-16'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-16'>#</a>
+      </div>
+      <p>Checks to see if the data can be split in half correctly</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>  <span class="n">data</span> <span class="o">=</span> <span class="n">DATA</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">the</span><span class="p">[</span><span class="s2">&quot;file&quot;</span><span class="p">])</span>
+  <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">half</span><span class="p">()</span>
+  <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">left</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">right</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">rows</span><span class="p">))</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">cells</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">mid</span><span class="o">.</span><span class="n">cells</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">B</span><span class="o">.</span><span class="n">cells</span><span class="p">)</span>
+  <span class="k">return</span> <span class="kc">True</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-17'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-17'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">checkCluster</span><span class="p">():</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-18'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-18'>#</a>
+      </div>
+      <p>Checks to see the results of the cluster</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>  <span class="n">data</span> <span class="o">=</span> <span class="n">DATA</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">the</span><span class="p">[</span><span class="s2">&quot;file&quot;</span><span class="p">])</span>
+  <span class="n">show</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">cluster</span><span class="p">(),</span> <span class="s2">&quot;mid&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">cols</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+  <span class="k">return</span> <span class="kc">True</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-19'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-19'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">checkOptimize</span><span class="p">():</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-20'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-20'>#</a>
+      </div>
+      <p>Checks to see the results of the sway optimizer function</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>  <span class="n">data</span> <span class="o">=</span> <span class="n">DATA</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">the</span><span class="p">[</span><span class="s2">&quot;file&quot;</span><span class="p">])</span>
+  <span class="n">show</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">sway</span><span class="p">(),</span> <span class="s2">&quot;mid&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">cols</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+  <span class="k">return</span> <span class="kc">True</span>
+
+</pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+</div>
+</body>

@@ -38,14 +38,15 @@ class NUM():
     return x if x == "?" else rnd(x,n)
   
   def norm(self, n):
+    # Normalizes the value of n
     top = (n - self.lo)
-    bottom = (self.hi - self.lo + 1e-32)
-    bottom2 = (self.hi - self.lo + 1E-32)
-    res = top / bottom2
+    bottom = (self.hi - self.lo + 1E-32)
+    res = top / bottom
     
     return n if n == "?" else res
   
   def dist(self, n1, n2):
+    # Gets the normalized difference between the two numbers
     if n1 == "?" and n2 == "?":
       return 1
     

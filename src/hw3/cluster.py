@@ -59,6 +59,4 @@ eg("cluster", "N-level bi-clustering", checkCluster)
 
 eg("optimize", "semi-supervised optimization", checkOptimize)
 
-eg("stats", "stats from DATA", checkStats)
-
 main(config.the, config.Help, egs)

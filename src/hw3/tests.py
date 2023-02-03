@@ -35,8 +35,8 @@ def readDataCSV():
     len(data.cols.x) == 4
 
 def checkClone():
+  # Checks to make sure the data can be cloned to another one if needed
   data1 = DATA(config.the["file"])
-  # print(data1.rows)
   data2 = data1.clone(data1.rows)
   return len(data1.rows) == len(data2.rows) and \
     data1.cols.y[0].w == data2.cols.y[0].w and \
@@ -44,15 +44,16 @@ def checkClone():
     len(data1.cols.x) == len(data2.cols.x)
 
 def checkAround():
+  # Checks to see which rows are arround the one in question
   data = DATA(config.the["file"])
   print(0, 0, data.rows[0].cells)
   for n,t in enumerate(data.around(data.rows[0])):
     if n % 50 == 0:
-      # Same change here as in sf in helpers.py
       print(n, rnd(t["dist"], 2), t["row"].cells)
   return True
 
 def checkHalf():
+  # Checks to see if the data can be split in half correctly
   data = DATA(config.the["file"])
   left, right, A, B, mid, c = data.half()
   print(len(left), len(right), len(data.rows))
@@ -62,22 +63,13 @@ def checkHalf():
   return True
 
 def checkCluster():
+  # Checks to see the results of the cluster
   data = DATA(config.the["file"])
   show(data.cluster(), "mid", data.cols.y, 1)
   return True
 
 def checkOptimize():
+  # Checks to see the results of the sway optimizer function
   data = DATA(config.the["file"])
   show(data.sway(), "mid", data.cols.y, 1)
   return True
-
-def checkStats():
-  # Reads data like readDataCSV, but this time evaluates the mid and div of each non-ignored column
-  data = DATA(config.the["file"])
-  for k, cols in enumerate([data.cols.y, data.cols.x]):
-    if k == 0:
-      k = "y"
-    else:
-      k = "x"
-    print(k, "\tmid", "\t" + str(data.stats("mid", cols, 2)))
-    print("", "\tdiv", "\t" + str(data.stats("div", cols, 2)))

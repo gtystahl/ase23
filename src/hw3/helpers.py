@@ -6,12 +6,14 @@ import os
 from pathlib import Path
 
 # This holds all of the supporting functions that are used by some of the other files
+
 def sf(s):
-  # Since I have opted to go for a list structure, 'dist' is 1 while row is 0
+  # Returns the distance value of the set passed to it
   res = s["dist"]
   return res
 
 def show(node, what, cols, nPlaces, lvl=None):
+  # This pretty prints the results of the clustering to the screen.
   if node:
       if not lvl:
           lvl = 0
@@ -26,17 +28,22 @@ def show(node, what, cols, nPlaces, lvl=None):
       show(node["right"], what, cols, nPlaces, lvl+1)
 
 def cosine(a, b, c):
-  x1 = ((a ** 2) + (c ** 2) / (2 * c))
+  # This is our version of the cosine equation used to find distance
+  x1 = ((a ** 2) + (c ** 2) ) - (b ** 2)/ (2 * c)
   x2 = max(0, min(1, x1))
   y = ((a ** 2) - x2 ** 2) ** .5
   return x2, y
 
 def ANY(t):
+  # This gets any one of the elements of t randomly
+
   # Need a -1 to account for the offset
   i = rint(hi=len(t) - 1)
   return t[i]
 
 def many(t, n):
+  # This gets a lot of random elements of t
+  
   u = {}
   for i in range(1, n):
     u[len(u)] = ANY(t)

@@ -23,17 +23,21 @@
       <div class="highlight"><pre><span></span><span class="k">global</span> <span class="n">the</span><span class="p">,</span> <span class="n">Help</span><span class="p">,</span> <span class="n">Seed</span>
 
 <span class="n">the</span><span class="p">,</span><span class="n">Help</span> <span class="o">=</span> <span class="p">{},</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">data.py : an example csv reader script</span>
-<span class="s2">(c)2023, Greg Tystahl &lt;gttystah@ncsu.edu&gt;, BSD-2 </span>
+<span class="s2">cluster.py : an example csv reader script</span>
+<span class="s2">(c)2022, Greg Tystahl &lt;gttystah@ncsu.edu&gt;, BSD-2 </span>
 
-<span class="s2">USAGE:   data.py  [OPTIONS] [-g ACTION]</span>
+<span class="s2">USAGE: cluster.py  [OPTIONS] [-g ACTION]</span>
 
 <span class="s2">OPTIONS:</span>
-<span class="s2">  -d  --dump  on crash, dump stack = false</span>
-<span class="s2">  -f  --file  name of file         = ../../etc/data/auto93.csv</span>
-<span class="s2">  -g  --go    start-up action      = data</span>
-<span class="s2">  -h  --help  show help            = false</span>
-<span class="s2">  -s  --seed  random number seed   = 937162211</span>
+<span class="s2">  -d  --dump    on crash, dump stack   = false</span>
+<span class="s2">  -f  --file    name of file           = ../../etc/data/auto93.csv</span>
+<span class="s2">  -F  --Far     distance to &quot;faraway&quot;  = .95</span>
+<span class="s2">  -g  --go      start-up action        = data</span>
+<span class="s2">  -h  --help    show help              = false</span>
+<span class="s2">  -m  --min     stop clusters at N^min = .5</span>
+<span class="s2">  -p  --p       distance coefficient   = 2</span>
+<span class="s2">  -s  --seed    random number seed     = 937162211</span>
+<span class="s2">  -S  --Sample  sampling data size     = 512</span>
 
 <span class="s2">ACTIONS:</span>
 <span class="s2">&quot;&quot;&quot;</span>
