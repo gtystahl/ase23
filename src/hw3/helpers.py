@@ -8,7 +8,7 @@ from pathlib import Path
 # This holds all of the supporting functions that are used by some of the other files
 def sf(s):
   # Since I have opted to go for a list structure, 'dist' is 1 while row is 0
-  res = s[1]
+  res = s["dist"]
   return res
 
 def show(node, what, cols, nPlaces, lvl=None):
@@ -17,13 +17,13 @@ def show(node, what, cols, nPlaces, lvl=None):
           lvl = 0
       for i in range(lvl):
           print("| ", end="")
-      print(str(len(node[0].rows)) + " ")
-      if (not node[4]) or lvl == 0:
-        print(node[0].stats("mid", node[0].cols.y, nPlaces))
+      print(str(len(node["data"].rows)) + " ")
+      if (not node["left"]) or lvl == 0:
+        print(node["data"].stats("mid", node["data"].cols.y, nPlaces))
       else:
         print("", end="")
-      show(node[4], what, cols, nPlaces, lvl+1)
-      show(node[5], what, cols, nPlaces, lvl+1)
+      show(node["left"], what, cols, nPlaces, lvl+1)
+      show(node["right"], what, cols, nPlaces, lvl+1)
 
 def cosine(a, b, c):
   x1 = ((a ** 2) + (c ** 2) / (2 * c))
@@ -37,9 +37,9 @@ def ANY(t):
   return t[i]
 
 def many(t, n):
-  u = []
+  u = {}
   for i in range(1, n):
-    u.append(ANY(t))
+    u[len(u)] = ANY(t)
   return u
 
 def rint(lo=0, hi=1):
@@ -63,24 +63,31 @@ def rnd(n, nPlaces=0):
 
 def MAP(t, fun):
   # This maps function fun over items in t
-  u = []
-  for k, v in enumerate(t):
-    v = fun(v)
-    u.append(v)
+  u = {}
+  for k, v in t.items():
+    res = fun(v)
+    if res is not None:
+      u[len(u)] = res
   return u
 
 def kap(t, fun):
   # Like map but requires fun to be fun(k, v) not just v
-  u = []
-  for k, v in enumerate(t):
+  u = {}
+  for k, v in t.items():
     v, k = fun(k, v)
-    u.append(v)
+    if k is not None:
+      u[k] = v
+    else:
+      u[len(u)] = v
   return u
 
-def sort(t:list, fun):
-  # Sorts t using the function fun as the key
-  t.sort(key=fun)
-  return t
+def sort(t, fun):
+  nt = []
+  for i in range(len(t)):
+    nt.append(t[i])
+  nt.sort(key=fun)
+
+  return nt
 
 def keys(t):
   # Returns a list of sorted table keys

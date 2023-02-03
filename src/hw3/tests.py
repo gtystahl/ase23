@@ -45,11 +45,11 @@ def checkClone():
 
 def checkAround():
   data = DATA(config.the["file"])
-  print(0, 0, data.rows[1].cells)
+  print(0, 0, data.rows[0].cells)
   for n,t in enumerate(data.around(data.rows[0])):
     if n % 50 == 0:
       # Same change here as in sf in helpers.py
-      print(n, rnd(t[1], 2), t[0].cells)
+      print(n, rnd(t["dist"], 2), t["row"].cells)
   return True
 
 def checkHalf():
@@ -70,3 +70,14 @@ def checkOptimize():
   data = DATA(config.the["file"])
   show(data.sway(), "mid", data.cols.y, 1)
   return True
+
+def checkStats():
+  # Reads data like readDataCSV, but this time evaluates the mid and div of each non-ignored column
+  data = DATA(config.the["file"])
+  for k, cols in enumerate([data.cols.y, data.cols.x]):
+    if k == 0:
+      k = "y"
+    else:
+      k = "x"
+    print(k, "\tmid", "\t" + str(data.stats("mid", cols, 2)))
+    print("", "\tdiv", "\t" + str(data.stats("div", cols, 2)))
