@@ -10,6 +10,8 @@ jobs:
           cd ./src/hw1; (python3 script.py -g all) > ../../etc/out/scriptOut.txt; cat ../../etc/out/scriptOut.txt;
       - run: | 
           cd ./src/hw2; (python3 data.py -g all) > ../../etc/out/dataOut.txt; cat ../../etc/out/dataOut.txt;
+      - run: | 
+          cd ./src/hw3; (python3 cluster.py -g all) > ../../etc/out/clusterOut.txt; cat ../../etc/out/clusterOut.txt;
       - run: |
           val=$(cat counter.txt)
           echo $(($val + 1)) > counter.txt
