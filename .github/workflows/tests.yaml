@@ -12,6 +12,8 @@ jobs:
           cd ./src/hw2; (python3 data.py -g all) > ../../etc/out/dataOut.txt; cat ../../etc/out/dataOut.txt;
       - run: | 
           cd ./src/hw3; (python3 cluster.py -g all) > ../../etc/out/clusterOut.txt; cat ../../etc/out/clusterOut.txt;
+      - run: | 
+          cd ./src/hw4; (python3 grid.py -g all) > ../../etc/out/gridOut.txt; cat ../../etc/out/gridOut.txt;
       - run: |
           val=$(cat counter.txt)
           echo $(($val + 1)) > counter.txt
