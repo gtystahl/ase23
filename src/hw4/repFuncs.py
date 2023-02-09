@@ -6,6 +6,7 @@ import copy
 # I had to move these to their own file because of circular dependencies
 
 def repCols(cols):
+  # Combines the columns titles of the input file and reformats them
   cols = copy.deepcopy(cols)
   for i in range(len(cols)):
     col = cols[i]
@@ -18,6 +19,7 @@ def repCols(cols):
   return DATA(cols)
 
 def repRows(t, rows):
+  # Adds the row descriptions to their place based on the input file
   rows = copy.deepcopy(rows)
   for j, s in last(rows).items():
     rows[0][j] = str(rows[0][j]) + ":" + str(s)
@@ -32,6 +34,7 @@ def repRows(t, rows):
   return DATA(rows)
 
 def repPlace(data):
+  # Makes and displays the grid
   n = 20
   g = {}
 
@@ -53,6 +56,7 @@ def repPlace(data):
     pretty(g[y])
 
 def repgrid(sFile):
+  # Does everything tested above
   t = dofile(sFile)
   rows = repRows(t, transpose(t["cols"]))
   cols = repCols(t["cols"])

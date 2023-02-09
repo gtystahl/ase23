@@ -18,7 +18,16 @@ def dofile(fname):
 
   bigLine = bigLine.replace("'", "")
   
+  # Functionality of below
   # Go until you find the first "{"
+  # Set current dict to be active dict
+  # Go until you find "}"
+  # If you find "{" first, add smaller dict noted by name = {} to dict (empty to start)
+  # Then go and look into the new set found
+  #
+  # All dicts at first will contain strings, then parse the strings for , to get the elements
+  # The keys to the dict are numbers rather than names as above 
+
   top = None
   back = None
   active = None
@@ -84,14 +93,6 @@ def dofile(fname):
       pass
     else:
       val += bigLine[i]
-
-  # Set current dict to be active dict
-  # Go until you find "}"
-  # If you find "{" first, add smaller dict noted by name = {} to dict (empty to start)
-  # Then go and look into the new set found
-  #
-  # All dicts at first will contain strings, then parse the strings for , to get the elements
-  # The keys to the dict are numbers rather than names as above 
   
   def rec(d):
     if "INDEX" in d.keys():
@@ -120,9 +121,11 @@ def sfX(s):
   return res
 
 def last(d):
+  # Gets the last item in d
   return d[len(d) - 1]
 
 def insert(d, element):
+  # Inserts an element to the beginning of d
   nd = {}
   for i in range(1, len(d) + 1):
     nd[i] = d[i - 1]
@@ -130,6 +133,7 @@ def insert(d, element):
   return nd
 
 def transpose(t):
+  # Transposes t (aka flips the rows and cols)
   u = {}
   for i in range(0, len(t[0])):
     u[i] = {}
@@ -144,12 +148,9 @@ def show(node, what=None, cols=None, nPlaces=None, lvl=None):
           lvl = 0
       for i in range(lvl):
           print("|.. ", end="")
-      # print(str(len(node["data"].rows)) + " ")
       if (not node["left"]):
-        # print(node["data"].stats("mid", node["data"].cols.y, nPlaces))
         print(last(last(node["data"].rows).cells))
       else:
-        # print("", end="")
         print("%.f" % rnd(100 * node["c"]))
       show(node["left"], what, cols, nPlaces, lvl+1)
       show(node["right"], what, cols, nPlaces, lvl+1)

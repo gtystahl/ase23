@@ -3,14 +3,12 @@ from sym import SYM
 from row import ROW
 
 def pretty(object):
+  # Pretty prints the objects given to it (NUM, SYM, ROW, and grid)
   if type(object) == NUM:
-    # print("Item is a num")
     print("{:a NUM :at %d :hi %d :lo %d :m2 %.03f :mu %.03f :n %d :txt %s :w %d}" % (object.at, object.hi, object.lo, object.m2, object.mu, object.n, object.txt, object.w))
   elif type(object) == SYM:
-    # print("Item is a sym")
     print("{:a SYM :at %d :has %s :most %d :n %d :txt %s}" % (object.at, str(object.has), object.most, object.n, object.txt))
   elif type(object) == ROW:
-    # print("Item is a row")
     cells = "{"
     for i in range(len(object.cells)):
       cells += str(object.cells[i]) + " "

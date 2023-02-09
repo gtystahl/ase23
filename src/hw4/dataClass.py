@@ -22,9 +22,6 @@ class DATA():
     
     def add(self, t):
         # Adds the row t to the columns and rows of this data object
-        # TODO REMOVE THIS!!
-        # if t == 0:
-        #     print("bad")
         if self.cols:
             t = t if "ROW" in str(type(t)) else ROW(t)
             self.rows[len(self.rows)] = t
@@ -87,6 +84,7 @@ class DATA():
         return sort(MAP(rows, f), sf)
     
     def furthest(self, row1, rows=None, cols=None):
+        # Gets the furthest row from row1
         t = self.around(row1, rows, cols)
         return last(t)
     
@@ -94,7 +92,6 @@ class DATA():
         # Divides the data in two using two far points
         def project(row):
             x, y = cosine(dist(row, A), dist(row, B), c)
-            # TODO Check these values with debugger. Might be 0
             if row.x is None:
                 row.x = x
             if row.y is None:
@@ -107,15 +104,11 @@ class DATA():
         if not rows:
             rows = self.rows
         
-        # some = many(rows, config.the["Sample"])
         if above:
             A = above
         else:
             A = ANY(rows)
         
-        # Python keeps it as a float so convert to int
-        # TODO Remove potentially
-        # index = int(config.the["Far"] * len(rows) // 1)
         B = self.furthest(A, rows)["row"]
 
         c = dist(A, B)
@@ -125,11 +118,9 @@ class DATA():
 
         for n,tmp in enumerate(sort(MAP(rows, project), sfX)):
             if n < len(rows) // 2:
-                # [0] for row
                 left[len(left)] = tmp["row"]
                 mid = tmp["row"]
             else:
-                # [0] for row
                 right[len(right)] = tmp["row"]
         return left, right, A, B, mid, c
         

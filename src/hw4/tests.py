@@ -34,16 +34,19 @@ def checkNums():
   return 11/7 == num.mid() and 0.787 == rnd(num.div())
 
 def checkRepCols():
+  # Checks to see if the data was read from the input csv correctly
   t = repCols(dofile(config.the["file"])["cols"])
   MAP(t.cols.all, pretty)
   MAP(t.rows, pretty)
   return True
 
 def checkColsCluster():
+  # Checks to see if the data can be clustered properly
   show(repCols(dofile(config.the["file"])["cols"]).cluster())
   return True
 
 def checkRepRows():
+  # Checks to see if the transpose works properly
   t = dofile(config.the["file"])
   rows = repRows(t, transpose(t["cols"]))
   MAP(rows.cols.all, pretty)
@@ -51,16 +54,19 @@ def checkRepRows():
   return True
 
 def checkRepCluster(): 
+  # Checks to see if the clustering on the rows works properly
   t = dofile(config.the["file"])
   rows = repRows(t, transpose(t["cols"]))
   show(rows.cluster())
   return True
 
 def checkRepPlace():
+  # Displays the clustering 
   t = dofile(config.the["file"])
   rows = repRows(t, transpose(t["cols"]))
   rows.cluster()
   repPlace(rows)
 
 def checkRepgrid():
+  # Displays all of the checks above
   repgrid(config.the["file"])
