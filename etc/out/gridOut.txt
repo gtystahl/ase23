@@ -1,0 +1,165 @@
+{'dump': False, 'file': '../../etc/data/repgrid1.csv', 'go': 'all', 'help': False, 'p': 2, 'seed': 937162211}
+✅ pass: 	the
+b4 {'a': 1, 'b': {'c': 2, 'd': 3}} 
+after {'a': 1, 'b': {'c': 2, 'd': 10000}}
+✅ pass: 	copy
+✅ pass: 	sym
+✅ pass: 	num
+{:a NUM :at 0 :hi 5 :lo 1 :m2 13.500 :mu 1.750 :n 8 :txt Num0 :w 1}
+{:a NUM :at 1 :hi 5 :lo 1 :m2 17.875 :mu 2.375 :n 8 :txt Num1 :w 1}
+{:a NUM :at 2 :hi 3 :lo 1 :m2 6.000 :mu 1.500 :n 8 :txt Num2 :w 1}
+{:a NUM :at 3 :hi 5 :lo 1 :m2 18.875 :mu 2.125 :n 8 :txt Num3 :w 1}
+{:a NUM :at 4 :hi 5 :lo 1 :m2 14.875 :mu 1.875 :n 8 :txt Num4 :w 1}
+{:a NUM :at 5 :hi 5 :lo 1 :m2 32.000 :mu 3.000 :n 8 :txt Num5 :w 1}
+{:a NUM :at 6 :hi 5 :lo 1 :m2 20.000 :mu 3.500 :n 8 :txt Num6 :w 1}
+{:a NUM :at 7 :hi 5 :lo 2 :m2 10.875 :mu 4.125 :n 8 :txt Num7 :w 1}
+{:a NUM :at 8 :hi 5 :lo 1 :m2 16.000 :mu 2.500 :n 8 :txt Num8 :w 1}
+{:a NUM :at 9 :hi 5 :lo 1 :m2 15.875 :mu 2.375 :n 8 :txt Num9 :w 1}
+{:a SYM :at 10 :has {} :most 0 :n 0 :txt thingX}
+{:a ROW :cells {5 3 3 1 1 1 1 3 5 5 DevelopmentTool:Application }}
+{:a ROW :cells {2 1 1 5 5 5 5 5 1 2 Multimedia:Programming }}
+{:a ROW :cells {1 3 1 3 2 5 4 3 1 1 CommunicationTechnology:ApplicationTechnology }}
+{:a ROW :cells {2 1 1 1 3 5 3 2 2 2 HumanOrientedTool:SystemTool }}
+{:a ROW :cells {1 5 3 4 1 1 4 5 4 4 ConventionalCommunication:NovelCommunication }}
+{:a ROW :cells {1 4 1 1 1 1 1 5 3 1 OnlyActAsProgrammed:Semi-autonomous }}
+{:a ROW :cells {1 1 1 1 1 1 5 5 1 1 ConventionalSystem:IntelligentSystem }}
+{:a ROW :cells {1 1 1 1 1 5 5 5 3 3 TargetedOnInterface:TargetedOnOverallSystem }}
+✅ pass: 	repcols
+74
+|.. 61
+|.. |.. 54
+|.. |.. |.. ConventionalCommunication:NovelCommunication
+|.. |.. |.. DevelopmentTool:Application
+|.. |.. 43
+|.. |.. |.. ConventionalSystem:IntelligentSystem
+|.. |.. |.. OnlyActAsProgrammed:Semi-autonomous
+|.. 51
+|.. |.. 30
+|.. |.. |.. HumanOrientedTool:SystemTool
+|.. |.. |.. CommunicationTechnology:ApplicationTechnology
+|.. |.. 49
+|.. |.. |.. Multimedia:Programming
+|.. |.. |.. TargetedOnInterface:TargetedOnOverallSystem
+✅ pass: 	synonyms
+{:a NUM :at 0 :hi 5 :lo 1 :m2 27.600 :mu 2.800 :n 10 :txt DevelopmentTool:Application :w 1}
+{:a NUM :at 1 :hi 5 :lo 1 :m2 33.600 :mu 3.200 :n 10 :txt Multimedia:Programming :w 1}
+{:a NUM :at 2 :hi 5 :lo 1 :m2 18.400 :mu 2.400 :n 10 :txt CommunicationTechnology:ApplicationTechnology :w 1}
+{:a NUM :at 3 :hi 5 :lo 1 :m2 13.600 :mu 2.200 :n 10 :txt HumanOrientedTool:SystemTool :w 1}
+{:a NUM :at 4 :hi 5 :lo 1 :m2 23.600 :mu 3.200 :n 10 :txt ConventionalCommunication:NovelCommunication :w 1}
+{:a NUM :at 5 :hi 5 :lo 1 :m2 20.900 :mu 1.900 :n 10 :txt OnlyActAsProgrammed:Semi-autonomous :w 1}
+{:a NUM :at 6 :hi 5 :lo 1 :m2 25.600 :mu 1.800 :n 10 :txt ConventionalSystem:IntelligentSystem :w 1}
+{:a NUM :at 7 :hi 5 :lo 1 :m2 30.400 :mu 2.600 :n 10 :txt TargetedOnInterface:TargetedOnOverallSystem :w 1}
+{:a SYM :at 8 :has {} :most 0 :n 0 :txt thingX}
+{:a ROW :cells {5 2 1 2 1 1 1 1 ElectronicPublishing }}
+{:a ROW :cells {3 1 3 1 5 4 1 1 VirtualReality }}
+{:a ROW :cells {3 1 1 1 3 1 1 1 MultimediaAndHypermedia }}
+{:a ROW :cells {1 5 3 1 4 1 1 1 VisualProgramming }}
+{:a ROW :cells {1 5 2 3 1 1 1 1 CrossPlatformGUIs }}
+{:a ROW :cells {1 5 5 5 1 1 1 5 ObjectOrientedSystems }}
+{:a ROW :cells {1 5 4 3 4 1 5 5 KnowledgeBasedSystems }}
+{:a ROW :cells {3 5 3 2 5 5 5 5 IntelligentAgents }}
+{:a ROW :cells {5 1 1 2 4 3 1 3 InformationHighway }}
+{:a ROW :cells {5 2 1 2 4 1 1 3 BroadbandNetworks }}
+✅ pass: 	reprows
+80
+|.. 71
+|.. |.. 48
+|.. |.. |.. ObjectOrientedSystems
+|.. |.. |.. CrossPlatformGUIs
+|.. |.. 65
+|.. |.. |.. IntelligentAgents
+|.. |.. |.. 54
+|.. |.. |.. |.. VisualProgramming
+|.. |.. |.. |.. KnowledgeBasedSystems
+|.. 52
+|.. |.. 34
+|.. |.. |.. VirtualReality
+|.. |.. |.. InformationHighway
+|.. |.. 32
+|.. |.. |.. ElectronicPublishing
+|.. |.. |.. 29
+|.. |.. |.. |.. BroadbandNetworks
+|.. |.. |.. |.. MultimediaAndHypermedia
+✅ pass: 	prototypes
+
+A ElectronicPublishing
+B VirtualReality
+C MultimediaAndHypermedia
+D VisualProgramming
+E CrossPlatformGUIs
+F ObjectOrientedSystems
+G KnowledgeBasedSystems
+H IntelligentAgents
+I InformationHighway
+J BroadbandNetworks
+
+{F                             B           }
+{                                          }
+{                                          }
+{                                          }
+{                                          }
+{                                          }
+{                          I               }
+{          E       D   J                   }
+{        G                                 }
+{                    A                     }
+{                  H                       }
+✅ pass: 	position
+80
+|.. 71
+|.. |.. 48
+|.. |.. |.. ObjectOrientedSystems
+|.. |.. |.. CrossPlatformGUIs
+|.. |.. 65
+|.. |.. |.. IntelligentAgents
+|.. |.. |.. 54
+|.. |.. |.. |.. VisualProgramming
+|.. |.. |.. |.. KnowledgeBasedSystems
+|.. 52
+|.. |.. 34
+|.. |.. |.. VirtualReality
+|.. |.. |.. InformationHighway
+|.. |.. 32
+|.. |.. |.. ElectronicPublishing
+|.. |.. |.. 29
+|.. |.. |.. |.. BroadbandNetworks
+|.. |.. |.. |.. MultimediaAndHypermedia
+74
+|.. 51
+|.. |.. 30
+|.. |.. |.. HumanOrientedTool:SystemTool
+|.. |.. |.. CommunicationTechnology:ApplicationTechnology
+|.. |.. 49
+|.. |.. |.. Multimedia:Programming
+|.. |.. |.. TargetedOnInterface:TargetedOnOverallSystem
+|.. 61
+|.. |.. 54
+|.. |.. |.. ConventionalCommunication:NovelCommunication
+|.. |.. |.. DevelopmentTool:Application
+|.. |.. 43
+|.. |.. |.. ConventionalSystem:IntelligentSystem
+|.. |.. |.. OnlyActAsProgrammed:Semi-autonomous
+
+A ElectronicPublishing
+B VirtualReality
+C MultimediaAndHypermedia
+D VisualProgramming
+E CrossPlatformGUIs
+F ObjectOrientedSystems
+G KnowledgeBasedSystems
+H IntelligentAgents
+I InformationHighway
+J BroadbandNetworks
+
+{F                             B           }
+{                                          }
+{                                          }
+{                                          }
+{                                          }
+{                                          }
+{                          I               }
+{          E       D   J                   }
+{        G                                 }
+{                    A                     }
+{                  H                       }
+✅ pass: 	every
