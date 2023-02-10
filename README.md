@@ -21,3 +21,7 @@ This folder holds the files for the third homework aimed at creating our cluster
 
 The onCluster.md holds information on how to run the tests as well as other .html files in the docs for each files seperately
 
+## hw4
+This folder holds the files for the fourth homework aimed at creating our regrid analysis tool. 
+
+The onGrid.md holds information on how to run the tests as well as other .html files in the docs for each files seperately stored in ./docs/hw4
