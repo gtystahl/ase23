@@ -24,6 +24,9 @@ def main(options: dict, HELP, funs):
     else:
       for what in funs:
         if options["go"] == "all" or what == options["go"]:
+          # Since I added the surveys as tests, this ignores them unless specified to keep them seperate
+          if options["go"] == "all" and ("Survey" in what or "Every" == what):
+            continue 
           for k,v in saved.items():
             options[k] = v
           config.Seed = options["seed"]
@@ -62,5 +65,15 @@ eg("prototypes","checking reprows cluster", checkRepCluster)
 eg("position","where's wally", checkRepPlace)
 
 eg("every","the whole enchilada", checkRepgrid)
+
+# Here are the tests for running the cluster on the surveys (Repgrids)
+
+eg("Survey1", "The repgrid for the first survey", survey1)
+
+eg("Survey2", "The repgrid for the second survey", survey2)
+
+eg("Survey3", "The repgrid for the third survey", survey3)
+
+eg("Every", "This runs all of the serveys", all_surveys)
 
 main(config.the, config.Help, egs)

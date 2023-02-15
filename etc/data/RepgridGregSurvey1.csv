@@ -1,0 +1,14 @@
+local _ = 
+return {
+  domain="Bars in Raleigh"
+  cols={    {'Cheap', 3, 4, 2, 4, 'Expensive'},
+    {'No Music', 5, 4, 5, 1, 'Live'},
+    {'Lively', 5, 2, 5, 5, 'Intimate'},
+    {'Beer', 3, 4, 3, 5, 'Wine'},
+  },
+  rows={    { _, _, _, 'Fox Liquor Bar'},
+    { _, _, 'The Big Easy'},
+    { _, 'The Architect Bar and Social House'},
+    { 'Clouds Brewing'},
+  }
+}

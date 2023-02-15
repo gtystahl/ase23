@@ -1,0 +1,22 @@
+local _ = 
+return {
+  domain="Bars in Raleigh"
+  cols={    {'No Beer', 6, 10, 4, 5, 3, 4, 3, 5, 4, 7, 'High Variety of Beer'},
+    {'Quiet', 8, 5, 6, 2, 4, 2, 2, 7, 3, 4, 'Loud'},
+    {'Small', 6, 8, 3, 4, 4, 3, 3, 4, 5, 3, 'Big'},
+    {'Cheap', 5, 4, 7, 6, 5, 5, 6, 7, 6, 8, 'Expensive'},
+    {'Low Quality', 2, 7, 6, 5, 7, 8, 7, 4, 7, 4, 'High Quality'},
+    {'Small Number of People', 8, 7, 8, 4, 5, 3, 4, 7, 3, 5, 'Crowded'},
+  },
+  rows={    { _, _, _, _, _, _, _, _, _, 'Fox Liquor Bar'},
+    { _, _, _, _, _, _, _, _, 'The Big Easy'},
+    { _, _, _, _, _, _, _, 'The Architect Bar & Social House'},
+    { _, _, _, _, _, _, 'Clouds Brewing'},
+    { _, _, _, _, _, 'Trophy Brewing and Tap Room'},
+    { _, _, _, _, 'Crank Arm'},
+    { _, _, _, 'Little City Brewing'},
+    { _, _, 'Foundation'},
+    { _, 'Raleigh Beer Garden'},
+    { 'Tin Roof'},
+  }
+}

@@ -291,7 +291,114 @@
       <p>Displays all of the checks above</p>
     </div>
     <div class='code'>
-      <div class="highlight"><pre>  <span class="n">repgrid</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">the</span><span class="p">[</span><span class="s2">&quot;file&quot;</span><span class="p">])</span>
+      <div class="highlight"><pre>  <span class="n">repgrid</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">the</span><span class="p">[</span><span class="s2">&quot;file&quot;</span><span class="p">])</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-21'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-21'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">survey1</span><span class="p">():</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-22'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-22'>#</a>
+      </div>
+      <p>t = repCols(dofile(&ldquo;../../etc/data/RepgridGregSurvey1.csv&rdquo;)[&ldquo;cols&rdquo;])
+MAP(t.cols.all, pretty)
+MAP(t.rows, pretty)
+t = dofile(&ldquo;../../etc/data/RepgridGregSurvey1.csv&rdquo;)
+rows = repRows(t, transpose(t[&ldquo;cols&rdquo;]))
+MAP(rows.cols.all, pretty)
+MAP(rows.rows, pretty)</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>  <span class="n">repgrid</span><span class="p">(</span><span class="s2">&quot;../../etc/data/RepgridGregSurvey1.csv&quot;</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-23'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-23'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">survey2</span><span class="p">():</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-24'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-24'>#</a>
+      </div>
+      <p>t = repCols(dofile(&ldquo;../../etc/data/RepgridGregSurvey1.csv&rdquo;)[&ldquo;cols&rdquo;])
+MAP(t.cols.all, pretty)
+MAP(t.rows, pretty)
+t = dofile(&ldquo;../../etc/data/RepgridGregSurvey1.csv&rdquo;)
+rows = repRows(t, transpose(t[&ldquo;cols&rdquo;]))
+MAP(rows.cols.all, pretty)
+MAP(rows.rows, pretty)</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>  <span class="n">repgrid</span><span class="p">(</span><span class="s2">&quot;../../etc/data/RepgridGregSurvey2.csv&quot;</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-25'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-25'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">survey3</span><span class="p">():</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-26'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-26'>#</a>
+      </div>
+      <p>t = repCols(dofile(&ldquo;../../etc/data/RepgridGregSurvey1.csv&rdquo;)[&ldquo;cols&rdquo;])
+MAP(t.cols.all, pretty)
+MAP(t.rows, pretty)
+t = dofile(&ldquo;../../etc/data/RepgridGregSurvey1.csv&rdquo;)
+rows = repRows(t, transpose(t[&ldquo;cols&rdquo;]))
+MAP(rows.cols.all, pretty)
+MAP(rows.rows, pretty)</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>  <span class="n">repgrid</span><span class="p">(</span><span class="s2">&quot;../../etc/data/RepgridGregSurvey3.csv&quot;</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-27'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-27'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">all_surveys</span><span class="p">():</span>
+  <span class="n">survey1</span><span class="p">()</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">-----------</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+  <span class="n">survey2</span><span class="p">()</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">-----------</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+  <span class="n">survey3</span><span class="p">()</span>
 
 </pre></div>
     </div>

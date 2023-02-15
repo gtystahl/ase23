@@ -48,6 +48,8 @@ def repPlace(data):
     c = chr(65 + r)
     print(c, last(row.cells))
     x = int(row.x * n)
+    if type(row.y) == complex:
+      row.y = 0
     y = int(row.y * n)
     maxy = max(maxy, y + 1)
     g[y][x] = c

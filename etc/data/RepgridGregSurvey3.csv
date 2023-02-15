@@ -1,0 +1,21 @@
+local _ = 
+return {
+  domain="Bars in Raleigh"
+  cols={    {'Cheap', 4, 3, 3, 1, 3, 1, 2, 3, 3, 'Expensive'},
+    {'Quiet Music', 4, 3, 5, 4, 3, 3, 5, 2, 3, 'Loud Music'},
+    {'Closed Design', 4, 4, 2, 4, 3, 2, 5, 5, 1, 'Open Design'},
+    {'Close to NC State', 3, 3, 3, 1, 2, 2, 4, 4, 4, 'Far Away'},
+    {'Less Crowded', 5, 5, 4, 3, 2, 4, 4, 3, 5, 'More Crowded'},
+    {'Less Drink Variety', 5, 5, 3, 2, 2, 4, 4, 3, 5, 'More Drink Variety'},
+  },
+  rows={    { _, _, _, _, _, _, _, _, 'Clockwork'},
+    { _, _, _, _, _, _, _, 'The Arbor Bar and Garden'},
+    { _, _, _, _, _, _, 'Boxcar Bar and Arcade'},
+    { _, _, _, _, _, 'Mitch's Tavern'},
+    { _, _, _, _, 'Brickhouse Sprots Bar and Grill'},
+    { _, _, _, 'Sammy's'},
+    { _, _, 'Tin Roof'},
+    { _, 'Crank Arm'},
+    { 'Raleigh Beer Garden'},
+  }
+}

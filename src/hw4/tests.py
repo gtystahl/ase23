@@ -70,3 +70,40 @@ def checkRepPlace():
 def checkRepgrid():
   # Displays all of the checks above
   repgrid(config.the["file"])
+
+def survey1():
+  # t = repCols(dofile("../../etc/data/RepgridGregSurvey1.csv")["cols"])
+  # MAP(t.cols.all, pretty)
+  # MAP(t.rows, pretty)
+  # t = dofile("../../etc/data/RepgridGregSurvey1.csv")
+  # rows = repRows(t, transpose(t["cols"]))
+  # MAP(rows.cols.all, pretty)
+  # MAP(rows.rows, pretty)
+  repgrid("../../etc/data/RepgridGregSurvey1.csv")
+
+def survey2():
+  # t = repCols(dofile("../../etc/data/RepgridGregSurvey1.csv")["cols"])
+  # MAP(t.cols.all, pretty)
+  # MAP(t.rows, pretty)
+  # t = dofile("../../etc/data/RepgridGregSurvey1.csv")
+  # rows = repRows(t, transpose(t["cols"]))
+  # MAP(rows.cols.all, pretty)
+  # MAP(rows.rows, pretty)
+  repgrid("../../etc/data/RepgridGregSurvey2.csv")
+
+def survey3():
+  # t = repCols(dofile("../../etc/data/RepgridGregSurvey1.csv")["cols"])
+  # MAP(t.cols.all, pretty)
+  # MAP(t.rows, pretty)
+  # t = dofile("../../etc/data/RepgridGregSurvey1.csv")
+  # rows = repRows(t, transpose(t["cols"]))
+  # MAP(rows.cols.all, pretty)
+  # MAP(rows.rows, pretty)
+  repgrid("../../etc/data/RepgridGregSurvey3.csv")
+
+def all_surveys():
+  survey1()
+  print("\n-----------\n")
+  survey2()
+  print("\n-----------\n")
+  survey3()

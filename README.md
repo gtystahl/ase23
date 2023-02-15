@@ -25,3 +25,5 @@ The onCluster.md holds information on how to run the tests as well as other .htm
 This folder holds the files for the fourth homework aimed at creating our regrid analysis tool. 
 
 The onGrid.md holds information on how to run the tests as well as other .html files in the docs for each files seperately stored in ./docs/hw4
+
+The **WRITEUP** is stored in ./docs/hw4/Task5Writeup.md. The regrids for task 5 were also added to the testing yaml so the results can be found in task5Out.txt in the ./etc/out/ folder.
