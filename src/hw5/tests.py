@@ -158,15 +158,25 @@ def checkTree():
 def checkSway():
   data = DREAD(config.the["file"])
   best, rest = sway(data)
-  print("\nall ", stats(data)) 
-  print("    ",   stats(data,div)) 
-  print("\nbest", stats(best)) 
-  print("    ",   stats(best,div)) 
-  print("\nrest", stats(rest)) 
-  print("    ",   stats(rest,div)) 
+  print("\nall ", stats(data)[0]) 
+  print("    ",   stats(data,div)[0]) 
+  print("\nbest", stats(best)[0]) 
+  print("    ",   stats(best,div)[0]) 
+  print("\nrest", stats(rest)[0]) 
+  print("    ",   stats(rest,div)[0]) 
   print("\nall ~= best?", diffs(best["cols"]["y"], data["cols"]["y"]))
   print("best ~= rest?", diffs(best["cols"]["y"], rest["cols"]["y"]))
 
 
 def checkBins():
-  return False
+  b4 = ""
+  data = DREAD(config.the["file"])
+  best, rest = sway(data)
+  print("all","","","",{"best": len(best["rows"]), "rest": len(rest["rows"])})
+  res = bins(data["cols"]["x"], {"best": best["rows"], "rest": rest["rows"]})
+  for k, t in res.items():
+    for _, range in t.items():
+      if range["txt"] != b4:
+        print("")
+      b4 = range["txt"]
+      print(range["txt"], range["lo"], range["hi"], rnd(value(range["y"]["has"], len(best["rows"]), len(rest["rows"]))), "best", range["y"]["has"])

@@ -27,7 +27,9 @@ def COLS(ss):
             push((cols["y"] if col["isGoal"] else cols["x"]), col)
     return cols
 
-def RANGE(at, txt, lo, hi):
+def RANGE(at, txt, lo, hi=None):
+    if hi is None:
+        hi = lo
     # Might need to change the "hi" part
     return {"at": at, "txt":txt, "lo":lo, "hi":hi, "y": SYM()}
 

@@ -206,7 +206,7 @@ def value(has, nB=1, nR=1, sGoal=True):
       r = r + n
   b = b/(nB+1/math.inf)
   r = r/(nR+1/math.inf)
-  return b^2 / (b+r)
+  return b**2 / (b+r)
 
 
 def dist(data, t1, t2, cols=None):

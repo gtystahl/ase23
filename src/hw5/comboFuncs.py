@@ -38,7 +38,7 @@ def showTree(tree, lvl=0, post=None):
 
 def sway(data):
   def worker(rows, worse, above=None):
-    if len(rows) <= (len(data["rows"]) ** config.the["min"]):
+    if len(rows) < (len(data["rows"]) ** config.the["min"]):
       return rows, many(worse, config.the["rest"] * len(rows))
     else:
       # Changed this since there is no cols
@@ -62,16 +62,18 @@ def bins(cols, rowss):
           k = BIN(col, x)
           if not k in ranges.keys():
             ranges[k] = RANGE(col["at"], col["txt"], x)
-            extend(ranges[k], x, y)
-    ranges = sort(MAP(ranges, itself), lo)
-    out[1 + len(out)] = ranges if col["isSym"] else mergeAny(ranges)
+          extend(ranges[k], x, y)
+    def f(d):
+      return d["lo"]
+    ranges = sort(MAP(ranges, itself), f)
+    out[len(out)] = lstToDict(ranges) if col["isSym"] else mergeAny(ranges)
   return out
 
 
-def bin(col, x):
+def BIN(col, x):
   if x == "?" or col["isSym"]:
     return x
-  tmp = (col["hi" - col["lo"]]) / (config.the["bins"] - 1)
-  return 1 if col["hi"] == col["hi"] else math.floor(x / tmp + 0.5) * tmp
+  tmp = (col["hi"] - col["lo"]) / (config.the["bins"] - 1)
+  return 1 if col["hi"] == col["lo"] else math.floor(x / tmp + 0.5) * tmp
 
 
