@@ -27,3 +27,12 @@ This folder holds the files for the fourth homework aimed at creating our regrid
 The onGrid.md holds information on how to run the tests as well as other .html files in the docs for each files seperately stored in ./docs/hw4
 
 The **WRITEUP** is stored in ./docs/hw4/Task5Writeup.md. The regrids for task 5 were also added to the testing yaml so the results can be found in task5Out.txt in the ./etc/out/ folder.
+
+I have also added them to the main folder of the repo for easier grading
+
+## hw5
+This folder holds the files for the Fifth homework aimed at creating our clustering algorithm and optimization of such clustering with sway. 
+
+The onBins.md holds information on how to run the tests as well as other .html files in the docs for each files seperately
+
+I have also added for this homework, a bash script to run bins.py called **hw5Runner.sh** to make it easier to grade

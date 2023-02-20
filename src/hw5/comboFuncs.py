@@ -1,9 +1,10 @@
-from newClasses import *
-from newHelpers import *
+from classes import *
+from helpers import *
 
 # This file holds all of the functions that require the helpers and the classses
 
 def tree(data, rows=None, cols=None, above=None):
+  # Creates a tree of the data 
   if rows is None:
     rows = data["rows"]
   here = {"data": DCLONE(data, rows)}
@@ -15,6 +16,7 @@ def tree(data, rows=None, cols=None, above=None):
 
 
 def showTree(tree, lvl=0, post=None):
+  # Prints the created tree to the screen
   if tree:
     line = ""
     for i in range(lvl):
@@ -37,6 +39,7 @@ def showTree(tree, lvl=0, post=None):
 
 
 def sway(data):
+  # Our optimized clustering algorithm swway
   def worker(rows, worse, above=None):
     if len(rows) < (len(data["rows"]) ** config.the["min"]):
       return rows, many(worse, config.the["rest"] * len(rows))
@@ -44,7 +47,12 @@ def sway(data):
       # Changed this since there is no cols
       l, r, A, B, _ = half(data, rows, None, above)
       if better(data, B, A):
-        l, r, A, B = r, l, B, A
+        ol = l
+        l = r
+        r = ol
+        oa = A
+        A = B
+        B = oa
       MAP(r, lambda row: push(worse, row))
       return worker(l, worse, A)
   best, rest = worker(data["rows"], {})
@@ -52,6 +60,7 @@ def sway(data):
 
 
 def bins(cols, rowss):
+  # Seperates the data into bins
   out = {}
   for _, col in cols.items():
     ranges = {}
@@ -71,6 +80,7 @@ def bins(cols, rowss):
 
 
 def BIN(col, x):
+  # Returns what bin this item needs to be in
   if x == "?" or col["isSym"]:
     return x
   tmp = (col["hi"] - col["lo"]) / (config.the["bins"] - 1)

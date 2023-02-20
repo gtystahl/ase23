@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>config.py</title>
+  <link rel="stylesheet" href="pycco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div class='section'>
+    <div class='docs'><h1>config.py</h1></div>
+  </div>
+  <div class='clearall'>
+  <div class='section' id='section-0'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-0'>#</a>
+      </div>
+      <p>This file holds all of global data needed across all of the other files</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span></span><span class="k">global</span> <span class="n">the</span><span class="p">,</span> <span class="n">Help</span><span class="p">,</span> <span class="n">Seed</span>
+
+<span class="n">the</span><span class="p">,</span><span class="n">Help</span> <span class="o">=</span> <span class="p">{},</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">bins: multi-objective semi-supervised discetization</span>
+<span class="s2">(c) 2023 Greg Tystahl &lt;gttystahl@ncsu.edu&gt; BSD-2</span>
+<span class="s2">  </span>
+<span class="s2">USAGE: python3 bins.py [OPTIONS] [-g ACTIONS]</span>
+<span class="s2">  </span>
+<span class="s2">OPTIONS:</span>
+<span class="s2">  -b  --bins    initial number of bins       = 16</span>
+<span class="s2">  -c  --cliffs  cliff&#39;s delta threshold      = .147</span>
+<span class="s2">  -f  --file    data file                    = ../../etc/data/auto93.csv</span>
+<span class="s2">  -F  --Far     distance to distant          = .95</span>
+<span class="s2">  -g  --go      start-up action              = nothing</span>
+<span class="s2">  -h  --help    show help                    = false</span>
+<span class="s2">  -H  --Halves  search space for clustering  = 512</span>
+<span class="s2">  -m  --min     size of smallest cluster     = .5</span>
+<span class="s2">  -M  --Max     numbers                      = 512</span>
+<span class="s2">  -p  --p       dist coefficient             = 2</span>
+<span class="s2">  -r  --rest    how many of rest to sample   = 4</span>
+<span class="s2">  -R  --Reuse   child splits reuse a parent pole = true</span>
+<span class="s2">  -s  --seed    random number seed           = 937162211</span>
+<span class="s2">&quot;&quot;&quot;</span>
+    
+<span class="n">Seed</span> <span class="o">=</span> <span class="mi">937162211</span>
+
+</pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+</div>
+</body>

@@ -1,0 +1,137 @@
+87
+|.. 25
+|.. |.. TheBigEasy
+|.. |.. CloudsBrewing
+|.. 67
+|.. |.. FoxLiquorBar
+|.. |.. TheArchitectBarandSocialHouse
+80
+|.. 71
+|.. |.. NoMusic:Live
+|.. |.. Lively:Intimate
+|.. 21
+|.. |.. Cheap:Expensive
+|.. |.. Beer:Wine
+
+A CloudsBrewing
+B TheArchitectBarandSocialHouse
+C TheBigEasy
+D FoxLiquorBar
+
+{C                                 D       }
+{                                          }
+{                                          }
+{                                          }
+{    A                                     }
+{                                          }
+{                                          }
+{                                          }
+{                                          }
+{                                          }
+{                                          }
+{                    B                     }
+
+-----------
+
+56
+|.. 26
+|.. |.. 24
+|.. |.. |.. CrankArm
+|.. |.. |.. TrophyBrewingandTapRoom
+|.. |.. 20
+|.. |.. |.. LittleCityBrewing
+|.. |.. |.. 20
+|.. |.. |.. |.. TheBigEasy
+|.. |.. |.. |.. CloudsBrewing
+|.. 66
+|.. |.. 51
+|.. |.. |.. RaleighBeerGarden
+|.. |.. |.. TinRoof
+|.. |.. 37
+|.. |.. |.. FoxLiquorBar
+|.. |.. |.. 20
+|.. |.. |.. |.. Foundation
+|.. |.. |.. |.. TheArchitectBar&SocialHouse
+79
+|.. 56
+|.. |.. LowQuality:HighQuality
+|.. |.. 63
+|.. |.. |.. Small:Big
+|.. |.. |.. Cheap:Expensive
+|.. 51
+|.. |.. Quiet:Loud
+|.. |.. 45
+|.. |.. |.. NoBeer:HighVarietyofBeer
+|.. |.. |.. SmallNumberofPeople:Crowded
+
+A TinRoof
+B RaleighBeerGarden
+C Foundation
+D LittleCityBrewing
+E CrankArm
+F TrophyBrewingandTapRoom
+G CloudsBrewing
+H TheArchitectBar&SocialHouse
+I TheBigEasy
+J FoxLiquorBar
+
+{E                     B                   }
+{                                          }
+{                                          }
+{                                          }
+{I                                         }
+{D                                         }
+{                                          }
+{C   H                                     }
+{  J         A                             }
+
+-----------
+
+64
+|.. 44
+|.. |.. 19
+|.. |.. |.. CrankArm
+|.. |.. |.. RaleighBeerGarden
+|.. |.. 58
+|.. |.. |.. TheArborBarandGarden
+|.. |.. |.. Clockwork
+|.. 55
+|.. |.. 37
+|.. |.. |.. Sammys
+|.. |.. |.. BrickhouseSprotsBarandGrill
+|.. |.. 51
+|.. |.. |.. BoxcarBarandArcade
+|.. |.. |.. 43
+|.. |.. |.. |.. MitchsTavern
+|.. |.. |.. |.. TinRoof
+64
+|.. 58
+|.. |.. QuietMusic:LoudMusic
+|.. |.. 59
+|.. |.. |.. Cheap:Expensive
+|.. |.. |.. ClosedDesign:OpenDesign
+|.. 55
+|.. |.. LessCrowded:MoreCrowded
+|.. |.. 55
+|.. |.. |.. ClosetoNCState:FarAway
+|.. |.. |.. LessDrinkVariety:MoreDrinkVariety
+
+A RaleighBeerGarden
+B CrankArm
+C TinRoof
+D Sammys
+E BrickhouseSprotsBarandGrill
+F MitchsTavern
+G BoxcarBarandArcade
+H TheArborBarandGarden
+I Clockwork
+
+{B                       D                 }
+{                                          }
+{                                          }
+{A                                         }
+{                                          }
+{            F                             }
+{I       G         E                       }
+{        H C                               }
+✅ pass: 	Every

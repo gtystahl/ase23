@@ -1,23 +1,9 @@
-from newClasses import *
-from newHelpers import *
+from classes import *
+from helpers import *
 from comboFuncs import *
 import config
 
 # This is the file that holds the functions for all of the tests
-
-
-def close(val1, val2):
-  # This checks to make sure that the function works within 0.01
-  rval1 = round(val1, 2)
-  rval2 = round(val2, 2)
-  if (rval1 == rval2):
-    return True
-  elif (rval2 - 0.01 == rval1) or (rval2 + 0.01 == rval1):
-    return True
-  elif (rval1 - 0.01 == rval2) or (rval1 + 0.01 == rval2):
-    return True
-  else:
-    return False
 
 
 def oo(t):
@@ -40,6 +26,7 @@ def oo(t):
 
 
 def checkRand():
+  # Checks to make sure the random generator is working
   s = config.Seed
 
   config.Seed = 1
@@ -59,6 +46,7 @@ def checkRand():
 
 
 def checkSome():
+  # Checks to make sure we can grab some numbers correctly
   m = config.the["Max"]
   config.the["Max"] = 32
   num1 = NUM()
@@ -69,6 +57,7 @@ def checkSome():
 
 
 def checkNums():
+  # Checks to make sure nums are created and added correctly
   num1 = NUM()
   num2 = NUM()
   for i in range(1, 10001):
@@ -77,18 +66,18 @@ def checkNums():
     add(num2, rand() ** 2)
   print(1, rnd(mid(num1)), rnd(div(num1)))
   print(2, rnd(mid(num2)), rnd(div(num2)))
-  # print(0.5 == rnd(mid(num1)))
-  # print(mid(num1) > mid(num2))
   return close(0.5, rnd(mid(num1))) and mid(num1) > mid(num2)
 
 
 def checkSyms():
+  # Checks to make sure syms are created and added correctly
   sym = adds(SYM(), {0: "a", 1: "a", 2: "a", 3: "a", 4: "b", 5: "b", 6: "c"})
   print(mid(sym), rnd(div(sym)))
   return close(1.38, rnd(div(sym)))
 
 
 def checkCsv():
+  # Checks to make sure the data is read correctly
   global n
   n = 0
   def f(t):
@@ -99,6 +88,7 @@ def checkCsv():
 
 
 def checkData():
+  # Checks to make sure the data is created correctly
   data = DREAD(config.the["file"])
   col = data["cols"]["x"][0]
   print(col["lo"], col["hi"], mid(col), div(col))
@@ -106,6 +96,7 @@ def checkData():
 
 
 def checkClone():
+  # Checks to make sure the data can be cloned correctly
   data1 = DREAD(config.the["file"])
   data2 = DCLONE(data1, data1["rows"])
   oo(stats(data1))
@@ -113,6 +104,7 @@ def checkClone():
 
 
 def checkCliffs():
+  # Checks to make sure cliffsDelta catagorizes correctly
   assert(False == cliffDelta( {0: 8, 1: 7, 2: 6, 3: 2, 4: 5, 5: 8, 6: 7, 7: 3}, {0: 8, 1: 7, 2: 6, 3: 2, 4: 5, 5: 8, 6: 7, 7: 3}))
   assert(True == cliffDelta( {0: 8, 1: 7, 2: 6, 3: 2, 4: 5, 5: 8, 6: 7, 7: 3}, {0: 9, 1: 9, 2: 7, 3: 8, 4: 10, 5: 9, 6: 6}))
   t1 = {}
@@ -130,10 +122,10 @@ def checkCliffs():
     diff = cliffDelta(t1, t3)
     print(">", rnd(j), diff)
     j = j * 1.025
-    # j = 1.13
 
 
 def checkDist():
+  # Checks to make sure the distance funciton works properly
   data = DREAD(config.the["file"])
   num = NUM()
   for _,row in data["rows"].items():
@@ -142,6 +134,7 @@ def checkDist():
 
 
 def checkHalf():
+  # Checks to make sure that the data can be split in half correctly
   data = DREAD(config.the["file"])
   left, right, A, B, c = half(data)
   print(len(left), len(right))
@@ -152,10 +145,12 @@ def checkHalf():
  
 
 def checkTree():
+  # Checks to make sure trees are made correctly
   showTree(tree(DREAD(config.the["file"])))
 
 
 def checkSway():
+  # Checks to make sure the sway function works properly
   data = DREAD(config.the["file"])
   best, rest = sway(data)
   print("\nall ", stats(data)[0]) 
@@ -169,6 +164,7 @@ def checkSway():
 
 
 def checkBins():
+  # Checks to make sure the bins works correctly
   b4 = ""
   data = DREAD(config.the["file"])
   best, rest = sway(data)
@@ -179,4 +175,4 @@ def checkBins():
       if range["txt"] != b4:
         print("")
       b4 = range["txt"]
-      print(range["txt"], range["lo"], range["hi"], rnd(value(range["y"]["has"], len(best["rows"]), len(rest["rows"]))), "best", range["y"]["has"])
+      print(range["txt"], range["lo"], range["hi"], rnd(value(range["y"]["has"], len(best["rows"]), len(rest["rows"]), "best")), range["y"]["has"])

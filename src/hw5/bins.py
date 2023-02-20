@@ -5,13 +5,15 @@
 #  then prunes bins that have similar distributions in `best` and `rest
 
 # This is the main file of hw5. All tests are run here and all the meat is created in the other files
+
+# I kept the main running the same for simplicty of automation on my side
   
 from tests import *
 import config
 
 def main(options: dict, HELP, funs):
   # This function runs the tests specified by the user on the run (defined in -h or --help)
-    saved, fails = {}, 0
+    saved, fails, passes = {}, 0, 0
     for k,v in cli(settings(HELP)).items(): 
       options[k] = v
       saved[k] = v
@@ -30,7 +32,9 @@ def main(options: dict, HELP, funs):
             fails = fails + 1
             print("❌ fail:", "\t" + what)
           else:
+            passes += 1
             print("✅ pass:","\t" + what)
+    print("\n🔆 %s\n" % str({"pass": passes, "fail": fails, "success": 100*passes/(passes+fails)}))
     exit(fails)
 
 egs = {}
