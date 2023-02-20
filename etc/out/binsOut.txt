@@ -1,0 +1,25 @@
+all    {'best': 13, 'rest': 52}
+
+Clndrs -inf 3 0.0 {'rest': 1}
+Clndrs 3 4 0.642 {'best': 13, 'rest': 29}
+Clndrs 4 inf 0.0 {'rest': 22}
+
+Volume -inf 90 0.026 {'best': 1, 'rest': 8}
+Volume 90 107 0.316 {'best': 6, 'rest': 11}
+Volume 107 140 0.197 {'best': 4, 'rest': 9}
+Volume 140 163 0.112 {'best': 2, 'rest': 3}
+Volume 163 inf 0.0 {'rest': 21}
+
+Model -inf 78 0.0 {'rest': 39}
+Model 78 79 0.443 {'best': 6, 'rest': 1}
+Model 79 80 0.154 {'best': 3, 'rest': 6}
+Model 80 81 0.259 {'best': 4, 'rest': 3}
+Model 81 inf 0.0 {'rest': 3}
+
+origin 1 1 0.658 {'best': 13, 'rest': 27}
+origin 2 2 0.0 {'rest': 12}
+origin 3 3 0.0 {'rest': 13}
+✅ pass: 	bins
+
+🔆 {'pass': 1, 'fail': 0, 'success': 100.0}
+
