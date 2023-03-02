@@ -1,29 +1,9 @@
-
-# <!-- vim: set syntax=lua ts=2 sw=2 et : -->
-# <img style="padding:3px;" src="https://raw.githubusercontent.com/timm/tested/main/etc/img/script.png" align=left width=135>
-# <p style="text-align: right;">
-#  <a 
-#   href="https://zenodo.org/badge/latestdoi/569981645"> <img 
-#    src="https://zenodo.org/badge/569981645.svg" alt="DOI"></a><br>
-# <img src="https://img.shields.io/badge/task-ai-purple"> <img 
-#  src="https://img.shields.io/badge/language-lua5.4-orange"><br><img 
-#  src="https://img.shields.io/badge/purpose-teaching-yellow">
-# <a href="https://github.com/timm/tested/actions/workflows/tests.yml"><br><img 
-#   src="https://github.com/timm/tested/actions/workflows/tests.yml/badge.svg"></a>
-#  <br>
-# <a href="https://github.com/timm/tested/blob/main/src/xai.lua">download</a> <br>
-# <a href="https://github.com/timm/tested/blob/main/etc/data/auto93.csv">example data</a> <br>
-# <a href="#license">license</a> <br>
-# <a href="https://github.com/timm/tested/issues">issues</a><br clear=all>
-#        
-# <p style="text-align: left;">
 # This code supports multi-goal semi-supervised explanation.  Here,  optimization 
 # is treated as a kind of data mining; i.e.  we recursively bi-cluster (using the 
 # distance to two remote points), all the while pruning the  "worst" half of the 
 # data (as measured by a multi-goal domination predicate).
 # During this, we  only label one or two points per cluster. Afterwards, 
 # the rules we generate to explain the better rows is generated from the delta between best cluster and the rest.</p>
-# For help with code, see comments at the <a href="#about">end of this file</a>.</p>
 
 # This is the main file of hw6. All tests are run here and all the meat is created in the other files
 
@@ -91,7 +71,6 @@ eg("half","divide data in halg", checkHalf)
  
 eg("tree","make snd show tree of clusters", checkTree)
 
-# TODO Start here. Cliffs says its false for acc when it should be true. Need to check either that specifically or each of the "close" values I have ignored up to this point
 eg("sway","optimizing", checkSway)
 
 eg("bins", "find deltas between best and rest", checkBins)

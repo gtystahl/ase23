@@ -17,7 +17,12 @@
       <div class='octowrap'>
         <a class='octothorpe' href='#section-0'>#</a>
       </div>
-      
+      <p>This code supports multi-goal semi-supervised explanation.  Here,  optimization 
+is treated as a kind of data mining; i.e.  we recursively bi-cluster (using the 
+distance to two remote points), all the while pruning the  &ldquo;worst&rdquo; half of the 
+data (as measured by a multi-goal domination predicate).
+During this, we  only label one or two points per cluster. Afterwards, 
+the rules we generate to explain the better rows is generated from the delta between best cluster and the rest.</p></p>
     </div>
     <div class='code'>
       <div class="highlight"><pre><span></span></pre></div>
@@ -29,31 +34,7 @@
       <div class='octowrap'>
         <a class='octothorpe' href='#section-1'>#</a>
       </div>
-      <!-- vim: set syntax=lua ts=2 sw=2 et : -->
-<p><img style="padding:3px;" src="https://raw.githubusercontent.com/timm/tested/main/etc/img/script.png" align=left width=135></p>
-<p style="text-align: right;">
- <a 
-  href="https://zenodo.org/badge/latestdoi/569981645"> <img 
-   src="https://zenodo.org/badge/569981645.svg" alt="DOI"></a><br>
-<img src="https://img.shields.io/badge/task-ai-purple"> <img 
- src="https://img.shields.io/badge/language-lua5.4-orange"><br><img 
- src="https://img.shields.io/badge/purpose-teaching-yellow">
-<a href="https://github.com/timm/tested/actions/workflows/tests.yml"><br><img 
-  src="https://github.com/timm/tested/actions/workflows/tests.yml/badge.svg"></a>
- <br>
-<a href="https://github.com/timm/tested/blob/main/src/xai.lua">download</a> <br>
-<a href="https://github.com/timm/tested/blob/main/etc/data/auto93.csv">example data</a> <br>
-<a href="#license">license</a> <br>
-<a href="https://github.com/timm/tested/issues">issues</a><br clear=all>
-
-<p style="text-align: left;">
-This code supports multi-goal semi-supervised explanation.  Here,  optimization 
-is treated as a kind of data mining; i.e.  we recursively bi-cluster (using the 
-distance to two remote points), all the while pruning the  "worst" half of the 
-data (as measured by a multi-goal domination predicate).
-During this, we  only label one or two points per cluster. Afterwards, 
-the rules we generate to explain the better rows is generated from the delta between best cluster and the rest.</p>
-For help with code, see comments at the <a href="#about">end of this file</a>.</p>
+      <p>This is the main file of hw6. All tests are run here and all the meat is created in the other files</p>
     </div>
     <div class='code'>
       <div class="highlight"><pre></pre></div>
@@ -65,18 +46,6 @@ For help with code, see comments at the <a href="#about">end of this file</a>.</
       <div class='octowrap'>
         <a class='octothorpe' href='#section-2'>#</a>
       </div>
-      <p>This is the main file of hw6. All tests are run here and all the meat is created in the other files</p>
-    </div>
-    <div class='code'>
-      <div class="highlight"><pre></pre></div>
-    </div>
-  </div>
-  <div class='clearall'></div>
-  <div class='section' id='section-3'>
-    <div class='docs'>
-      <div class='octowrap'>
-        <a class='octothorpe' href='#section-3'>#</a>
-      </div>
       <p>I kept the main running the same for simplicty of automation on my side</p>
     </div>
     <div class='code'>
@@ -86,10 +55,10 @@ For help with code, see comments at the <a href="#about">end of this file</a>.</
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-4'>
+  <div class='section' id='section-3'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-4'>#</a>
+        <a class='octothorpe' href='#section-3'>#</a>
       </div>
       
     </div>
@@ -98,10 +67,10 @@ For help with code, see comments at the <a href="#about">end of this file</a>.</
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-5'>
+  <div class='section' id='section-4'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-5'>#</a>
+        <a class='octothorpe' href='#section-4'>#</a>
       </div>
       <p>This function runs the tests specified by the user on the run (defined in -h or &ndash;help)</p>
     </div>
@@ -118,10 +87,10 @@ For help with code, see comments at the <a href="#about">end of this file</a>.</
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-6'>
+  <div class='section' id='section-5'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-6'>#</a>
+        <a class='octothorpe' href='#section-5'>#</a>
       </div>
       <p>Since I added the surveys as tests, this ignores them unless specified to keep them seperate</p>
     </div>
@@ -144,10 +113,10 @@ For help with code, see comments at the <a href="#about">end of this file</a>.</
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-7'>
+  <div class='section' id='section-6'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-7'>#</a>
+        <a class='octothorpe' href='#section-6'>#</a>
       </div>
       
     </div>
@@ -156,10 +125,10 @@ For help with code, see comments at the <a href="#about">end of this file</a>.</
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-8'>
+  <div class='section' id='section-7'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-8'>#</a>
+        <a class='octothorpe' href='#section-7'>#</a>
       </div>
       <p>This is the base function for creating tests which will be run in main</p>
     </div>
@@ -169,10 +138,10 @@ For help with code, see comments at the <a href="#about">end of this file</a>.</
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-9'>
+  <div class='section' id='section-8'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-9'>#</a>
+        <a class='octothorpe' href='#section-8'>#</a>
       </div>
       <p>It also adds a way to call that test function into the help</p>
     </div>
@@ -201,19 +170,9 @@ For help with code, see comments at the <a href="#about">end of this file</a>.</
 
 <span class="n">eg</span><span class="p">(</span><span class="s2">&quot;half&quot;</span><span class="p">,</span><span class="s2">&quot;divide data in halg&quot;</span><span class="p">,</span> <span class="n">checkHalf</span><span class="p">)</span>
  
-<span class="n">eg</span><span class="p">(</span><span class="s2">&quot;tree&quot;</span><span class="p">,</span><span class="s2">&quot;make snd show tree of clusters&quot;</span><span class="p">,</span> <span class="n">checkTree</span><span class="p">)</span></pre></div>
-    </div>
-  </div>
-  <div class='clearall'></div>
-  <div class='section' id='section-10'>
-    <div class='docs'>
-      <div class='octowrap'>
-        <a class='octothorpe' href='#section-10'>#</a>
-      </div>
-      <p>TODO Start here. Cliffs says its false for acc when it should be true. Need to check either that specifically or each of the &ldquo;close&rdquo; values I have ignored up to this point</p>
-    </div>
-    <div class='code'>
-      <div class="highlight"><pre><span class="n">eg</span><span class="p">(</span><span class="s2">&quot;sway&quot;</span><span class="p">,</span><span class="s2">&quot;optimizing&quot;</span><span class="p">,</span> <span class="n">checkSway</span><span class="p">)</span>
+<span class="n">eg</span><span class="p">(</span><span class="s2">&quot;tree&quot;</span><span class="p">,</span><span class="s2">&quot;make snd show tree of clusters&quot;</span><span class="p">,</span> <span class="n">checkTree</span><span class="p">)</span>
+
+<span class="n">eg</span><span class="p">(</span><span class="s2">&quot;sway&quot;</span><span class="p">,</span><span class="s2">&quot;optimizing&quot;</span><span class="p">,</span> <span class="n">checkSway</span><span class="p">)</span>
 
 <span class="n">eg</span><span class="p">(</span><span class="s2">&quot;bins&quot;</span><span class="p">,</span> <span class="s2">&quot;find deltas between best and rest&quot;</span><span class="p">,</span> <span class="n">checkBins</span><span class="p">)</span>
 
