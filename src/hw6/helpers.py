@@ -152,14 +152,80 @@ def sort(t, fun=None):
   return nt
 
 
-def superSort(data, fun=None):
+def superSort(data, n):
   # Sorts items in t based on fun with two inputs
   t = data["rows"]
+  best = []
+  nextBest = []
+  for i in range(len(t)):
+    best.append(t[i])
   i = 0
+  times = 0
+  end = 10000
   good = True
   item1 = None
   item2 = None
   while True:
+    times += 1
+
+    try:
+      item1 = best[i]
+      item2 = best[i + 1]
+      i += 2
+    except:
+      i = 0
+      item1 = None
+      item2 = None
+      best = nextBest
+      nextBest = []
+
+      if len(best) / 2 < n:
+        best.sort(key=altBetter)
+        break
+      continue
+
+    res = better(data, item1, item2)
+    if res == False:
+      nextBest.append(item2)
+    else:
+      nextBest.append(item1)
+      
+    if times > end:
+      break
+
+  return lstToDict(best)
+
+
+def bestOf(data, n):
+  t = data["rows"]
+  best = []
+  for i in range(len(t)):
+    item = t[i]
+    if len(best) == 0:
+      best.append(item)
+    else:
+      for a in range(len(best)):
+        item2 = best[a]
+        res = better(data, item, item2)
+        if res == True:
+          best.insert(a, item)
+          if len(best) > n:
+            best.pop()
+          break
+  return lstToDict(best)
+
+
+def oldsuperSort(data, fun=None):
+  # Sorts items in t based on fun with two inputs
+  t = data["rows"]
+  i = 0
+  times = 0
+  end = 398
+  good = True
+  item1 = None
+  item2 = None
+  while True:
+    
     if item1 is None:
       item1 = t[i]
       i += 1
@@ -169,6 +235,7 @@ def superSort(data, fun=None):
       i += 1
 
     res = better(data, item1, item2)
+    times += 1
     if res == False:
       good = False
       t[i - 2] = item2
@@ -186,6 +253,8 @@ def superSort(data, fun=None):
         break
       else:
         good = True
+    if times > end:
+      break
   return t
 
 
@@ -382,8 +451,10 @@ def better(data, row1, row2):
 
 
 def betters(data, n):
-  tmp = superSort(data, altBetter)
-  return SLICE(tmp, 0, n), SLICE(tmp, n+1) if n else tmp
+  # tmp = superSort(data, n)
+  # return SLICE(tmp, 0, n), SLICE(tmp, n+1) if n else tmp
+  tmp = bestOf(data, n)
+  return tmp, None
 
 
 def SLICE(t, go=None, stop=None, inc=1):
@@ -420,7 +491,7 @@ def half(data, rows=None, cols=None, above=None):
   def f(d):
     return d["d"]
   tmp = sort(MAP(some, lambda r: {"row": r, "d": gap(r, A)}), f)
-  far = tmp[int(len(tmp) * config.the["Far"])]
+  far = tmp[int((len(tmp) - 1) * config.the["Far"])]
   B = far["row"]
   c = far["d"]
 
@@ -598,7 +669,7 @@ def many(t, n):
 def per(t, p=0.5):
   # Return the p ratio item in t
   p = math.floor(((p) * len(t) - 1) + 0.5)
-  return t[max(1, min(len(t) - 1, p))]
+  return t[max(0, min(len(t) - 1, p))]
 
 
 def settings(s):
