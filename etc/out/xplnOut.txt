@@ -1,0 +1,46 @@
+
+Clndrs -inf 5
+Clndrs 5 inf
+
+Volume -inf 90
+Volume 90 115
+Volume 115 200
+Volume 200 inf
+
+Model -inf 80
+Model 80 81
+Model 81 inf
+
+origin 1 1
+origin 2 2
+origin 3 3
+
+origin 3 3 0.86 {'best': 12, 'rest': 8}
+Model 81 inf 0.71 {'best': 9, 'rest': 2}
+Clndrs -inf 5 0.7 {'best': 12, 'rest': 21}
+Volume 90 115 0.45 {'best': 7, 'rest': 8}
+Model 80 81 0.2 {'best': 3, 'rest': 3}
+Volume -inf 90 0.19 {'best': 3, 'rest': 4}
+Volume 115 200 0.06 {'best': 2, 'rest': 13}
+Clndrs 5 inf 0.0 {'rest': 27}
+Volume 200 inf 0.0 {'rest': 23}
+Model -inf 80 0.0 {'rest': 43}
+origin 1 1 0.0 {'rest': 33}
+origin 2 2 0.0 {'rest': 7}
+{'origin': {3}}
+{'origin': {3}, 'Model': {{81 inf}}}
+{'origin': {3}, 'Model': {{81 inf}}, 'Clndrs': {{-inf 5}}}
+{'origin': {3}, 'Model': {{81 inf}}, 'Clndrs': {{-inf 5}}, 'Volume': {{90 115}}}
+{'origin': {3}, 'Model': {{80 inf}}, 'Clndrs': {{-inf 5}}, 'Volume': {{90 115}}}
+{'origin': {3}, 'Model': {{80 inf}}, 'Clndrs': {{-inf 5}}, 'Volume': {{-inf 115}}}
+
+-----------
+explain={'origin': {3}, 'Model': {{81 inf}}}
+all                {'Lbs-': 2800.0, 'Acc+': 15.5, 'Mpg+\n': 20.0, 'N': 398} {'Lbs-': 887.21, 'Acc+': 2.71, 'Mpg+\n': 7.75, 'N': 398}
+sway with     6 evals {'Lbs-': 1975.0, 'Acc+': 16.1, 'Mpg+\n': 40.0, 'N': 12} {'Lbs-': 189.92, 'Acc+': 1.67, 'Mpg+\n': 3.88, 'N': 12}
+xpln on       6 evals {'Lbs-': 2065.0, 'Acc+': 16.1, 'Mpg+\n': 30.0, 'N': 21} {'Lbs-': 350.78, 'Acc+': 1.71, 'Mpg+\n': 3.88, 'N': 21}
+sort with   398 evals {'Lbs-': 1985.0, 'Acc+': 18.8, 'Mpg+\n': 40.0, 'N': 12} {'Lbs-': 200.39, 'Acc+': 2.48, 'Mpg+\n': 0.0, 'N': 12}
+✅ pass: 	xpln
+
+🔆 {'pass': 1, 'fail': 0, 'success': 100.0}
+
