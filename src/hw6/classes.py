@@ -44,6 +44,7 @@ def RANGE(at, txt, lo, hi=None):
 
 
 def RULE(ranges, maxSize):
+    # This generates a rule for the xpln function in comboFuncs.py
     t = {}
     for _, range in ranges.items():
         if not range["txt"] in t.keys():
@@ -53,6 +54,7 @@ def RULE(ranges, maxSize):
 
 
 def prune(rule, maxSize):
+    # Prunces rules that are too generic (aka tries to cover everything)
     n = 0
     for txt, ranges in rule.items():
         n = n + 1
@@ -64,6 +66,7 @@ def prune(rule, maxSize):
 
 
 def DATA(src, rows={}):
+    # Remade remade data which includes read and clone inside of it
     data = {"rows": {}, "cols": None}
     add = lambda t: row(data, t)
     if type(src) == str:

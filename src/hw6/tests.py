@@ -181,9 +181,12 @@ def checkBins():
 
 
 def checkXPLN():
+  # Checks to make sure the xpln clustering works
   data = DATA(config.the["file"])
-  best, rest, rule, most, evals = xpln(data)
-  print("explain=", showRule(rule))
+  best, rest, evals = sway(data)
+  rule, most = xpln(data, best, rest)
+  print("\n-----------\nexplain=", end="")
+  prettyPrint(showRule(rule), 1)
   data1 = DATA(data, selects(rule, data["rows"]))
   print("all               ", stats(data)[0], stats(data, div)[0])
   print("sway with %5s evals" % evals, stats(best)[0], stats(best, div)[0])

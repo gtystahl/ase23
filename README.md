@@ -36,3 +36,10 @@ This folder holds the files for the Fifth homework aimed at creating our cluster
 The onBins.md holds information on how to run the tests as well as other .html files in the docs for each files seperately
 
 I have also added for this homework, a bash script to run bins.py called **hw5Runner.sh** to make it easier to grade
+
+## hw6
+This folder holds the files for the Sixth homework aimed at creating our explaining clustering algorithm based on rules. 
+
+The onXpln.md holds information on how to run the tests as well as other .html files in the docs for each files seperately
+
+I have also added for this homework, a bash script to run bins.py called **hw6Runner.sh** to make it easier to grade

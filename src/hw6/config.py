@@ -3,10 +3,10 @@
 global the, Help, Seed
 
 the,Help = {},"""  
-xai: multi-goal semi-supervised explanation
+xpln: multi-goal semi-supervised explanation
 (c) 2023 Greg Tystahl <gttystah@ncsu.edu> BSD-2
   
-USAGE: python3 xai.py [OPTIONS] [-g ACTIONS]
+USAGE: python3 xpln.py [OPTIONS] [-g ACTIONS]
   
 OPTIONS:
   -b  --bins    initial number of bins       = 16

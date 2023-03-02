@@ -6,9 +6,7 @@ import os
 import copy
 import re
 from pathlib import Path
-
-
-global d
+import random
 
 
 # My helpers
@@ -32,8 +30,38 @@ def close(val1, val2):
     return True
   else:
     return False
+  
 
+def prettyPrint(obj, t=0):
+  if t == 0:
+    print(obj)
+  elif t == 1:
+    # Print the rule in lua form
+    i = 0
+    print("{", end="")
+    for k,v in obj.items():
+      i += 1
+      print("'%s': {" % k, end="")
+      for k2,v2 in v.items():
+        if type(v2) == dict:
+          print("{", end="")
+          for k3, v3 in v2.items():
+            if (k3 == 0 or k3 == "0") and len(v2) != 1:
+              print(str(v3) + " ", end="")
+            else:
+              print(str(v3) + "}", end="")
+          print("}", end="")
+          break
+        if (k2 == 0 or k2 == "0") and len(v) != 1:
+          print(str(v2) + " ")
+        else:
+          print(str(v2) + "}", end="")
+      if i < len(obj):
+        print(", ", end="")
+    print("}")
+    
 
+# Lua converted functions
 def coerce(s):
   # Convert to python data types from strings
   def fun(s1):
@@ -84,27 +112,6 @@ def add(col, x, n=1):
     else:
       num(col["has"])
 
-  """
-  if x != "?":
-    col["n"] = col["n"] + n
-    if col["isSym"]:
-      val = 0
-      if x in col["has"].keys():
-        val = col["has"][x]
-      col["has"][x] = n + val
-      if col["has"][x] > col["most"]:
-        col["most"] = col["has"][x]
-        col["mode"] = x
-    else:
-      col["lo"] = min(x, col["lo"])
-      col["hi"] = max(x, col["hi"])
-      all = len(col["has"])
-      pos = (all if all < config.the["Max"] else (rint(0, all - 1) if rand() < config.the["Max"] / col["n"] else None)) 
-      if pos is not None:
-        col["has"][pos] = x
-        col["ok"] = False
-  """
-
 
 def rint(lo=0, hi=1):
   # This gets a random integer between the high and low
@@ -112,6 +119,8 @@ def rint(lo=0, hi=1):
 
 
 def rand(lo=0, hi=1):
+  # Trial for changing to true random stuff
+  # return lo + (hi - lo) * random.random()
   # Gets a random number between the high and low numbers
   config.Seed = (16807 * config.Seed) % 2147483647
   return lo + (hi - lo) * config.Seed / 2147483647
@@ -152,51 +161,8 @@ def sort(t, fun=None):
   return nt
 
 
-def superSort(data, n):
-  # Sorts items in t based on fun with two inputs
-  t = data["rows"]
-  best = []
-  nextBest = []
-  for i in range(len(t)):
-    best.append(t[i])
-  i = 0
-  times = 0
-  end = 10000
-  good = True
-  item1 = None
-  item2 = None
-  while True:
-    times += 1
-
-    try:
-      item1 = best[i]
-      item2 = best[i + 1]
-      i += 2
-    except:
-      i = 0
-      item1 = None
-      item2 = None
-      best = nextBest
-      nextBest = []
-
-      if len(best) / 2 < n:
-        best.sort(key=altBetter)
-        break
-      continue
-
-    res = better(data, item1, item2)
-    if res == False:
-      nextBest.append(item2)
-    else:
-      nextBest.append(item1)
-      
-    if times > end:
-      break
-
-  return lstToDict(best)
-
-
 def bestOf(data, n):
+  # My modified sorting-all algorithm
   t = data["rows"]
   best = []
   for i in range(len(t)):
@@ -213,77 +179,6 @@ def bestOf(data, n):
             best.pop()
           break
   return lstToDict(best)
-
-
-def oldsuperSort(data, fun=None):
-  # Sorts items in t based on fun with two inputs
-  t = data["rows"]
-  i = 0
-  times = 0
-  end = 398
-  good = True
-  item1 = None
-  item2 = None
-  while True:
-    
-    if item1 is None:
-      item1 = t[i]
-      i += 1
-      continue
-    if item2 is None:
-      item2 = t[i]
-      i += 1
-
-    res = better(data, item1, item2)
-    times += 1
-    if res == False:
-      good = False
-      t[i - 2] = item2
-      t[i - 1] = item1
-
-
-    item1 = t[i - 1]
-    item2 = t[i]
-    i += 1
-    if i == len(t):
-      i = 0
-      item1 = None
-      item2 = None
-      if good == True:
-        break
-      else:
-        good = True
-    if times > end:
-      break
-  return t
-
-
-def superSortTwo(data, fun):
-  nt = []
-  for i in range(len(data["rows"])):
-    nt.append(data["rows"][i])
-  nt.sort(fun)
-
-
-def altBetter(row):
-  # Returns which row is better (True for row1, False for row2)
-  s1 = 0
-  s2 = 0
-  ys = d["cols"]["y"]
-  row1 = row
-  row2 = None
-  try:
-    row2 = d["rows"][row["at"] + 1]
-  except:
-    return math.inf
-  for _, col in ys.items():
-    x = norm(col, row1[col["at"]])
-    y = norm(col, row2[col["at"]])
-    s1 = s1 - math.exp(col["w"] * (x - y)/len(ys))
-    s2 = s2 - math.exp(col["w"] * (y - x)/len(ys))
-  return s1 / len(ys)
-
-  
 
 
 def mid(col):
@@ -410,32 +305,6 @@ def dist(data, t1, t2, cols=None):
     d = d + dist1(col, t1[col["at"]], t2[col["at"]]) ** config.the["p"]
   return (d/len(cols)) ** (1 / config.the["p"])
 
-  """
-  def dist1(col, x, y):
-    if x == "?" and y == "?":
-      return 1
-    if col["isSym"]:
-      return 0 if x == y else 1
-    else:
-      x = norm(col, x)
-      y = norm(col, y)
-      if x == "?":
-        # This and the other seems redundant because they both return the same?
-        x = 1 if y < 0.5 else 1
-      if y == "?":
-        y = 1 if x < 0.5 else 1
-      return abs(x - y)
-    
-  d = 0
-  n = 1 / math.inf
-  if cols is None:
-    cols = data["cols"]["x"]
-  for _, col in cols.items():
-    n = n + 1
-    d = d + dist1(col, t1[col["at"]], t2[col["at"]]) ** config.the["p"]
-  return (d/n) ** (1/config.the["p"])
-  """
-
 
 def better(data, row1, row2):
   # Returns which row is better (True for row1, False for row2)
@@ -451,13 +320,14 @@ def better(data, row1, row2):
 
 
 def betters(data, n):
-  # tmp = superSort(data, n)
-  # return SLICE(tmp, 0, n), SLICE(tmp, n+1) if n else tmp
+  # Finds the betters in data with a size of n
+  # Modified sort to be O(len(data) * n) which is O(n * c) which is O(n) in terms of algorithm evals
   tmp = bestOf(data, n)
   return tmp, None
 
 
 def SLICE(t, go=None, stop=None, inc=1):
+  # Sliceing function, works like lst[1:]
   if go and go < 0:
     go = len(t) + go
   if stop and stop < 0:
@@ -503,7 +373,6 @@ def half(data, rows=None, cols=None, above=None):
   return left, right, A, B, c, evals
 
 
-# Maybe need to look into this for bins if it is not working...
 def merges(ranges0, nSmall, nFar):
   # Given a sorted list of ranges
   def noGaps(t):
@@ -530,26 +399,6 @@ def merges(ranges0, nSmall, nFar):
     j = j + 1
     push(ranges1, here)
   return noGaps(ranges0) if len(ranges0) == len(ranges1) else merges(ranges1, nSmall, nFar)
-
-  """
-  ranges1 = {}
-  j = 0
-  while j < len(ranges0):
-    left = ranges0[j]
-    right = None
-    try:
-      right = ranges0[j + 1]
-    except:
-      pass
-    if right is not None:
-      y = merge2(left["y"], right["y"])
-      if y:
-        j = j + 1
-        left["hi"], left["y"] = right["hi"], y
-    push(ranges1, left)
-    j = j + 1
-  return noGaps(ranges0) if len(ranges0) == len(ranges1) else mergeAny(ranges1)
-  """
 
 
 def merged(col1, col2, nSmall, nFar):

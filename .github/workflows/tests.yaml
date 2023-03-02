@@ -18,6 +18,8 @@ jobs:
           cd ./src/hw4; (python3 grid.py -g Every) > ../../etc/out/task5Out.txt; cat ../../etc/out/task5Out.txt;
       - run: | 
           cd ./src/hw5; (python3 bins.py -g bins) > ../../etc/out/binsOut.txt; cat ../../etc/out/binsOut.txt;
+      - run: | 
+          cd ./src/hw6; (python3 xpln.py -g xpln) > ../../etc/out/xplnOut.txt; cat ../../etc/out/xplnOut.txt;
       - run: |
           val=$(cat counter.txt)
           echo $(($val + 1)) > counter.txt

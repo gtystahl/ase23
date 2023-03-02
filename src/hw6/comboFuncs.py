@@ -59,27 +59,6 @@ def sway(data):
   return DATA(data, best), DATA(data, rest), evals
 
 
-  """
-  def worker(rows, worse, above=None):
-    if len(rows) < (len(data["rows"]) ** config.the["min"]):
-      return rows, many(worse, config.the["rest"] * len(rows))
-    else:
-      # Changed this since there is no cols
-      l, r, A, B, _ = half(data, rows, None, above)
-      if better(data, B, A):
-        ol = l
-        l = r
-        r = ol
-        oa = A
-        A = B
-        B = oa
-      MAP(r, lambda row: push(worse, row))
-      return worker(l, worse, A)
-  best, rest = worker(data["rows"], {})
-  return DCLONE(data, best), DCLONE(data, rest)
-  """
-
-
 def bins(cols, rowss):
   # Seperates the data into bins
   def with1Col(col):
@@ -113,26 +92,6 @@ def bins(cols, rowss):
   return MAP(cols, with1Col)
 
 
-  """
-  out = {}
-  for _, col in cols.items():
-    ranges = {}
-    for y, rows in rowss.items():
-      for _, row in rows.items():
-        x = row[col["at"]]
-        if x != "?":
-          k = BIN(col, x)
-          if not k in ranges.keys():
-            ranges[k] = RANGE(col["at"], col["txt"], x)
-          extend(ranges[k], x, y)
-    def f(d):
-      return d["lo"]
-    ranges = sort(MAP(ranges, itself), f)
-    out[len(out)] = lstToDict(ranges) if col["isSym"] else mergeAny(ranges)
-  return out
-  """
-
-
 def BIN(col, x):
   # Returns what bin this item needs to be in
   if x == "?" or col["isSym"]:
@@ -141,47 +100,50 @@ def BIN(col, x):
   return 1 if col["hi"] == col["lo"] else math.floor(x / tmp + 0.5) * tmp
 
 
-def xpln(data):
+def xpln(data, best, rest):
+  # A cluster based on rules instead of values to show which parts are important
   def v(has):
     return value(has, len(best["rows"]), len(rest["rows"]), "best")
   
   def score(ranges):
     rule = RULE(ranges, maxSizes)
     if rule:
+      prettyPrint(showRule(rule), 1)
       bestr = selects(rule, best["rows"])
       restr = selects(rule, rest["rows"])
       if len(bestr) + len(restr) > 0:
         return v({"best": len(bestr), "rest": len(restr)}), rule
-  
-  best, rest, evals = sway(data)
+
   tmp = {}
   maxSizes = {}
   for _, ranges in bins(data["cols"]["x"], {"best": best["rows"], "rest": rest["rows"]}).items():
     maxSizes[ranges[0]["txt"]] = len(ranges)
+    print("")
     for _, range in ranges.items():
+      print(range["txt"], range["lo"], range["hi"])
       push(tmp, {"range": range, "max":len(ranges), "val":v(range["y"]["has"])})
   def f(d):
     return -d["val"]
-  rule, most = firstN(sort(tmp, f), score)
-  return best, rest, rule, most, evals
+  rule, most = firstN(lstToDict(sort(tmp, f)), score)
+  return rule, most
 
 
-# A list is passed to the first parameter from above, be mindful
 def firstN(sortedRanges, scoreFun):
+  # This gets the useful rules made above
+  print("")
+  MAP(sortedRanges, lambda r: print(r["range"]["txt"], r["range"]["lo"], r["range"]["hi"], rnd(r["val"]), r["range"]["y"]["has"]))
   first = sortedRanges[0]["val"]
   def useful(range):
-    if range["val"] > 0.5 and range["val"] > first / 10:
+    if range["val"] > 0.05 and range["val"] > first / 10:
       return range
     
-  # TODO Check the result of this. Based on my map, might be wonky
   sortedRanges = MAP(lstToDict(sortedRanges), useful)
   most = -1
-  # TODO Might need to change this too
   def f(d):
     return d["range"]
   for n in range(0, len(sortedRanges)):
     tmp, rule = None, None
-    res = scoreFun(MAP(SLICE(sortedRanges, 0, n), f))
+    res = scoreFun(MAP(SLICE(sortedRanges, 0, n + 1), f))
     if res:
       tmp = res[0]
       rule = res[1]
@@ -192,12 +154,13 @@ def firstN(sortedRanges, scoreFun):
 
 
 def showRule(rule):
+  # Prints the rules to the screen
   def pretty(range):
     return range["lo"] if range["lo"] == range["hi"] else {0: range["lo"], 1: range["hi"]}
   def f(d):
     return d["lo"]
   def merges(attr, ranges):
-    return MAP(merge(lstToDict(sort(ranges, f))), pretty)
+    return MAP(merge(lstToDict(sort(ranges, f))), pretty), attr
   def merge(t0):
     t = {}
     j = 0
@@ -216,12 +179,13 @@ def showRule(rule):
       j = j + 1
     return t if len(t0) == len(t) else merge(t)
   def altMerges(k, v):
-    return merges(k, v), None
+    return merges(k, v)
   return kap(rule, altMerges)
 
 
 def selects(rule, rows):
-  def oneOfThem(ranges, row):
+  # Selects the best rule that works for all
+  def disjunction(ranges, row):
     for _, range in ranges.items():
       lo = range["lo"]
       hi = range["hi"]
@@ -235,10 +199,10 @@ def selects(rule, rows):
         return True
     return False
   
-  def allOfThem(row):
+  def conjunction(row):
     for _, ranges in rule.items():
-      if not oneOfThem(ranges, row):
+      if not disjunction(ranges, row):
         return False
     return True
   
-  return MAP(rows, lambda r: r if allOfThem(r) else None)
+  return MAP(rows, lambda r: r if conjunction(r) else None)
