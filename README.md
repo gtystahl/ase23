@@ -43,3 +43,10 @@ This folder holds the files for the Sixth homework aimed at creating our explain
 The onXpln.md holds information on how to run the tests as well as other .html files in the docs for each files seperately
 
 I have also added for this homework, a bash script to run bins.py called **hw6Runner.sh** to make it easier to grade
+
+## hw7
+This folder holds the files for the Seventh homework aimed at creating statistics functions to explain our data for our final project. 
+
+The onStats.md holds information on how to run the tests as well as other .html files in the docs for each files seperately
+
+I have also added for this homework, a bash script to run bins.py called **hw7Runner.sh** to make it easier to grade

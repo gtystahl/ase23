@@ -20,6 +20,8 @@ jobs:
           cd ./src/hw5; (python3 bins.py -g bins) > ../../etc/out/binsOut.txt; cat ../../etc/out/binsOut.txt;
       - run: | 
           cd ./src/hw6; (python3 xpln.py -g xpln) > ../../etc/out/xplnOut.txt; cat ../../etc/out/xplnOut.txt;
+      - run: | 
+          cd ./src/hw7; (python3 stats.py -g all) > ../../etc/out/statsOut.txt; cat ../../etc/out/statsOut.txt;
       - run: |
           val=$(cat counter.txt)
           echo $(($val + 1)) > counter.txt
