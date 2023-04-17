@@ -191,6 +191,8 @@ def checkXPLN():
   # Checks to make sure the xpln clustering works
   data = DATA(config.the["file"])
   best, rest, evals = sway(data)
+  print(len(best["rows"]))
+  config.bestNum = len(best["rows"])
   rule, most = xpln(data, best, rest)
   print("\n-----------\nexplain=", end="")
   prettyPrint(showRule(rule), 1)

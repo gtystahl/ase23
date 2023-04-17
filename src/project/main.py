@@ -1,6 +1,7 @@
 # NOTE Need to remove the tests I dont use then done editing this file
   
 from tests import *
+from scikittests import *
 import config
 
 def main(options: dict, HELP, funs):
@@ -38,35 +39,37 @@ def eg(key,string,fun):
   # It also adds a way to call that test function into the help
   config.Help = config.Help + ("  -g  %s\t%s\n" % (key,string))
 
-eg("Is", "show options", lambda: oo(config.the))
+# eg("Is", "show options", lambda: oo(config.the))
 
-eg("rand", "demo random number generation", checkRand)
+# eg("rand", "demo random number generation", checkRand)
 
-eg("some","demo of reservoir sampling", checkSome)
+# eg("some","demo of reservoir sampling", checkSome)
 
-eg("nums","demo of NUM", checkNums)
+# eg("nums","demo of NUM", checkNums)
 
-eg("syms","demo SYMS", checkSyms)
+# eg("syms","demo SYMS", checkSyms)
 
-eg("csv","reading csv files", checkCsv)
+# eg("csv","reading csv files", checkCsv)
 
-eg("data", "showing data sets", checkData)
+# eg("data", "showing data sets", checkData)
 
-eg("clone","replicate structure of a DATA", checkClone)
+# eg("clone","replicate structure of a DATA", checkClone)
 
-eg("cliffs","stats tests", checkCliffs)
+# eg("cliffs","stats tests", checkCliffs)
 
-eg("dist","distance test", checkDist)
+# eg("dist","distance test", checkDist)
 
-eg("half","divide data in halg", checkHalf)
+# eg("half","divide data in halg", checkHalf)
  
-eg("tree","make snd show tree of clusters", checkTree)
+# eg("tree","make snd show tree of clusters", checkTree)
 
-eg("sway","optimizing", checkSway)
+# eg("sway","optimizing", checkSway)
 
-eg("bins", "find deltas between best and rest", checkBins)
+# eg("bins", "find deltas between best and rest", checkBins)
 
 eg("xpln", "explore explanation sets", checkXPLN)
+
+eg("sci", "run the scikit function", scitest)
 
 # HW7 Tests that need to be rewritten
 """

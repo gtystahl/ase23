@@ -1,7 +1,7 @@
 # NOTE Combined and completed
 # This file holds all of global data needed across all of the other files
 
-global the, Help, Seed
+global the, Help, Seed, bestNum
 
 the,Help = {},"""  
 xpln: multi-goal semi-supervised explanation
@@ -33,3 +33,7 @@ OPTIONS:
 """
     
 Seed = 937162211
+
+bestNum = 0
+
+currFile = "curr.csv"

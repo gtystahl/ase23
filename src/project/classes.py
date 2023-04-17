@@ -131,6 +131,7 @@ def bootstrap(y0, z0):
     return n / config.the["bootstrap"] >= config.the["conf"]
 
 
+"""
 def mid(t):
     # Gets the mean of the data in t
     if "has" in t.keys():
@@ -148,6 +149,7 @@ def div(t):
     if len(t) == 0:
         return 0
     return (t[len(t) * 9 // 10] - t[len(t) * 9 // 10]) / 2.56
+"""
 
 
 # Even though it is a stat function, had to be here because of circular dependency problem

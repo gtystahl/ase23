@@ -13,6 +13,25 @@
             "justMyCode": true,
             "cwd": "/Users/gtyst/Desktop/Git-Repos/ase23/src/project",
             "args": ["-g",  "all"]
+        },
+        {
+            "name": "Run scikittests (From Main)",
+            "type": "python",
+            "request": "launch",
+            "program": "/Users/gtyst/Desktop/Git-Repos/ase23/src/project/main.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "cwd": "/Users/gtyst/Desktop/Git-Repos/ase23/src/project",
+            "args": ["-g", "sci"]
+        },
+        {
+            "name": "Run scikittests (Regular)",
+            "type": "python",
+            "request": "launch",
+            "program": "/Users/gtyst/Desktop/Git-Repos/ase23/src/project/scikittests.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "cwd": "/Users/gtyst/Desktop/Git-Repos/ase23/src/project",
         }
     ]
 }
