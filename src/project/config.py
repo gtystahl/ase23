@@ -17,7 +17,7 @@ OPTIONS:
   -cd --cohen       cohenD constant                   = 0.35
   -C  --cliff       cliffs delta constant             = 0.4
   -d  --d           different is over sd*d            = .35
-  -f  --file        data file                         = ../../etc/data/project-data/SSN.csv
+  -f  --file        data file                         = ../../etc/data/project-data/auto93.csv
   -fm --Fmt         format string                     = empty
   -F  --Far         distance to distant               = .95
   -g  --go          start-up action                   = nothing

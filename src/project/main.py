@@ -71,6 +71,10 @@ eg("xpln", "explore explanation sets", checkXPLN)
 
 eg("sci", "run the scikit function", scitest)
 
+eg("autorun", "runs all of the experiements and saves the resutls", autorun)
+
+eg("results", "interprets the results saved by the tests above", getResults)
+
 # HW7 Tests that need to be rewritten
 """
 eg("ok", "check ok function", ok)

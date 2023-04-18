@@ -5,6 +5,26 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Run Main (Linux)",
+            "type": "python",
+            "request": "launch",
+            "program": "/home/gttystah/Desktop/sem2-spring-2023/Automated-Software/ase23/src/project/main.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "cwd": "/home/gttystah/Desktop/sem2-spring-2023/Automated-Software/ase23/src/project",
+            "args": ["-g",  "all"]
+        },
+        {
+            "name": "Run Results (Linux)",
+            "type": "python",
+            "request": "launch",
+            "program": "/home/gttystah/Desktop/sem2-spring-2023/Automated-Software/ase23/src/project/main.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "cwd": "/home/gttystah/Desktop/sem2-spring-2023/Automated-Software/ase23/src/project",
+            "args": ["-g",  "results"]
+        },
+        {
             "name": "Run Main",
             "type": "python",
             "request": "launch",
