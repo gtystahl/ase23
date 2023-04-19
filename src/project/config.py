@@ -1,7 +1,7 @@
 # NOTE Combined and completed
 # This file holds all of global data needed across all of the other files
 
-global the, Help, Seed, bestNum
+global the, Help, Seed, bestNum, currFile, resultType
 
 the,Help = {},"""  
 xpln: multi-goal semi-supervised explanation
@@ -37,3 +37,6 @@ Seed = 937162211
 bestNum = 0
 
 currFile = "curr.csv"
+
+# resultType = "./results/"
+resultType = "./swayResults/"

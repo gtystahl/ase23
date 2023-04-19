@@ -3,6 +3,8 @@
 from tests import *
 from scikittests import *
 import config
+from ablation import *
+from hpo import *
 
 def main(options: dict, HELP, funs):
   # This function runs the tests specified by the user on the run (defined in -h or --help)
@@ -67,14 +69,17 @@ def eg(key,string,fun):
 
 # eg("bins", "find deltas between best and rest", checkBins)
 
-eg("xpln", "explore explanation sets", checkXPLN)
+# eg("xpln", "explore explanation sets", checkXPLN)
 
-eg("sci", "run the scikit function", scitest)
+# eg("sci", "run the scikit function", scitest)
 
-eg("autorun", "runs all of the experiements and saves the resutls", autorun)
+# eg("autorun", "runs all of the experiements and saves the resutls", autorun)
 
-eg("results", "interprets the results saved by the tests above", getResults)
+# eg("results", "interprets the results saved by the tests above", getResults)
 
+# eg("ablation", "Runs the abltion runner to get the results to compare", ablationRunner)
+
+eg("hpo", "Runs the hpo runner", hpoRunner)
 # HW7 Tests that need to be rewritten
 """
 eg("ok", "check ok function", ok)

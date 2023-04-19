@@ -1,0 +1,121 @@
+Average of the median values for the cluster with {8.0} evals over 20 runs {' CityMPG+': 30.55, ' HighwayMPG+': 35.7, ' Weight-': 2118.75, ' Class-\n': 9.12, 'N': 10.05}
+Average of the median values for the explainer with {0.9495000000000001} evals over 20 runs {' CityMPG+': 30.8, ' HighwayMPG+': 36.15, ' Weight-': 2112.75, ' Class-\n': 8.959999999999997, 'N': 9.7}
+Important Features:
+1.  Engine_revolutions_per_mile
+2.  Horsepower
+3.  Fuel_tank_capacity
+4.  Engine_size
+5.  Length
+6.  U-turn_space
+7.  Wheelbase
+----------------
+Average of the median values for the cluster with {8.0} evals over 20 runs {'Lbs-': 1965.0, 'Acc+': 17.0, 'Mpg+\n': 30.0, 'N': 60.0}
+Average of the median values for the explainer with {0.9924999999999999} evals over 20 runs {'Lbs-': 1965.0, 'Acc+': 17.0, 'Mpg+\n': 30.0, 'N': 60.0}
+Important Features:
+1. Volume
+2. origin
+3. Clndrs
+4. Model
+----------------
+Average of the median values for the cluster with {8.0} evals over 20 runs {'N_effort-\n': 757.5, 'N': 243.1}
+Average of the median values for the explainer with {0.9924000000000002} evals over 20 runs {'N_effort-\n': 756.5, 'N': 242.6}
+Important Features:
+1. AFP
+2. PDR_UFP
+3. NPDU_UFP
+4. Added
+5. PDR_AFP
+6. NPDR_AFP
+7. File
+8. Input
+9. Enquiry
+----------------
+Average of the median values for the cluster with {8.0} evals over 20 runs {'LOC+': 1575.0, ' AEXP-': 3.0, ' PLEX-': 2.0, ' RISK-': 8.0, ' EFFORT-\n': 67244.5, 'N': 74.5}
+Average of the median values for the explainer with {0.9346} evals over 20 runs {'LOC+': 1582.3, ' AEXP-': 3.0, ' PLEX-': 2.25, ' RISK-': 7.5, ' EFFORT-\n': 67631.15, 'N': 67.2}
+Important Features:
+1.  TEAM
+2.  PMAT
+3.  RUSE
+4.  PVOL
+5.  TOOL
+6.  ARCH
+7.  RELY
+----------------
+Average of the median values for the cluster with {8.0} evals over 20 runs {'Loc+': 1429.5, ' Risk-': 6.85, ' Effort-\n': 47262.85, 'N': 1148.2}
+Average of the median values for the explainer with {0.9986200000000002} evals over 20 runs {'Loc+': 1438.7, ' Risk-': 7.05, ' Effort-\n': 47112.95, 'N': 1147.95}
+Important Features:
+1.  Docu
+2.  Flex
+3.  Cplx
+4.  Prec
+5.  Aexp
+6.  Pmat
+7.  Team
+----------------
+Average of the median values for the cluster with {8.0} evals over 20 runs {'MRE-': 74.06949999999999, 'ACC+': 7.4285, 'PRED40+': 25.0, 'N': 1698.55}
+Average of the median values for the explainer with {0.9991} evals over 20 runs {'MRE-': 74.0365, 'ACC+': 7.422500000000001, 'PRED40+': 25.0, 'N': 1698.25}
+Important Features:
+1. N_estimators
+2. Min_impurity_decrease
+3. Min_sample_leaves
+4. Max_depth
+5. criterion
+----------------
+Average of the median values for the cluster with {8.0} evals over 20 runs {'MRE-': 0.0, 'ACC+': 0.0, 'PRED40+': 83.32999999999998, 'N': 650.6}
+Average of the median values for the explainer with {1.0} evals over 20 runs {'MRE-': 0.0, 'ACC+': 0.0, 'PRED40+': 83.32999999999998, 'N': 650.6}
+Important Features:
+1. N_estimators
+2. Min_impurity_decrease
+3. criterion
+4. Min_sample_leaves
+5. Max_depth
+----------------
+Average of the median values for the cluster with {8.0} evals over 20 runs {'Kloc+': 12.935000000000002, 'Effort-': 61.8, 'Defects-': 562.25, 'Months-\n': 13.989999999999998, 'N': 40.55}
+Average of the median values for the explainer with {0.9470000000000003} evals over 20 runs {'Kloc+': 13.260000000000002, 'Effort-': 61.3, 'Defects-': 558.65, 'Months-\n': 14.084999999999999, 'N': 40.4}
+Important Features:
+1. acap
+2. plex
+3. pcap
+4. data
+5. stor
+6. apex
+----------------
+Average of the median values for the cluster with {8.0} evals over 20 runs {'Cost-': 137.12499999999994, 'Completion+': 0.8880000000000002, 'Idle-\n': 0.24300000000000002, 'N': 1562.55}
+Average of the median values for the explainer with {0.9997400000000001} evals over 20 runs {'Cost-': 138.26749999999998, 'Completion+': 0.8845000000000003, 'Idle-\n': 0.23850000000000002, 'N': 1562.45}
+Important Features:
+1. Criticality Modifier
+2. Size
+3. Criticality
+4. Score:
+5. Initial Known
+6. Culture
+7. InterDependency
+----------------
+Average of the median values for the cluster with {8.0} evals over 20 runs {'NUMBERITERATIONS-': 6.1, ' TIMETOSOLUTION-\n': 127.30100000000002, 'N': 214236.4}
+Average of the median values for the explainer with {0.9998780080213905} evals over 20 runs {'NUMBERITERATIONS-': 6.05, ' TIMETOSOLUTION-\n': 127.20600000000002, 'N': 214238.45}
+Important Features:
+1. jACOBI
+2. ALPHA
+3. BETA
+4. rELAXPARAMETER
+5. PRESMOOTHING
+6. POSTSMOOTHING
+7. zEBRALINE
+8. lINE
+----------------
+Average of the median values for the cluster with {8.0} evals over 20 runs {'PSNR-': 45.81900000000001, ' Energy-\n': 1251.2475, 'N': 52981.0}
+Average of the median values for the explainer with {1.0} evals over 20 runs {'PSNR-': 45.7995, ' Energy-\n': 1252.4489999999998, 'N': 52981.0}
+Important Features:
+1. Crf
+2. Aq_strength
+3. Ipratio
+4. Qcomp
+5. Seek
+6. Rc_lookahead
+7. Keyint
+8. Ref
+----------------
+✅ pass: 	results
+
+🔆 {'pass': 1, 'fail': 0, 'success': 100.0}
+

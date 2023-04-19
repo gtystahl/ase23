@@ -3,3 +3,8 @@ env/
 generate.py
 generateV2.py
 data-download/
+ablation/
+results/
+resultsGood/
+swayResults/
+swayResultsGood/
