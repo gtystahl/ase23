@@ -147,7 +147,7 @@ def BisectClusterer(data, val):
     top, _ = betters(bestData, config.bestNum)
     top = DATA(data, top)
     # print("scikit clustering with %5s evals" % len(bestData["rows"]), stats(top)[0], stats(top, div)[0])
-    return top, groups, bestVal
+    return top, groups, bestVal, len(bestData["rows"]), bestData["rows"]
 
 def RFExplainer(data, val, groups, bestVal):
     # Random forest explainer below
@@ -164,6 +164,11 @@ def RFExplainer(data, val, groups, bestVal):
     clf = RandomForestClassifier()
     clf.fit(X=val, y=ys)
     scores = cross_val_score(clf, val, ys)
+    guesses = clf.predict(val)
+    guessed_rows = {}
+    for i in range(len(data["rows"])):
+      if guesses[i] == 1:
+        guessed_rows[len(guessed_rows)] = data["rows"][i]
     # print(scores.mean())
     importants = clf.feature_importances_
     importants = importants.tolist()
@@ -184,24 +189,36 @@ def RFExplainer(data, val, groups, bestVal):
         importantColumns.append(data["cols"]["names"][item[1]])
     # print(importantColumns)
     # print("done")
-    return importantColumns
+    return importantColumns, guessed_rows
 
 
 def scitest():
+  return
   # Need to add 20 runs per, grab the best val, then take the mean of the 20 best
   cleanCsv()
   data = DATA(config.currFile)
   val = np.genfromtxt(fname=config.currFile, delimiter=",", dtype=float, skip_header=1, missing_values="?", filling_values=0)
 
   bestCluster = {}
+  bestClusterEvals = {}
   bestExplain = {}
+  bestExplainValues = {}
+
+  regularClusters = {}
+  regularExplains = {}
   
   for i in range(20):
     print("Current run: %d" % i)
-    top, groups, bestVal = BisectClusterer(data, val)
+    top, groups, bestVal, evals, regular = BisectClusterer(data, val)
+    regularClusters[len(regularClusters)] = regular
+    bestClusterEvals[len(bestClusterEvals)] = evals
     res = betters(top, 1)
     bestCluster[len(bestCluster)] = res[0][0]
-    features = RFExplainer(data, val, groups, bestVal)
+    features, bestExplains = RFExplainer(data, val, groups, bestVal)
+    regularExplains[len(regularExplains)] = bestExplains
+    top = DATA(data, bestExplains)
+    res = betters(top, 1)
+    bestExplainValues[len(bestCluster)] = res[0][0]
     for ind in range(len(features)):
       feat = features[ind]
       if feat in bestExplain.keys():
@@ -229,23 +246,40 @@ def scitest():
 
   bestClusterData = DATA(data, bestCluster)
   print("Median of the best values for the cluster with %5s evals" % len(bestClusterData["rows"]), stats(bestClusterData)[0], stats(bestClusterData, div)[0])
+
+  bestExplainData = DATA(data, bestExplainValues)
+  print("Median of the best values for the cluster with %5s evals" % len(bestExplainData["rows"]), stats(bestExplainData)[0], stats(bestExplainData, div)[0])
+
+  avg = 0
+  for k, num in bestClusterEvals.items():
+    avg += num
+  avg /= len(bestClusterEvals)
+  avg_eval = {avg}
+
   print("Best features extracted:")
   for i in range(len(topTenBest)):
     print("%d. %s" % (i + 1, topTenBest[i]))
 
   with open("clusterRes.txt", "wb") as f:
     pickle.dump(bestClusterData["rows"], f)
+
+  with open("clusterEvalRes.txt", "wb") as f:
+    pickle.dump(avg_eval, f)
   
   with open("explainResults.txt", "wb") as f:
     pickle.dump(topTenBest, f)
+
+  with open("explainValuesResults.txt", "wb") as f:
+    pickle.dump(bestExplainData["rows"], f)
   
+  with open("regularCluster.txt", "wb") as f:
+    pickle.dump(regularClusters, f)
+
+  with open("regularExplain.txt", "wb") as f:
+    pickle.dump(regularExplains, f)
 
 def autorun():
-  # Things to gather on the second run:
-  # 1. Gather the evaluations for the data
-  # 2. Gather the groups made by the random forest, not just the features.
-  # 
-  
+  return
   config.the["file"] = "../../../../etc/data/project-data/auto93.csv"
   if not os.path.exists("./results/"):
     os.mkdir("./results/")
@@ -265,6 +299,7 @@ def autorun():
     # DO STUFF
     scitest()
     os.chdir(base)
+  os.chdir("../")
   print("Done autorunning")
 
 
@@ -284,18 +319,42 @@ def getResults():
     with open("clusterRes.txt", "rb") as f:
       result.append(pickle.load(f))
 
+    with open("clusterEvalRes.txt", "rb") as f:
+      result.append(pickle.load(f))
+
+    with open("explainValuesResults.txt", "rb") as f:
+      result.append(pickle.load(f))
+
     with open("explainResults.txt", "rb") as f:
+      result.append(pickle.load(f))
+    
+    with open("regularCluster.txt", "rb") as f:
+      result.append(pickle.load(f))
+
+    with open("regularExplain.txt", "rb") as f:
       result.append(pickle.load(f))
     
     os.chdir(base)
     results.append(result)
 
+  # result = [clusterData, cluster, evals, explainData, explain]
   for result in results:
     data = result[0]
     resData = DATA(data, result[1])
-    print("Median of the best values for the cluster with %5s evals" % len(resData["rows"]), stats(resData)[0], stats(resData, div)[0])
+    print("Median of the best values for the cluster with %5s evals" % result[2], stats(resData)[0], stats(resData, div)[0])
+    expData = DATA(data, result[3])
+    print("Median of the best values for the Explain:", stats(expData)[0], stats(expData, div)[0])
+
     print("Important Features:")
-    for i in range(len(result[2])):
-      f = result[2][i]
+    for i in range(len(result[4])):
+      f = result[4][i]
       print("%d. %s" % (i, f))
+
+    for i in range(len(result[5])):
+      resData = DATA(data, result[5][i])
+      print("Median of the CLUSTERED values for the cluster with %5s evals" % result[2], stats(resData)[0], stats(resData, div)[0])
+    print("ONTO EXPLAIN...")
+    for i in range(len(result[6])):
+      expData = DATA(data, result[6][i])
+      print("Median of the CLUSTERED values for the Explain:", stats(expData)[0], stats(expData, div)[0])
     print("----------------")
