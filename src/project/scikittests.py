@@ -209,7 +209,7 @@ def getAvg(d):
   return avgRes
 
 
-def scitest():
+def scitest(nClusters=8, verbose=False):
   print("Running scitest")
   # Need to add 20 runs per, grab the best val, then take the mean of the 20 best
   cleanCsv()
@@ -227,7 +227,7 @@ def scitest():
   
   for i in range(20):
     print("Current run: %d" % i)
-    top, groups, bestVal, evals, regular = BisectClusterer(data, val)
+    top, groups, bestVal, evals, regular = BisectClusterer(data, val, nClusters)
     regularClusters[len(regularClusters)] = regular
     bestClusterEvals[len(bestClusterEvals)] = evals
     # res = betters(top, 1)
@@ -311,6 +311,8 @@ def scitest():
   with open("regularExplain.txt", "wb") as f:
     pickle.dump(regularExplains, f)
 
+  if verbose:
+    return bestCluster, bestExplainValues
 
 def swaytest():
   print("Running sway test")
@@ -424,6 +426,23 @@ def swaytest():
 
   with open("regularExplain.txt", "wb") as f:
     pickle.dump(regularExplains, f)
+
+
+def budgetTest():
+  config.the["file"] = "../../" + config.the["file"].replace("auto93", "SSN")
+  budgets = [10,25,50,100,200,500]
+  base = "./budgetResults/"
+  if not os.path.exists(base):
+    os.mkdir(base)
+  os.chdir(base)
+  base = os.getcwd()
+
+  for budget in budgets:
+    if not os.path.exists(budget):
+      os.mkdir(budget)
+    os.chdir(budget)
+    scitest(budget)
+    os.chdir(base)
 
 
 def autorun():
