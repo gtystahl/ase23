@@ -77,9 +77,13 @@ def eg(key,string,fun):
 
 # eg("results", "interprets the results saved by the tests above", getResults)
 
+eg("bothResults", "gets both results for comparison", getBothResults)
+
+# eg("baselines", "gets the info for the baselines", getBenchmarks)
+
 # eg("ablation", "Runs the abltion runner to get the results to compare", ablationRunner)
 
-eg("hpo", "Runs the hpo runner", hpoRunner)
+# eg("hpo", "Runs the hpo runner", hpoRunner)
 # HW7 Tests that need to be rewritten
 """
 eg("ok", "check ok function", ok)

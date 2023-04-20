@@ -38,5 +38,5 @@ bestNum = 0
 
 currFile = "curr.csv"
 
-# resultType = "./results/"
-resultType = "./swayResults/"
+resultType = "./results/"
+# resultType = "./swayResults/"

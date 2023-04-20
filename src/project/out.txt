@@ -1,121 +1,56 @@
-Average of the median values for the cluster with {8.0} evals over 20 runs {' CityMPG+': 30.55, ' HighwayMPG+': 35.7, ' Weight-': 2118.75, ' Class-\n': 9.12, 'N': 10.05}
-Average of the median values for the explainer with {0.9495000000000001} evals over 20 runs {' CityMPG+': 30.8, ' HighwayMPG+': 36.15, ' Weight-': 2112.75, ' Class-\n': 8.959999999999997, 'N': 9.7}
-Important Features:
-1.  Engine_revolutions_per_mile
-2.  Horsepower
-3.  Fuel_tank_capacity
-4.  Engine_size
-5.  Length
-6.  U-turn_space
-7.  Wheelbase
+done
+Average of the median values for the sway cluster with {5.0} evals over 20 runs {' CityMPG+': 29.157894736842106, ' HighwayMPG+': 34.0, ' Weight-': 2169.2105263157896, ' Class-\n': 8.968421052631578, 'N': 5.894736842105263}
+Average of the median values for the bisect cluster with {8.0} evals over 20 runs {' CityMPG+': 30.8, ' HighwayMPG+': 36.65, ' Weight-': 2100.0, ' Class-\n': 8.95, 'N': 9.2}
+Average of the median values for the sway explainer with {'Not Applicable'} evals over 20 runs {' CityMPG+': 29.263157894736842, ' HighwayMPG+': 33.421052631578945, ' Weight-': 2323.157894736842, ' Class-\n': 9.842105263157896, 'N': 17.94736842105263}
+Average of the median values for the bisect explainer with {0.9254999999999999} evals over 20 runs {' CityMPG+': 30.85, ' HighwayMPG+': 36.25, ' Weight-': 2106.0, ' Class-\n': 8.855, 'N': 8.6}
 ----------------
-Average of the median values for the cluster with {8.0} evals over 20 runs {'Lbs-': 1965.0, 'Acc+': 17.0, 'Mpg+\n': 30.0, 'N': 60.0}
-Average of the median values for the explainer with {0.9924999999999999} evals over 20 runs {'Lbs-': 1965.0, 'Acc+': 17.0, 'Mpg+\n': 30.0, 'N': 60.0}
-Important Features:
-1. Volume
-2. origin
-3. Clndrs
-4. Model
+Average of the median values for the sway cluster with {6.0} evals over 20 runs {'Lbs-': 2111.157894736842, 'Acc+': 16.331578947368424, 'Mpg+\n': 33.68421052631579, 'N': 12.894736842105264}
+Average of the median values for the bisect cluster with {8.0} evals over 20 runs {'Lbs-': 1965.0, 'Acc+': 17.0, 'Mpg+\n': 30.0, 'N': 60.0}
+Average of the median values for the sway explainer with {'Not Applicable'} evals over 20 runs {'Lbs-': 2190.315789473684, 'Acc+': 16.07894736842105, 'Mpg+\n': 30.0, 'N': 81.3157894736842}
+Average of the median values for the bisect explainer with {0.9924999999999999} evals over 20 runs {'Lbs-': 1965.0, 'Acc+': 17.0, 'Mpg+\n': 30.0, 'N': 59.95}
 ----------------
-Average of the median values for the cluster with {8.0} evals over 20 runs {'N_effort-\n': 757.5, 'N': 243.1}
-Average of the median values for the explainer with {0.9924000000000002} evals over 20 runs {'N_effort-\n': 756.5, 'N': 242.6}
-Important Features:
-1. AFP
-2. PDR_UFP
-3. NPDU_UFP
-4. Added
-5. PDR_AFP
-6. NPDR_AFP
-7. File
-8. Input
-9. Enquiry
+Average of the median values for the sway cluster with {6.0} evals over 20 runs {'N_effort-': 907.0, 'N': 15.947368421052632}
+Average of the median values for the bisect cluster with {8.0} evals over 20 runs {'N_effort-\n': 758.1, 'N': 243.55}
+Average of the median values for the sway explainer with {'Not Applicable'} evals over 20 runs {'N_effort-': 1634.9473684210527, 'N': 129.10526315789474}
+Average of the median values for the bisect explainer with {0.9884000000000004} evals over 20 runs {'N_effort-\n': 758.1, 'N': 243.3}
 ----------------
-Average of the median values for the cluster with {8.0} evals over 20 runs {'LOC+': 1575.0, ' AEXP-': 3.0, ' PLEX-': 2.0, ' RISK-': 8.0, ' EFFORT-\n': 67244.5, 'N': 74.5}
-Average of the median values for the explainer with {0.9346} evals over 20 runs {'LOC+': 1582.3, ' AEXP-': 3.0, ' PLEX-': 2.25, ' RISK-': 7.5, ' EFFORT-\n': 67631.15, 'N': 67.2}
-Important Features:
-1.  TEAM
-2.  PMAT
-3.  RUSE
-4.  PVOL
-5.  TOOL
-6.  ARCH
-7.  RELY
+Average of the median values for the sway cluster with {6.8125} evals over 20 runs {'LOC+': 1034.5, ' AEXP-': 2.9375, ' PLEX-': 2.8125, ' RISK-': 3.25, ' EFFORT-\n': 14783.375, 'N': 18.8125}
+Average of the median values for the bisect cluster with {8.0} evals over 20 runs {'LOC+': 1575.0, ' AEXP-': 3.0, ' PLEX-': 2.0, ' RISK-': 8.0, ' EFFORT-\n': 67244.5, 'N': 74.5}
+Average of the median values for the sway explainer with {'Not Applicable'} evals over 20 runs {'LOC+': 1084.5625, ' AEXP-': 2.9375, ' PLEX-': 3.0, ' RISK-': 4.5625, ' EFFORT-\n': 21334.875, 'N': 242.25}
+Average of the median values for the bisect explainer with {0.9308} evals over 20 runs {'LOC+': 1598.55, ' AEXP-': 3.0, ' PLEX-': 2.35, ' RISK-': 7.3, ' EFFORT-\n': 67617.5, 'N': 66.35}
 ----------------
-Average of the median values for the cluster with {8.0} evals over 20 runs {'Loc+': 1429.5, ' Risk-': 6.85, ' Effort-\n': 47262.85, 'N': 1148.2}
-Average of the median values for the explainer with {0.9986200000000002} evals over 20 runs {'Loc+': 1438.7, ' Risk-': 7.05, ' Effort-\n': 47112.95, 'N': 1147.95}
-Important Features:
-1.  Docu
-2.  Flex
-3.  Cplx
-4.  Prec
-5.  Aexp
-6.  Pmat
-7.  Team
+Average of the median values for the sway cluster with {8.0} evals over 20 runs {'Loc+': 1015.0, ' Risk-': 4.277777777777778, ' Effort-\n': 16777.722222222223, 'N': 78.66666666666667}
+Average of the median values for the bisect cluster with {8.0} evals over 20 runs {'Loc+': 1440.25, ' Risk-': 6.95, ' Effort-\n': 47230.75, 'N': 1147.9}
+Average of the median values for the sway explainer with {'Not Applicable'} evals over 20 runs {'Loc+': 1022.8333333333334, ' Risk-': 5.388888888888889, ' Effort-\n': 19355.5, 'N': 2293.1666666666665}
+Average of the median values for the bisect explainer with {0.9984999999999999} evals over 20 runs {'Loc+': 1438.5, ' Risk-': 6.9, ' Effort-\n': 47301.15, 'N': 1147.4}
 ----------------
-Average of the median values for the cluster with {8.0} evals over 20 runs {'MRE-': 74.06949999999999, 'ACC+': 7.4285, 'PRED40+': 25.0, 'N': 1698.55}
-Average of the median values for the explainer with {0.9991} evals over 20 runs {'MRE-': 74.0365, 'ACC+': 7.422500000000001, 'PRED40+': 25.0, 'N': 1698.25}
-Important Features:
-1. N_estimators
-2. Min_impurity_decrease
-3. Min_sample_leaves
-4. Max_depth
-5. criterion
+Average of the median values for the sway cluster with {8.0} evals over 20 runs {'MRE-': 73.70349999999999, 'ACC+': 7.570500000000001, 'PRED40+': 25.0, 'N': 78.5}
+Average of the median values for the bisect cluster with {8.0} evals over 20 runs {'MRE-': 75.229, 'ACC+': 7.1105, 'PRED40+': 25.0, 'N': 1704.35}
+Average of the median values for the sway explainer with {'Not Applicable'} evals over 20 runs {'MRE-': 73.771, 'ACC+': 7.5569999999999995, 'PRED40+': 25.0, 'N': 2932.25}
+Average of the median values for the bisect explainer with {0.9992599999999999} evals over 20 runs {'MRE-': 75.3085, 'ACC+': 7.437, 'PRED40+': 25.0, 'N': 1704.35}
 ----------------
-Average of the median values for the cluster with {8.0} evals over 20 runs {'MRE-': 0.0, 'ACC+': 0.0, 'PRED40+': 83.32999999999998, 'N': 650.6}
-Average of the median values for the explainer with {1.0} evals over 20 runs {'MRE-': 0.0, 'ACC+': 0.0, 'PRED40+': 83.32999999999998, 'N': 650.6}
-Important Features:
-1. N_estimators
-2. Min_impurity_decrease
-3. criterion
-4. Min_sample_leaves
-5. Max_depth
+Average of the median values for the sway cluster with {8.0} evals over 20 runs {'MRE-': 10.053, 'ACC+': -0.052000000000000005, 'PRED40+': 74.99699999999999, 'N': 78.9}
+Average of the median values for the bisect cluster with {8.0} evals over 20 runs {'MRE-': 0.0, 'ACC+': 0.0, 'PRED40+': 83.32999999999998, 'N': 571.4}
+Average of the median values for the sway explainer with {'Not Applicable'} evals over 20 runs {'MRE-': 0.0, 'ACC+': 0.0, 'PRED40+': 83.32999999999998, 'N': 3302.0}
+Average of the median values for the bisect explainer with {1.0} evals over 20 runs {'MRE-': 0.0, 'ACC+': 0.0, 'PRED40+': 83.32999999999998, 'N': 571.4}
 ----------------
-Average of the median values for the cluster with {8.0} evals over 20 runs {'Kloc+': 12.935000000000002, 'Effort-': 61.8, 'Defects-': 562.25, 'Months-\n': 13.989999999999998, 'N': 40.55}
-Average of the median values for the explainer with {0.9470000000000003} evals over 20 runs {'Kloc+': 13.260000000000002, 'Effort-': 61.3, 'Defects-': 558.65, 'Months-\n': 14.084999999999999, 'N': 40.4}
-Important Features:
-1. acap
-2. plex
-3. pcap
-4. data
-5. stor
-6. apex
+Average of the median values for the sway cluster with {5.0} evals over 20 runs {'Kloc+': 16.822222222222223, 'Effort-': 88.88888888888889, 'Defects-': 609.6111111111111, 'Months-\n': 14.088888888888892, 'N': 5.944444444444445}
+Average of the median values for the bisect cluster with {8.0} evals over 20 runs {'Kloc+': 12.610000000000003, 'Effort-': 61.2, 'Defects-': 542.7, 'Months-\n': 13.895, 'N': 39.45}
+Average of the median values for the sway explainer with {'Not Applicable'} evals over 20 runs {'Kloc+': 18.572222222222223, 'Effort-': 106.11111111111111, 'Defects-': 750.2222222222222, 'Months-\n': 14.722222222222221, 'N': 18.0}
+Average of the median values for the bisect explainer with {0.9540000000000001} evals over 20 runs {'Kloc+': 12.675, 'Effort-': 60.7, 'Defects-': 542.35, 'Months-\n': 13.895, 'N': 39.25}
 ----------------
-Average of the median values for the cluster with {8.0} evals over 20 runs {'Cost-': 137.12499999999994, 'Completion+': 0.8880000000000002, 'Idle-\n': 0.24300000000000002, 'N': 1562.55}
-Average of the median values for the explainer with {0.9997400000000001} evals over 20 runs {'Cost-': 138.26749999999998, 'Completion+': 0.8845000000000003, 'Idle-\n': 0.23850000000000002, 'N': 1562.45}
-Important Features:
-1. Criticality Modifier
-2. Size
-3. Criticality
-4. Score:
-5. Initial Known
-6. Culture
-7. InterDependency
+Average of the median values for the sway cluster with {8.0} evals over 20 runs {'Cost-': 283.0109090909091, 'Completion+': 0.9145454545454546, 'Idle-\n': 0.2281818181818182, 'N': 78.72727272727273}
+Average of the median values for the bisect cluster with {8.0} evals over 20 runs {'Cost-': 137.952, 'Completion+': 0.8875000000000002, 'Idle-\n': 0.2395, 'N': 1562.15}
+Average of the median values for the sway explainer with {'Not Applicable'} evals over 20 runs {'Cost-': 330.9218181818182, 'Completion+': 0.9, 'Idle-\n': 0.23090909090909095, 'N': 7332.272727272727}
+Average of the median values for the bisect explainer with {0.9997200000000002} evals over 20 runs {'Cost-': 137.86499999999998, 'Completion+': 0.8860000000000003, 'Idle-\n': 0.23650000000000007, 'N': 1562.2}
 ----------------
-Average of the median values for the cluster with {8.0} evals over 20 runs {'NUMBERITERATIONS-': 6.1, ' TIMETOSOLUTION-\n': 127.30100000000002, 'N': 214236.4}
-Average of the median values for the explainer with {0.9998780080213905} evals over 20 runs {'NUMBERITERATIONS-': 6.05, ' TIMETOSOLUTION-\n': 127.20600000000002, 'N': 214238.45}
-Important Features:
-1. jACOBI
-2. ALPHA
-3. BETA
-4. rELAXPARAMETER
-5. PRESMOOTHING
-6. POSTSMOOTHING
-7. zEBRALINE
-8. lINE
+Average of the median values for the sway cluster with {10.0} evals over 20 runs {'NUMBERITERATIONS-': 4.8, 'N': 468.0}
+Average of the median values for the bisect cluster with {8.0} evals over 20 runs {'NUMBERITERATIONS-': 6.1, ' TIMETOSOLUTION-\n': 126.5755, 'N': 214235.0}
+Average of the median values for the sway explainer with {'Not Applicable'} evals over 20 runs {'NUMBERITERATIONS-': 5.65, 'N': 13258.3}
+Average of the median values for the bisect explainer with {0.9998846925133691} evals over 20 runs {'NUMBERITERATIONS-': 6.1, ' TIMETOSOLUTION-\n': 126.47200000000001, 'N': 214237.05}
 ----------------
-Average of the median values for the cluster with {8.0} evals over 20 runs {'PSNR-': 45.81900000000001, ' Energy-\n': 1251.2475, 'N': 52981.0}
-Average of the median values for the explainer with {1.0} evals over 20 runs {'PSNR-': 45.7995, ' Energy-\n': 1252.4489999999998, 'N': 52981.0}
-Important Features:
-1. Crf
-2. Aq_strength
-3. Ipratio
-4. Qcomp
-5. Seek
-6. Rc_lookahead
-7. Keyint
-8. Ref
+Average of the median values for the sway cluster with {9.0} evals over 20 runs {'PSNR-': 43.7595, ' Energy-\n': 1185.2450000000001, 'N': 209.95}
+Average of the median values for the bisect cluster with {8.0} evals over 20 runs {'PSNR-': 45.63900000000001, ' Energy-\n': 1271.0025, 'N': 52981.0}
+Average of the median values for the sway explainer with {'Not Applicable'} evals over 20 runs {'PSNR-': 45.242, ' Energy-\n': 1220.8505000000002, 'N': 6085.85}
+Average of the median values for the bisect explainer with {1.0} evals over 20 runs {'PSNR-': 45.852000000000004, ' Energy-\n': 1269.5075, 'N': 52981.0}
 ----------------
-✅ pass: 	results
-
-🔆 {'pass': 1, 'fail': 0, 'success': 100.0}
-

@@ -289,6 +289,9 @@ def scitest():
 
   with open("clusterEvalRes.txt", "wb") as f:
     pickle.dump(avg_eval, f)
+
+  with open("bestCluster.txt", "wb") as f:
+    pickle.dump(bestCluster, f)
   
   with open("explainResults.txt", "wb") as f:
     pickle.dump(topTenBest, f)
@@ -298,6 +301,9 @@ def scitest():
 
   with open("explainScoreAvg.txt", "wb") as f:
     pickle.dump(avg_score, f)
+
+  with open("bestExplainValues.txt", "wb") as f:
+    pickle.dump(bestExplainValues, f)
   
   with open("regularCluster.txt", "wb") as f:
     pickle.dump(regularClusters, f)
@@ -400,12 +406,18 @@ def swaytest():
 
   with open("clusterEvalRes.txt", "wb") as f:
     pickle.dump(avg_eval, f)
+
+  with open("bestCluster.txt", "wb") as f:
+    pickle.dump(bestCluster, f)
   
   with open("explainResults.txt", "wb") as f:
     pickle.dump(topTenBest, f)
 
   with open("explainValuesResults.txt", "wb") as f:
     pickle.dump(bestExplainData, f)
+
+  with open("bestExplainValues.txt", "wb") as f:
+    pickle.dump(bestExplainValues, f)
   
   with open("regularCluster.txt", "wb") as f:
     pickle.dump(regularClusters, f)
@@ -435,7 +447,7 @@ def autorun():
     print(config.resultType)
     if config.resultType == "./results/":
       scitest()
-    else:
+    elif config.resultType == "./swayResults/":
       swaytest()
 
     os.chdir(base)
@@ -510,4 +522,202 @@ def getResults():
       print("Median of the CLUSTERED values for the Explain with %5s score:" % result[4], stats(expData)[0], stats(expData, div)[0])
     """
     print("----------------")
-  
+
+
+def getBothResults():
+  # os.chdir(config.resultType)
+  base = os.getcwd()
+  files = ["auto2.csv", "auto93.csv", "china.csv", "coc1000.csv", "coc10000.csv", "healthCloseIsses12mths0001-hard.csv", "healthCloseIsses12mths0011-easy.csv", "nasa93dem.csv", "pom.csv", "SSM.csv", "SSN.csv"]
+  swayResults = []
+  clusterResults = []
+  resultDirectories = ["./results/", "./swayResults/"]
+  for file in files:
+    for dire in resultDirectories:
+      os.chdir(dire)
+      directory = file.split(".")[0]
+      result = []
+      os.chdir("./" + directory + "/")
+      
+      try:
+        data = DATA("curr.csv")
+      except:
+        data = DATA("../../../../etc/data/project-data/" + file)
+
+      result.append(data)
+
+      with open("clusterRes.txt", "rb") as f:
+        result.append(pickle.load(f))
+
+      with open("clusterEvalRes.txt", "rb") as f:
+        result.append(pickle.load(f))
+
+      with open("explainValuesResults.txt", "rb") as f:
+        result.append(pickle.load(f))
+
+      try:
+        with open("explainScoreAvg.txt", "rb") as f:
+          result.append(pickle.load(f))
+      except:
+        result.append({"Not Applicable"})
+
+      with open("explainResults.txt", "rb") as f:
+        result.append(pickle.load(f))
+      
+      with open("regularCluster.txt", "rb") as f:
+        result.append(pickle.load(f))
+
+      with open("regularExplain.txt", "rb") as f:
+        result.append(pickle.load(f))
+
+      with open("bestExplainValues.txt", "rb") as f:
+        result.append(pickle.load(f))
+
+      with open("bestCluster.txt", "rb") as f:
+        result.append(pickle.load(f))
+      
+      os.chdir(base)
+      if dire == "./results/":
+        clusterResults.append(result)
+      else:
+        swayResults.append(result)
+
+  print("done")
+
+  for i in range(len(clusterResults)):
+    cResult = clusterResults[i]
+    sResult = swayResults[i]
+    data = sResult[0]
+    top, _ = betters(data, round(sResult[1]["N"]))
+    top = DATA(data, top)
+    averageTotal = stats(data)[0]
+    bestTotal = stats(top)[0]
+    print("Baseline for the total average of the data set", averageTotal)
+    print("Average of the median values for the sway cluster with %5s evals over 20 runs" % sResult[2], sResult[1])
+    print("Average of the median values for the bisect cluster with %5s evals over 20 runs" % cResult[2], cResult[1])
+    print("Average of the median values for the sway explainer with %5s evals over 20 runs" % sResult[4], sResult[3])
+    print("Average of the median values for the bisect explainer with %5s evals over 20 runs" % cResult[4], cResult[3])
+    print("Baseline for the best group of values of the data set with %5s evals" % len(data["rows"]), bestTotal)
+
+    print("Getting cliffsDelta effect size test results...")
+    avgData = data
+    bestData = top
+    sway1Data = sResult[8]
+    xpln1Data = sResult[9]
+    sway2Data = cResult[8]
+    xpln2Data = cResult[9]
+
+    try:
+      print("Diff in all vs all")
+      cols = {}
+      for k in averageTotal.keys():
+        # Format needed for average and top. xpln and sway would need similar - the colnames stuff since it should just key match k
+        val1 = {}
+        ind = 0
+        for colName in cols["cols"]["names"]:
+          if colName.rstrip() == k:
+            break
+          ind += 1
+        for row in avgData["rows"]:
+          val1[len(val1)] = row[i]
+
+        if cliffDelta(val1, val1):
+          cols[k] = "!="
+        else:
+          cols[k] = "="
+      print("cols vals:", cols)
+    except KeyError:
+      print("Error in printing all vs all")
+      pass
+
+    # Above def needs debugging
+    continue
+    try:
+      print("Diff in all vs sway1")
+      cols = {}
+      for k, v in averageTotal.items():
+        if cliffDelta(v, sResult[1][k]):
+          cols[k] = "!="
+        else:
+          cols[k] = "="
+      print("cols vals:", cols)
+    except KeyError:
+      print("Error in printing all vs sway1")
+      pass
+
+    try:
+      print("Diff in all vs sway2")
+      cols = {}
+      for k, v in averageTotal.items():
+        if cliffDelta(v, cResult[1][k]):
+          cols[k] = "!="
+        else:
+          cols[k] = "="
+      print("cols vals:", cols)
+    except KeyError:
+      print("Error in printing all vs sway2")
+      pass
+
+    try:
+      print("Diff in sway1 vs sway2")
+      cols = {}
+      for k, v in sResult[1].items():
+        if cliffDelta(v, cResult[1][k]):
+          cols[k] = "!="
+        else:
+          cols[k] = "="
+      print("cols vals:", cols)
+    except KeyError:
+      print("Error in printing sway1 vs sway2")
+      pass
+
+    try:
+      print("Diff in sway1 vs xpln1")
+      cols = {}
+      for k, v in sResult[1].items():
+        if cliffDelta(v, sResult[3][k]):
+          cols[k] = "!="
+        else:
+          cols[k] = "="
+      print("cols vals:", cols)
+    except KeyError:
+      print("Error in printing sway1 vs sway2")
+      pass
+
+    try:
+      print("Diff in sway2 vs xpln2")
+      cols = {}
+      for k, v in cResult[1].items():
+        if cliffDelta(v, cResult[3][k]):
+          cols[k] = "!="
+        else:
+          cols[k] = "="
+      print("cols vals:", cols)
+    except KeyError:
+      print("Error in printing sway2 vs xpln2")
+      pass
+
+    try:
+      print("Diff in sway1 vs top")
+      cols = {}
+      for k, v in sResult[1].items():
+        if cliffDelta(v, bestTotal[k]):
+          cols[k] = "!="
+        else:
+          cols[k] = "="
+      print("cols vals:", cols)
+    except KeyError:
+      print("Error in printing sway1 vs top")
+      pass
+    
+    print("----------------")
+
+
+def getBenchmarks():
+  file_info = {"auto2.csv": 6, "auto93.csv": 12, "china.csv": 16, "coc1000.csv":19, "coc10000.csv": 79, "healthCloseIsses12mths0001-hard.csv": 79, "healthCloseIsses12mths0011-easy.csv": 79, "nasa93dem.csv": 6, "pom.csv": 79, "SSM.csv": 468, "SSN.csv": 209}
+  for file, number in file_info.items():
+    data = DATA(config.the["file"].replace("auto93.csv", file))
+    top, _ = betters(data, number)
+    top = DATA(data, top)
+    print("Baseline for the total average of the data set with %5s evals" % len(data["rows"]), stats(data)[0])
+    print("Baseline for the best group of values of the data set", stats(top)[0])
+    print("-----------------")

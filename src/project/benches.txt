@@ -1,0 +1,33 @@
+Baseline for the total average of the data set with    93 evals {' CityMPG+': 21.0, ' HighwayMPG+': 28.0, ' Weight-': 3040.0, ' Class-\n': 17.7, 'N': 93}
+Baseline for the best group of values of the data set {' CityMPG+': 33.0, ' HighwayMPG+': 41.0, ' Weight-': 2045.0, ' Class-\n': 8.6, 'N': 6}
+-----------------
+Baseline for the total average of the data set with   398 evals {'Lbs-': 2800.0, 'Acc+': 15.5, 'Mpg+\n': 20.0, 'N': 398}
+Baseline for the best group of values of the data set {'Lbs-': 1985.0, 'Acc+': 18.8, 'Mpg+\n': 40.0, 'N': 12}
+-----------------
+Baseline for the total average of the data set with   499 evals {'N_effort-': 2098.0, 'N': 499}
+Baseline for the best group of values of the data set {'N_effort-': 145.0, 'N': 16}
+-----------------
+Baseline for the total average of the data set with  1000 evals {'LOC+': 1078.0, ' AEXP-': 3.0, ' PLEX-': 3.0, ' RISK-': 5.0, ' EFFORT-\n': 19198.0, 'N': 1000}
+Baseline for the best group of values of the data set {'LOC+': 1543.0, ' AEXP-': 2.0, ' PLEX-': 1.0, ' RISK-': 3.0, ' EFFORT-\n': 31323.0, 'N': 19}
+-----------------
+Baseline for the total average of the data set with 10000 evals {'Loc+': 1030.0, ' Risk-': 5.0, ' Effort-\n': 18405.0, 'N': 10000}
+Baseline for the best group of values of the data set {'Loc+': 1959.0, ' Risk-': 0.0, ' Effort-\n': 17752.0, 'N': 79}
+-----------------
+Baseline for the total average of the data set with 10000 evals {'MRE-': 75.41, 'ACC+': 7.19, 'PRED40+': 25.0, 'N': 10000}
+Baseline for the best group of values of the data set {'MRE-': 64.91, 'ACC+': 11.4, 'PRED40+': 25.0, 'N': 79}
+-----------------
+Baseline for the total average of the data set with 10000 evals {'MRE-': 119.33, 'ACC+': -12.2, 'PRED40+': 0.0, 'N': 10000}
+Baseline for the best group of values of the data set {'MRE-': 0.0, 'ACC+': 0.0, 'PRED40+': 83.33, 'N': 79}
+-----------------
+Baseline for the total average of the data set with    93 evals {'Kloc+': 47.5, 'Effort-': 252.0, 'Defects-': 2007.0, 'Months-\n': 21.4, 'N': 93}
+Baseline for the best group of values of the data set {'Kloc+': 3.5, 'Effort-': 10.8, 'Defects-': 109.0, 'Months-\n': 7.8, 'N': 6}
+-----------------
+Baseline for the total average of the data set with 10000 evals {'Cost-': 331.89, 'Completion+': 0.9, 'Idle-\n': 0.24, 'N': 10000}
+Baseline for the best group of values of the data set {'Cost-': 138.75, 'Completion+': 1.0, 'Idle-\n': 0.0, 'N': 79}
+-----------------
+Baseline for the total average of the data set with 239360 evals {'NUMBERITERATIONS-': 7.0, 'N': 239360}
+Baseline for the best group of values of the data set {'NUMBERITERATIONS-': 3.0, 'N': 468}
+-----------------
+Baseline for the total average of the data set with 53662 evals {'PSNR-': 45.96, ' Energy-\n': 1215.58, 'N': 53662}
+Baseline for the best group of values of the data set {'PSNR-': 26.7, ' Energy-\n': 465.94, 'N': 209}
+-----------------
