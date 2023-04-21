@@ -6,6 +6,9 @@ This repo holds all of my homework code as well as my project code
 The below headers describe the folders found in docs and src
 Output files for the current tests are held in etc/out/
 
+## Final Project
+The final project is stored in `src/project` with its own readme. The paper is called `Tystahl_791_Automated_Software_Final.pdf` and is located both in the main directory and in the project folder. Documentation is sparse and there are loose comments. Apologies in advance!
+
 ## hw1
 This folder holds the files for the first homework aimed at getting us used to working in a TDD (Test Driven Development) environment as well as learning lua.
 
