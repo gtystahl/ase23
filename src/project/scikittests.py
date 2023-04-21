@@ -152,24 +152,31 @@ def BisectClusterer(data, val, nClusters=8):
     # return top, groups, bestVal, len(bestData["rows"]), bestData["rows"]
     return bestData, groups, bestVal, {"Evals": nClusters}, bestData["rows"]
 
-def RFExplainer(data, val, groups, bestVal):
+def RFExplainer(data, val, groups, bestVal, model=None):
     # Random forest explainer below
-    ys = []
-    for i in range(len(groups)):
-      item = groups[i]
-      if item == bestVal:
-        ys.append(1)
-      else:
-        ys.append(0)
-    ys = np.array(ys)
+    
 
     # clf = RandomForestClassifier(n_estimators=10, max_depth=None, min_samples_split=2, random_state=0)
-    clf = RandomForestClassifier()
-    X_train, X_test, y_train, y_test = train_test_split(val, ys)
-    clf.fit(X=X_train, y=y_train)
-    scores = cross_val_score(clf, X_test, y_test)
+    if model is None:
+      ys = []
+      for i in range(len(groups)):
+        item = groups[i]
+        if item == bestVal:
+          ys.append(1)
+        else:
+          ys.append(0)
+      ys = np.array(ys)
+      clf = RandomForestClassifier()
+      X_train, X_test, y_train, y_test = train_test_split(val, ys)
+      clf.fit(X=X_train, y=y_train)
+      scores = cross_val_score(clf, X_test, y_test)
+    else:
+      clf = model
+      scores = 0
     guesses = clf.predict(val)
     guessed_rows = {}
+    with open("RandomForestModel", "wb") as f:
+      pickle.dump(clf, f)
     for i in range(len(data["rows"])):
       if guesses[i] == 1:
         guessed_rows[len(guessed_rows)] = data["rows"][i]
@@ -191,9 +198,7 @@ def RFExplainer(data, val, groups, bestVal):
     for item in d:
       if item[0] != 0:
         importantColumns.append(data["cols"]["names"][item[1]])
-    # print(importantColumns)
-    # print("done")
-    return importantColumns, guessed_rows, {"Score": scores.mean()}
+    return importantColumns, guessed_rows, ({"Score": scores.mean()} if model is None else 0)
 
 
 def getAvg(d):
@@ -239,7 +244,10 @@ def scitest(nClusters=8, verbose=False):
     top = DATA(data, bestExplains)
     # res = betters(top, 1)
     # bestExplainValues[len(bestCluster)] = res[0][0]
+    # try:
     bestExplainValues[len(bestExplainValues)] = stats(top)[0]
+    # except:
+      # continue
     for ind in range(len(features)):
       feat = features[ind]
       if feat in bestExplain.keys():
@@ -430,7 +438,10 @@ def swaytest():
 
 def budgetTest():
   config.the["file"] = "../../" + config.the["file"].replace("auto93", "SSN")
-  budgets = [10,25,50,100,200,500]
+  # budgets = [10,25,50,100,200,500]
+  # budgets = [10,25,50]
+  budgets = [50]
+  # budgets = [100,200,500]
   base = "./budgetResults/"
   if not os.path.exists(base):
     os.mkdir(base)
@@ -438,9 +449,10 @@ def budgetTest():
   base = os.getcwd()
 
   for budget in budgets:
-    if not os.path.exists(budget):
-      os.mkdir(budget)
-    os.chdir(budget)
+    if not os.path.exists("./" + str(budget) + "/"):
+      os.mkdir("./" + str(budget) + "/")
+    os.chdir("./" + str(budget) + "/")
+    print("Current Budget: %d" % budget)
     scitest(budget)
     os.chdir(base)
 
@@ -599,6 +611,8 @@ def getBothResults():
         clusterResults.append(result)
       else:
         swayResults.append(result)
+      
+    # break
 
   print("done")
 
@@ -629,35 +643,67 @@ def getBothResults():
       print("Diff in all vs all")
       cols = {}
       for k in averageTotal.keys():
+        k = k.rstrip()
         # Format needed for average and top. xpln and sway would need similar - the colnames stuff since it should just key match k
         val1 = {}
         ind = 0
-        for colName in cols["cols"]["names"]:
+        good = False
+        for keyVal, colName in avgData["cols"]["names"].items():
           if colName.rstrip() == k:
+            good = True
             break
           ind += 1
-        for row in avgData["rows"]:
-          val1[len(val1)] = row[i]
+        if good:
+          for keyVal, row in avgData["rows"].items():
+            val1[len(val1)] = row[ind]
 
-        if cliffDelta(val1, val1):
-          cols[k] = "!="
+          if cliffDelta(val1, val1):
+            cols[k] = "!="
+          else:
+            cols[k] = "="
         else:
-          cols[k] = "="
+          if k != "N":
+            print("Can't find k: %s" % k)
       print("cols vals:", cols)
-    except KeyError:
+    except KeyError: 
       print("Error in printing all vs all")
       pass
 
-    # Above def needs debugging
-    continue
     try:
       print("Diff in all vs sway1")
       cols = {}
-      for k, v in averageTotal.items():
-        if cliffDelta(v, sResult[1][k]):
-          cols[k] = "!="
+      for k in averageTotal.keys():
+        # Format needed for average and top. xpln and sway would need similar - the colnames stuff since it should just key match k
+        val1 = {}
+        ind = 0
+        good1 = False
+        for keyVal, colName in avgData["cols"]["names"].items():
+          if colName == k:
+            good1 = True
+            break
+          ind += 1
+        if good1:
+          for keyVal, row in avgData["rows"].items():
+            val1[len(val1)] = row[ind]
         else:
-          cols[k] = "="
+          if k != "N":
+            print("Can't find k for all: [%s]" % k)
+
+        val2 = {}
+        good2 = False
+        for keyVal, avgInfo in sway1Data.items():
+          try:
+            val2[len(val2)] = avgInfo[k]
+            good2 = True
+          except KeyError:
+            print("Bad k for sway1: [%s]" % k)
+            pass
+
+        if good1 and good2:
+          if cliffDelta(val1, val2):
+            cols[k] = "!="
+          else:
+            cols[k] = "="
       print("cols vals:", cols)
     except KeyError:
       print("Error in printing all vs sway1")
@@ -666,11 +712,38 @@ def getBothResults():
     try:
       print("Diff in all vs sway2")
       cols = {}
-      for k, v in averageTotal.items():
-        if cliffDelta(v, cResult[1][k]):
-          cols[k] = "!="
+      for k in averageTotal.keys():
+        # Format needed for average and top. xpln and sway would need similar - the colnames stuff since it should just key match k
+        val1 = {}
+        ind = 0
+        good1 = False
+        for keyVal, colName in avgData["cols"]["names"].items():
+          if colName == k:
+            good1 = True
+            break
+          ind += 1
+        if good1:
+          for keyVal, row in avgData["rows"].items():
+            val1[len(val1)] = row[ind]
         else:
-          cols[k] = "="
+          if k != "N":
+            print("Can't find k for all: [%s]" % k)
+
+        val2 = {}
+        good2 = False
+        for keyVal, avgInfo in sway2Data.items():
+          try:
+            val2[len(val2)] = avgInfo[k]
+            good2 = True
+          except KeyError:
+            print("Bad k for sway2: [%s]" % k)
+            pass
+
+        if good1 and good2:
+          if cliffDelta(val1, val2):
+            cols[k] = "!="
+          else:
+            cols[k] = "="
       print("cols vals:", cols)
     except KeyError:
       print("Error in printing all vs sway2")
@@ -679,11 +752,33 @@ def getBothResults():
     try:
       print("Diff in sway1 vs sway2")
       cols = {}
-      for k, v in sResult[1].items():
-        if cliffDelta(v, cResult[1][k]):
-          cols[k] = "!="
-        else:
-          cols[k] = "="
+      for k in averageTotal.keys():
+        # Format needed for average and top. xpln and sway would need similar - the colnames stuff since it should just key match k
+        val1 = {}
+        good1 = False
+        for keyVal, avgInfo in sway1Data.items():
+          try:
+            val1[len(val1)] = avgInfo[k]
+            good1 = True
+          except KeyError:
+            print("Bad k for sway1: [%s]" % k)
+            pass
+
+        val2 = {}
+        good2 = False
+        for keyVal, avgInfo in sway2Data.items():
+          try:
+            val2[len(val2)] = avgInfo[k]
+            good2 = True
+          except KeyError:
+            print("Bad k for sway2: [%s]" % k)
+            pass
+
+        if good1 and good2:
+          if cliffDelta(val1, val2):
+            cols[k] = "!="
+          else:
+            cols[k] = "="
       print("cols vals:", cols)
     except KeyError:
       print("Error in printing sway1 vs sway2")
@@ -692,24 +787,68 @@ def getBothResults():
     try:
       print("Diff in sway1 vs xpln1")
       cols = {}
-      for k, v in sResult[1].items():
-        if cliffDelta(v, sResult[3][k]):
-          cols[k] = "!="
-        else:
-          cols[k] = "="
+      for k in averageTotal.keys():
+        # Format needed for average and top. xpln and sway would need similar - the colnames stuff since it should just key match k
+        val1 = {}
+        good1 = False
+        for keyVal, avgInfo in sway1Data.items():
+          try:
+            val1[len(val1)] = avgInfo[k]
+            good1 = True
+          except KeyError:
+            print("Bad k for sway1: [%s]" % k)
+            pass
+
+        val2 = {}
+        good2 = False
+        for keyVal, avgInfo in xpln1Data.items():
+          try:
+            val2[len(val2)] = avgInfo[k]
+            good2 = True
+          except KeyError:
+            print("Bad k for xpln1: [%s]" % k)
+            pass
+
+        if good1 and good2:
+          if cliffDelta(val1, val2):
+            cols[k] = "!="
+          else:
+            cols[k] = "="
       print("cols vals:", cols)
     except KeyError:
-      print("Error in printing sway1 vs sway2")
+      print("Error in printing sway1 vs xpln1")
       pass
 
     try:
       print("Diff in sway2 vs xpln2")
       cols = {}
-      for k, v in cResult[1].items():
-        if cliffDelta(v, cResult[3][k]):
-          cols[k] = "!="
-        else:
-          cols[k] = "="
+      for k in averageTotal.keys():
+        # Format needed for average and top. xpln and sway would need similar - the colnames stuff since it should just key match k
+        val1 = {}
+        good1 = False
+        for keyVal, avgInfo in sway2Data.items():
+          try:
+            val1[len(val1)] = avgInfo[k]
+            good1 = True
+          except KeyError:
+            print("Bad k for sway2: [%s]" % k)
+            pass
+
+        val2 = {}
+        good2 = False
+        for keyVal, avgInfo in xpln2Data.items():
+          try:
+            val2[len(val2)] = avgInfo[k]
+            good2 = True
+          except KeyError:
+            print("Bad k for xpln2: [%s]" % k)
+            pass
+
+        if good1 and good2:
+          if cliffDelta(val1, val2):
+            cols[k] = "!="
+          else:
+            cols[k] = "="
       print("cols vals:", cols)
     except KeyError:
       print("Error in printing sway2 vs xpln2")
@@ -718,16 +857,82 @@ def getBothResults():
     try:
       print("Diff in sway1 vs top")
       cols = {}
-      for k, v in sResult[1].items():
-        if cliffDelta(v, bestTotal[k]):
-          cols[k] = "!="
+      for k in averageTotal.keys():
+        # Format needed for average and top. xpln and sway would need similar - the colnames stuff since it should just key match k
+        val1 = {}
+        good1 = False
+        for keyVal, avgInfo in sway1Data.items():
+          try:
+            val1[len(val1)] = avgInfo[k]
+            good1 = True
+          except KeyError:
+            print("Bad k for sway1: [%s]" % k)
+            pass
+
+        val2 = {}
+        ind = 0
+        good2 = False
+        for keyVal, colName in top["cols"]["names"].items():
+          if colName == k:
+            good2 = True
+            break
+          ind += 1
+        if good2:
+          for keyVal, row in bestData["rows"].items():
+            val2[len(val2)] = row[ind]
         else:
-          cols[k] = "="
+          if k != "N":
+            print("Can't find k for top: [%s]" % k)
+
+        if good1 and good2:
+          if cliffDelta(val1, val2):
+            cols[k] = "!="
+          else:
+            cols[k] = "="
       print("cols vals:", cols)
     except KeyError:
       print("Error in printing sway1 vs top")
       pass
-    
+
+    try:
+      print("Diff in sway2 vs top")
+      cols = {}
+      for k in averageTotal.keys():
+        # Format needed for average and top. xpln and sway would need similar - the colnames stuff since it should just key match k
+        val1 = {}
+        good1 = False
+        for keyVal, avgInfo in sway2Data.items():
+          try:
+            val1[len(val1)] = avgInfo[k]
+            good1 = True
+          except KeyError:
+            print("Bad k for sway2: [%s]" % k)
+            pass
+
+        val2 = {}
+        ind = 0
+        good2 = False
+        for keyVal, colName in top["cols"]["names"].items():
+          if colName == k:
+            good2 = True
+            break
+          ind += 1
+        if good2:
+          for keyVal, row in bestData["rows"].items():
+            val2[len(val2)] = row[ind]
+        else:
+          if k != "N":
+            print("Can't find k for top: [%s]" % k)
+
+        if good1 and good2:
+          if cliffDelta(val1, val2):
+            cols[k] = "!="
+          else:
+            cols[k] = "="
+      print("cols vals:", cols)
+    except KeyError:
+      print("Error in printing sway2 vs top")
+      pass
     print("----------------")
 
 

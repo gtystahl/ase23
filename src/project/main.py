@@ -5,6 +5,7 @@ from scikittests import *
 import config
 from ablation import *
 from hpo import *
+from february import *
 
 def main(options: dict, HELP, funs):
   # This function runs the tests specified by the user on the run (defined in -h or --help)
@@ -41,70 +42,29 @@ def eg(key,string,fun):
   # It also adds a way to call that test function into the help
   config.Help = config.Help + ("  -g  %s\t%s\n" % (key,string))
 
-# eg("Is", "show options", lambda: oo(config.the))
+# NOTE DOES NOT WORK FOR -all unless you comment everything out
+# Runs the current result file test (sway1 or sway2)
+eg("autorun", "runs all of the experiements and saves the resutls", autorun)
 
-# eg("rand", "demo random number generation", checkRand)
+# Prints the results of the current result file
+eg("results", "interprets the results saved by the tests above", getResults)
 
-# eg("some","demo of reservoir sampling", checkSome)
-
-# eg("nums","demo of NUM", checkNums)
-
-# eg("syms","demo SYMS", checkSyms)
-
-# eg("csv","reading csv files", checkCsv)
-
-# eg("data", "showing data sets", checkData)
-
-# eg("clone","replicate structure of a DATA", checkClone)
-
-# eg("cliffs","stats tests", checkCliffs)
-
-# eg("dist","distance test", checkDist)
-
-# eg("half","divide data in halg", checkHalf)
- 
-# eg("tree","make snd show tree of clusters", checkTree)
-
-# eg("sway","optimizing", checkSway)
-
-# eg("bins", "find deltas between best and rest", checkBins)
-
-# eg("xpln", "explore explanation sets", checkXPLN)
-
-# eg("sci", "run the scikit function", scitest)
-
-# eg("autorun", "runs all of the experiements and saves the resutls", autorun)
-
-# eg("results", "interprets the results saved by the tests above", getResults)
-
+# Prints both results file
 eg("bothResults", "gets both results for comparison", getBothResults)
 
-# eg("baselines", "gets the info for the baselines", getBenchmarks)
+# Prints the baseline values since I didn't at first
+eg("baselines", "gets the info for the baselines", getBenchmarks)
 
-# eg("ablation", "Runs the abltion runner to get the results to compare", ablationRunner)
+# Runs the ablation study
+eg("ablation", "Runs the abltion runner to get the results to compare", ablationRunner)
 
-# eg("hpo", "Runs the hpo runner", hpoRunner)
-# HW7 Tests that need to be rewritten
-"""
-eg("ok", "check ok function", ok)
+# Runs the hpo study
+eg("hpo", "Runs the hpo runner", hpoRunner)
 
-eg("sample", "check sample function", sample)
+# Runs the budget study
+eg("budget", "tests more budget make the numbers better", budgetTest)
 
-eg("num", "check num function", num)
-
-eg("gauss", "check gauss function", gauss)
-
-eg("bootmu", "check bootmu function", bootmu)
-
-eg("pre", "check pre function", pre)
-
-eg("five", "check five function", five)
-
-eg("six", "check six function", six)
-
-eg("tiles", "check tiles function", til)
-
-eg("sk", "check sk function", sk)
-"""
+# Runs the february study
+eg("feb", "Runs the february runner", febRunner)
 
 main(config.the, config.Help, egs)

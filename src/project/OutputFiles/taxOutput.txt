@@ -1,0 +1,144 @@
+hello
+Data set tax results for [auto2]
+Sway1 sampling tax: [3.2105263157894726, 6.578947368421055, 70.0, 0.1578947368421062, 0.05263157894736814, 88]
+Sway2 sampling tax: [2.1000000000000014, 4.549999999999997, 86.0, 0.370000000000001, 3.4499999999999993, 85]
+Xpln1 Explanation tax: [0.21052631578947612, 0.7894736842105274, 175.7894736842104, 0.9684210526315784, -11.421052631578947, 5]
+Xpln2 Explanation tax: [-0.10000000000000142, 0.20000000000000284, -15.75, -0.13500000000000156, -0.8999999999999986, 8]
+--------
+Data set tax results for [auto93]
+Sway1 sampling tax: [96.0, 2.384210526315787, 4.210526315789473, 0.05263157894736814, 392]
+Sway2 sampling tax: [60.0, 1.8000000000000007, 10.0, 47.0, 390]
+Xpln1 Explanation tax: [78.68421052631584, 0.42105263157895223, 5.789473684210527, -58.10526315789474, 6]
+Xpln2 Explanation tax: [0.0, 0.0, 0.0, 0.0, 8]
+--------
+Data set tax results for [china]
+Sway1 sampling tax: [232.31578947368422, 0.05263157894736814, 493]
+Sway2 sampling tax: [618.1, 228.55, 491]
+Xpln1 Explanation tax: [408.05263157894734, -85.52631578947368, 6]
+Xpln2 Explanation tax: [0.049999999999954525, -0.05000000000001137, 8]
+--------
+Data set tax results for [coc1000]
+Sway1 sampling tax: [507.0666666666666, 0.7333333333333334, 2.0, 1.5333333333333332, 12420.400000000001, 0.0, 993]
+Sway2 sampling tax: [32.0, 1.0, 1.0, 5.0, 35880.25, 52.75, 992]
+Xpln1 Explanation tax: [-70.26666666666665, 0.19999999999999973, 0.06666666666666687, 0.7333333333333334, -2809.4000000000015, 315.53333333333336, 7]
+Xpln2 Explanation tax: [8.0, 0.0, 0.1499999999999999, -0.2999999999999998, 192.10000000000582, -6.75, 8]
+--------
+Data set tax results for [coc10000]
+Sway1 sampling tax: [989.375, 3.4375, 2083.125, 0.3125, 9992]
+Sway2 sampling tax: [520.95, 6.9, 29375.800000000003, 1069.35, 9992]
+Xpln1 Explanation tax: [-68.75, 1.6875, -5655.125, -3068.125, 8]
+Xpln2 Explanation tax: [6.349999999999909, 0.0, -30.60000000000582, -0.14999999999986358, 8]
+--------
+Data set tax results for [healthHard]
+Sway1 sampling tax: [8.747500000000016, 3.8374999999999986, 0.0, 0.3499999999999943, 9992]
+Sway2 sampling tax: [10.454499999999996, 4.331500000000002, 0.625, 1658.35, 9992]
+Xpln1 Explanation tax: [0.08050000000000068, 0.016000000000000014, 0.0, -3131.5, 8]
+Xpln2 Explanation tax: [-0.04899999999999238, 0.008999999999998565, 0.0, -0.5499999999999545, 8]
+--------
+Data set tax results for [healthEasy]
+Sway1 sampling tax: [25.142, 0.139, 20.832499999999996, 0.04999999999999716, 9992]
+Sway2 sampling tax: [0.0, 0.0, 1.4210854715202004e-14, 501.20000000000005, 9992]
+Xpln1 Explanation tax: [-15.091999999999999, -0.09000000000000001, -12.499499999999983, -2794.7000000000003, 8]
+Xpln2 Explanation tax: [0.0, 0.0, 0.0, 0.0, 8]
+--------
+Data set tax results for [nasa]
+Sway1 sampling tax: [9.805882352941177, 47.317647058823525, 421.0588235294117, 5.629411764705885, 0.0588235294117645, 88]
+Sway2 sampling tax: [9.855, 51.599999999999994, 465.04999999999995, 6.284999999999999, 35.45, 85]
+Xpln1 Explanation tax: [4.688235294117645, 23.329411764705874, 195.6470588235295, 1.4470588235294084, -9.588235294117647, 5]
+Xpln2 Explanation tax: [-0.049999999999998934, -0.10000000000000142, -5.2999999999999545, 0.009999999999999787, -0.20000000000000284, 8]
+--------
+Data set tax results for [pom]
+Sway1 sampling tax: [139.97250000000003, 0.09124999999999994, 0.21875, 0.375, 9992]
+Sway2 sampling tax: [0.41049999999995634, 0.11449999999999982, 0.24300000000000002, 1484.35, 9992]
+Xpln1 Explanation tax: [73.43874999999997, 0.012499999999999956, 0.024999999999999994, 8337.5, 8]
+Xpln2 Explanation tax: [0.792500000000075, -0.0014999999999999458, -0.003500000000000031, 0.0, 8]
+--------
+Data set tax results for [ssm]
+Sway1 sampling tax: [2.05, 0.05000000000001137, 239350]
+Sway2 sampling tax: [3.0, 213767.0, 239352]
+Xpln1 Explanation tax: [0.5, -10602.449999999999, 10]
+Xpln2 Explanation tax: [0.15000000000000036, 2.3999999999941792, 8]
+--------
+Data set tax results for [ssn]
+Sway1 sampling tax: [18.322999999999997, 1042.173, 0.09999999999999432, 53653]
+Sway2 sampling tax: [19.01500000000001, 808.5630000000001, 52771.0, 53654]
+Xpln1 Explanation tax: [0.792500000000004, -34.71900000000028, -6283.05, 9]
+Xpln2 Explanation tax: [0.04749999999998522, -21.541000000000167, 0.0, 8]
+--------
+-------------
+Now Normalizing...
+-------------
+Data set tax results for [auto2]
+Sway1 sampling tax: [-0.532074]
+Sway2 sampling tax: [-0.732379]
+Xpln1 Explanation tax: [-0.075700]
+Xpln2 Explanation tax: [0.008677]
+--------
+Data set tax results for [auto93]
+Sway1 sampling tax: [-0.391638]
+Sway2 sampling tax: [-0.370514]
+Xpln1 Explanation tax: [-0.063109]
+Xpln2 Explanation tax: [0.004020]
+--------
+Data set tax results for [china]
+Sway1 sampling tax: [-0.297690]
+Sway2 sampling tax: [-0.408785]
+Xpln1 Explanation tax: [-0.200692]
+Xpln2 Explanation tax: [0.005318]
+--------
+Data set tax results for [coc1000]
+Sway1 sampling tax: [-0.072971]
+Sway2 sampling tax: [-0.207731]
+Xpln1 Explanation tax: [-0.066308]
+Xpln2 Explanation tax: [0.010872]
+--------
+Data set tax results for [coc10000]
+Sway1 sampling tax: [-0.062660]
+Sway2 sampling tax: [-0.268929]
+Xpln1 Explanation tax: [-0.081679]
+Xpln2 Explanation tax: [0.001494]
+--------
+Data set tax results for [healthHard]
+Sway1 sampling tax: [-0.044208]
+Sway2 sampling tax: [-0.166729]
+Xpln1 Explanation tax: [-0.134358]
+Xpln2 Explanation tax: [0.000149]
+--------
+Data set tax results for [healthEasy]
+Sway1 sampling tax: [-0.505701]
+Sway2 sampling tax: [-0.390056]
+Xpln1 Explanation tax: [-0.200297]
+Xpln2 Explanation tax: [0.000160]
+--------
+Data set tax results for [nasa]
+Sway1 sampling tax: [-0.499826]
+Sway2 sampling tax: [-0.588915]
+Xpln1 Explanation tax: [-0.070658]
+Xpln2 Explanation tax: [0.013352]
+--------
+Data set tax results for [pom]
+Sway1 sampling tax: [-0.292097]
+Sway2 sampling tax: [-0.170240]
+Xpln1 Explanation tax: [0.248801]
+Xpln2 Explanation tax: [0.000160]
+--------
+Data set tax results for [ssm]
+Sway1 sampling tax: [-0.162514]
+Sway2 sampling tax: [-0.118402]
+Xpln1 Explanation tax: [-0.276859]
+Xpln2 Explanation tax: [0.012514]
+--------
+Data set tax results for [ssn]
+Sway1 sampling tax: [-0.011461]
+Sway2 sampling tax: [-0.005631]
+Xpln1 Explanation tax: [-0.210253]
+Xpln2 Explanation tax: [0.000656]
+--------
+---------
+---------
+---------
+The average sample tax for sway1 (normalized): [-0.261167]
+The average sample tax for sway2 (normalized): [-0.311665]
+The average sample tax for xpln1 (normalized): [-0.102828]
+The average sample tax for xpln2 (normalized): [0.005216]
+done

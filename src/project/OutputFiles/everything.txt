@@ -1,0 +1,365 @@
+done
+Baseline for the total average of the data set {' CityMPG+': 21.0, ' HighwayMPG+': 28.0, ' Weight-': 3040.0, ' Class-\n': 17.7, 'N': 93}
+Average of the median values for the sway cluster with {5.0} evals over 20 runs {' CityMPG+': 29.789473684210527, ' HighwayMPG+': 34.421052631578945, ' Weight-': 2115.0, ' Class-\n': 8.757894736842106, 'N': 5.947368421052632}
+Average of the median values for the bisect cluster with {8.0} evals over 20 runs {' CityMPG+': 30.9, ' HighwayMPG+': 36.45, ' Weight-': 2131.0, ' Class-\n': 8.97, 'N': 9.45}
+Average of the median values for the sway explainer with {'Not Applicable'} evals over 20 runs {' CityMPG+': 29.57894736842105, ' HighwayMPG+': 33.63157894736842, ' Weight-': 2290.7894736842104, ' Class-\n': 9.726315789473684, 'N': 17.36842105263158}
+Average of the median values for the bisect explainer with {0.9280000000000002} evals over 20 runs {' CityMPG+': 31.0, ' HighwayMPG+': 36.25, ' Weight-': 2115.25, ' Class-\n': 8.834999999999999, 'N': 8.55}
+Baseline for the best group of values of the data set with    93 evals {' CityMPG+': 33.0, ' HighwayMPG+': 41.0, ' Weight-': 2045.0, ' Class-\n': 8.6, 'N': 6}
+Getting cliffsDelta effect size test results...
+Diff in all vs all
+cols vals: {' CityMPG+': '=', ' HighwayMPG+': '=', ' Weight-': '=', ' Class-': '='}
+Diff in all vs sway1
+cols vals: {' CityMPG+': '!=', ' HighwayMPG+': '!=', ' Weight-': '!=', ' Class-\n': '!='}
+Diff in all vs sway2
+cols vals: {' CityMPG+': '!=', ' HighwayMPG+': '!=', ' Weight-': '!=', ' Class-\n': '!='}
+Diff in sway1 vs sway2
+cols vals: {' CityMPG+': '!=', ' HighwayMPG+': '!=', ' Weight-': '!=', ' Class-\n': '!=', 'N': '!='}
+Diff in sway1 vs xpln1
+cols vals: {' CityMPG+': '=', ' HighwayMPG+': '!=', ' Weight-': '!=', ' Class-\n': '!=', 'N': '!='}
+Diff in sway2 vs xpln2
+cols vals: {' CityMPG+': '=', ' HighwayMPG+': '=', ' Weight-': '=', ' Class-\n': '!=', 'N': '='}
+Diff in sway1 vs top
+cols vals: {' CityMPG+': '!=', ' HighwayMPG+': '!=', ' Weight-': '!=', ' Class-\n': '!='}
+Diff in sway2 vs top
+cols vals: {' CityMPG+': '!=', ' HighwayMPG+': '!=', ' Weight-': '=', ' Class-\n': '='}
+----------------
+Baseline for the total average of the data set {'Lbs-': 2800.0, 'Acc+': 15.5, 'Mpg+\n': 20.0, 'N': 398}
+Average of the median values for the sway cluster with {6.0} evals over 20 runs {'Lbs-': 2121.0, 'Acc+': 16.415789473684214, 'Mpg+\n': 35.78947368421053, 'N': 12.947368421052632}
+Average of the median values for the bisect cluster with {8.0} evals over 20 runs {'Lbs-': 1965.0, 'Acc+': 17.0, 'Mpg+\n': 30.0, 'N': 60.0}
+Average of the median values for the sway explainer with {'Not Applicable'} evals over 20 runs {'Lbs-': 2199.684210526316, 'Acc+': 15.994736842105262, 'Mpg+\n': 30.0, 'N': 71.05263157894737}
+Average of the median values for the bisect explainer with {0.992} evals over 20 runs {'Lbs-': 1965.0, 'Acc+': 17.0, 'Mpg+\n': 30.0, 'N': 60.0}
+Baseline for the best group of values of the data set with   398 evals {'Lbs-': 2025.0, 'Acc+': 18.8, 'Mpg+\n': 40.0, 'N': 13}
+Getting cliffsDelta effect size test results...
+Diff in all vs all
+cols vals: {'Lbs-': '=', 'Acc+': '=', 'Mpg+': '='}
+Diff in all vs sway1
+cols vals: {'Lbs-': '!=', 'Acc+': '=', 'Mpg+\n': '!='}
+Diff in all vs sway2
+cols vals: {'Lbs-': '!=', 'Acc+': '!=', 'Mpg+\n': '!='}
+Diff in sway1 vs sway2
+cols vals: {'Lbs-': '!=', 'Acc+': '!=', 'Mpg+\n': '=', 'N': '!='}
+Diff in sway1 vs xpln1
+cols vals: {'Lbs-': '!=', 'Acc+': '!=', 'Mpg+\n': '!=', 'N': '!='}
+Diff in sway2 vs xpln2
+cols vals: {'Lbs-': '=', 'Acc+': '=', 'Mpg+\n': '=', 'N': '='}
+Diff in sway1 vs top
+cols vals: {'Lbs-': '!=', 'Acc+': '!=', 'Mpg+\n': '!='}
+Diff in sway2 vs top
+cols vals: {'Lbs-': '!=', 'Acc+': '!=', 'Mpg+\n': '!='}
+----------------
+Baseline for the total average of the data set {'N_effort-': 2098.0, 'N': 499}
+Average of the median values for the sway cluster with {6.0} evals over 20 runs {'N_effort-': 377.3157894736842, 'N': 15.947368421052632}
+Average of the median values for the bisect cluster with {8.0} evals over 20 runs {'N_effort-\n': 763.1, 'N': 244.55}
+Average of the median values for the sway explainer with {'Not Applicable'} evals over 20 runs {'N_effort-': 785.3684210526316, 'N': 101.47368421052632}
+Average of the median values for the bisect explainer with {0.9920000000000002} evals over 20 runs {'N_effort-\n': 763.15, 'N': 244.5}
+Baseline for the best group of values of the data set with   499 evals {'N_effort-': 145.0, 'N': 16}
+Getting cliffsDelta effect size test results...
+Diff in all vs all
+cols vals: {'N_effort-': '='}
+Diff in all vs sway1
+cols vals: {'N_effort-': '!='}
+Diff in all vs sway2
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+cols vals: {}
+Diff in sway1 vs sway2
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+cols vals: {'N': '!='}
+Diff in sway1 vs xpln1
+cols vals: {'N_effort-': '!=', 'N': '!='}
+Diff in sway2 vs xpln2
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for xpln2: [N_effort-]
+Bad k for xpln2: [N_effort-]
+Bad k for xpln2: [N_effort-]
+Bad k for xpln2: [N_effort-]
+Bad k for xpln2: [N_effort-]
+Bad k for xpln2: [N_effort-]
+Bad k for xpln2: [N_effort-]
+Bad k for xpln2: [N_effort-]
+Bad k for xpln2: [N_effort-]
+Bad k for xpln2: [N_effort-]
+Bad k for xpln2: [N_effort-]
+Bad k for xpln2: [N_effort-]
+Bad k for xpln2: [N_effort-]
+Bad k for xpln2: [N_effort-]
+Bad k for xpln2: [N_effort-]
+Bad k for xpln2: [N_effort-]
+Bad k for xpln2: [N_effort-]
+Bad k for xpln2: [N_effort-]
+Bad k for xpln2: [N_effort-]
+Bad k for xpln2: [N_effort-]
+cols vals: {'N': '='}
+Diff in sway1 vs top
+cols vals: {'N_effort-': '!='}
+Diff in sway2 vs top
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+Bad k for sway2: [N_effort-]
+cols vals: {}
+----------------
+Baseline for the total average of the data set {'LOC+': 1034.0, ' AEXP-': 3.0, ' PLEX-': 3.0, ' RISK-': 5.0, ' EFFORT-\n': 20776.0, 'N': 1000}
+Average of the median values for the sway cluster with {6.666666666666667} evals over 20 runs {'LOC+': 1035.9333333333334, ' AEXP-': 2.7333333333333334, ' PLEX-': 3.0, ' RISK-': 4.533333333333333, ' EFFORT-\n': 18902.6, 'N': 21.0}
+Average of the median values for the bisect cluster with {8.0} evals over 20 runs {'LOC+': 1575.0, ' AEXP-': 3.0, ' PLEX-': 2.0, ' RISK-': 8.0, ' EFFORT-\n': 67203.25, 'N': 73.75}
+Average of the median values for the sway explainer with {'Not Applicable'} evals over 20 runs {'LOC+': 1106.2, ' AEXP-': 2.933333333333333, ' PLEX-': 3.066666666666667, ' RISK-': 5.266666666666667, ' EFFORT-\n': 21712.0, 'N': 336.53333333333336}
+Average of the median values for the bisect explainer with {0.9331999999999999} evals over 20 runs {'LOC+': 1583.0, ' AEXP-': 3.0, ' PLEX-': 2.15, ' RISK-': 7.7, ' EFFORT-\n': 67395.35, 'N': 67.0}
+Baseline for the best group of values of the data set with  1000 evals {'LOC+': 1543.0, ' AEXP-': 2.0, ' PLEX-': 1.0, ' RISK-': 3.0, ' EFFORT-\n': 31323.0, 'N': 21}
+Getting cliffsDelta effect size test results...
+Diff in all vs all
+cols vals: {'LOC+': '=', ' AEXP-': '=', ' PLEX-': '=', ' RISK-': '=', ' EFFORT-': '='}
+Diff in all vs sway1
+cols vals: {'LOC+': '=', ' AEXP-': '=', ' PLEX-': '=', ' RISK-': '=', ' EFFORT-\n': '='}
+Diff in all vs sway2
+cols vals: {'LOC+': '!=', ' AEXP-': '!=', ' PLEX-': '!=', ' RISK-': '!=', ' EFFORT-\n': '!='}
+Diff in sway1 vs sway2
+cols vals: {'LOC+': '!=', ' AEXP-': '=', ' PLEX-': '!=', ' RISK-': '!=', ' EFFORT-\n': '!=', 'N': '!='}
+Diff in sway1 vs xpln1
+cols vals: {'LOC+': '!=', ' AEXP-': '!=', ' PLEX-': '=', ' RISK-': '!=', ' EFFORT-\n': '!=', 'N': '!='}
+Diff in sway2 vs xpln2
+cols vals: {'LOC+': '!=', ' AEXP-': '=', ' PLEX-': '!=', ' RISK-': '!=', ' EFFORT-\n': '!=', 'N': '!='}
+Diff in sway1 vs top
+cols vals: {'LOC+': '!=', ' AEXP-': '!=', ' PLEX-': '!=', ' RISK-': '!=', ' EFFORT-\n': '!='}
+Diff in sway2 vs top
+cols vals: {'LOC+': '=', ' AEXP-': '!=', ' PLEX-': '!=', ' RISK-': '!=', ' EFFORT-\n': '!='}
+----------------
+Baseline for the total average of the data set {'Loc+': 1009.0, ' Risk-': 5.0, ' Effort-\n': 20024.0, 'N': 10000}
+Average of the median values for the sway cluster with {8.0} evals over 20 runs {'Loc+': 969.625, ' Risk-': 3.4375, ' Effort-\n': 15668.875, 'N': 78.6875}
+Average of the median values for the bisect cluster with {8.0} evals over 20 runs {'Loc+': 1438.05, ' Risk-': 6.9, ' Effort-\n': 47127.8, 'N': 1148.35}
+Average of the median values for the sway explainer with {'Not Applicable'} evals over 20 runs {'Loc+': 1038.375, ' Risk-': 5.125, ' Effort-\n': 21324.0, 'N': 3146.8125}
+Average of the median values for the bisect explainer with {0.9987999999999999} evals over 20 runs {'Loc+': 1431.7, ' Risk-': 6.9, ' Effort-\n': 47097.2, 'N': 1148.2}
+Baseline for the best group of values of the data set with 10000 evals {'Loc+': 1959.0, ' Risk-': 0.0, ' Effort-\n': 17752.0, 'N': 79}
+Getting cliffsDelta effect size test results...
+Diff in all vs all
+cols vals: {'Loc+': '=', ' Risk-': '=', ' Effort-': '='}
+Diff in all vs sway1
+cols vals: {'Loc+': '=', ' Risk-': '=', ' Effort-\n': '='}
+Diff in all vs sway2
+cols vals: {'Loc+': '!=', ' Risk-': '!=', ' Effort-\n': '!='}
+Diff in sway1 vs sway2
+cols vals: {'Loc+': '!=', ' Risk-': '!=', ' Effort-\n': '!=', 'N': '!='}
+Diff in sway1 vs xpln1
+cols vals: {'Loc+': '!=', ' Risk-': '!=', ' Effort-\n': '!=', 'N': '!='}
+Diff in sway2 vs xpln2
+cols vals: {'Loc+': '=', ' Risk-': '=', ' Effort-\n': '=', 'N': '='}
+Diff in sway1 vs top
+cols vals: {'Loc+': '!=', ' Risk-': '!=', ' Effort-\n': '!='}
+Diff in sway2 vs top
+cols vals: {'Loc+': '!=', ' Risk-': '!=', ' Effort-\n': '!='}
+----------------
+Baseline for the total average of the data set {'MRE-': 74.96, 'ACC+': 7.18, 'PRED40+': 25.0, 'N': 10000}
+Average of the median values for the sway cluster with {8.0} evals over 20 runs {'MRE-': 73.65750000000001, 'ACC+': 7.562500000000002, 'PRED40+': 25.0, 'N': 78.65}
+Average of the median values for the bisect cluster with {8.0} evals over 20 runs {'MRE-': 75.36449999999999, 'ACC+': 7.0684999999999985, 'PRED40+': 25.625, 'N': 1737.35}
+Average of the median values for the sway explainer with {'Not Applicable'} evals over 20 runs {'MRE-': 73.73800000000001, 'ACC+': 7.546500000000002, 'PRED40+': 25.0, 'N': 3210.15}
+Average of the median values for the bisect explainer with {0.9995600000000001} evals over 20 runs {'MRE-': 75.3155, 'ACC+': 7.0595, 'PRED40+': 25.625, 'N': 1736.8}
+Baseline for the best group of values of the data set with 10000 evals {'MRE-': 64.91, 'ACC+': 11.4, 'PRED40+': 25.0, 'N': 79}
+Getting cliffsDelta effect size test results...
+Diff in all vs all
+cols vals: {'MRE-': '=', 'ACC+': '=', 'PRED40+': '='}
+Diff in all vs sway1
+cols vals: {'MRE-': '!=', 'ACC+': '!=', 'PRED40+': '='}
+Diff in all vs sway2
+cols vals: {'MRE-': '=', 'ACC+': '!=', 'PRED40+': '='}
+Diff in sway1 vs sway2
+cols vals: {'MRE-': '!=', 'ACC+': '!=', 'PRED40+': '=', 'N': '!='}
+Diff in sway1 vs xpln1
+cols vals: {'MRE-': '!=', 'ACC+': '=', 'PRED40+': '=', 'N': '!='}
+Diff in sway2 vs xpln2
+cols vals: {'MRE-': '=', 'ACC+': '=', 'PRED40+': '=', 'N': '='}
+Diff in sway1 vs top
+cols vals: {'MRE-': '!=', 'ACC+': '!=', 'PRED40+': '!='}
+Diff in sway2 vs top
+cols vals: {'MRE-': '!=', 'ACC+': '!=', 'PRED40+': '!='}
+----------------
+Baseline for the total average of the data set {'MRE-': 119.19, 'ACC+': -12.24, 'PRED40+': 0.0, 'N': 10000}
+Average of the median values for the sway cluster with {8.0} evals over 20 runs {'MRE-': 25.142, 'ACC+': -0.139, 'PRED40+': 62.4975, 'N': 78.95}
+Average of the median values for the bisect cluster with {8.0} evals over 20 runs {'MRE-': 0.0, 'ACC+': 0.0, 'PRED40+': 83.32999999999998, 'N': 580.2}
+Average of the median values for the sway explainer with {'Not Applicable'} evals over 20 runs {'MRE-': 10.05, 'ACC+': -0.049, 'PRED40+': 74.99699999999999, 'N': 2873.65}
+Average of the median values for the bisect explainer with {1.0} evals over 20 runs {'MRE-': 0.0, 'ACC+': 0.0, 'PRED40+': 83.32999999999998, 'N': 580.2}
+Baseline for the best group of values of the data set with 10000 evals {'MRE-': 0.0, 'ACC+': 0.0, 'PRED40+': 83.33, 'N': 79}
+Getting cliffsDelta effect size test results...
+Diff in all vs all
+cols vals: {'MRE-': '=', 'ACC+': '=', 'PRED40+': '='}
+Diff in all vs sway1
+cols vals: {'MRE-': '!=', 'ACC+': '!=', 'PRED40+': '!='}
+Diff in all vs sway2
+cols vals: {'MRE-': '!=', 'ACC+': '!=', 'PRED40+': '!='}
+Diff in sway1 vs sway2
+cols vals: {'MRE-': '=', 'ACC+': '=', 'PRED40+': '=', 'N': '!='}
+Diff in sway1 vs xpln1
+cols vals: {'MRE-': '!=', 'ACC+': '!=', 'PRED40+': '!=', 'N': '!='}
+Diff in sway2 vs xpln2
+cols vals: {'MRE-': '=', 'ACC+': '=', 'PRED40+': '=', 'N': '='}
+Diff in sway1 vs top
+cols vals: {'MRE-': '=', 'ACC+': '=', 'PRED40+': '!='}
+Diff in sway2 vs top
+cols vals: {'MRE-': '=', 'ACC+': '=', 'PRED40+': '!='}
+----------------
+Baseline for the total average of the data set {'Kloc+': 47.5, 'Effort-': 252.0, 'Defects-': 2007.0, 'Months-\n': 21.4, 'N': 93}
+Average of the median values for the sway cluster with {5.0} evals over 20 runs {'Kloc+': 13.305882352941177, 'Effort-': 58.11764705882353, 'Defects-': 530.0588235294117, 'Months-\n': 13.429411764705884, 'N': 5.9411764705882355}
+Average of the median values for the bisect cluster with {8.0} evals over 20 runs {'Kloc+': 13.355, 'Effort-': 62.4, 'Defects-': 574.05, 'Months-\n': 14.084999999999999, 'N': 41.45}
+Average of the median values for the sway explainer with {'Not Applicable'} evals over 20 runs {'Kloc+': 17.99411764705882, 'Effort-': 81.4470588235294, 'Defects-': 725.7058823529412, 'Months-\n': 14.876470588235293, 'N': 15.529411764705882}
+Average of the median values for the bisect explainer with {0.9475000000000001} evals over 20 runs {'Kloc+': 13.305000000000001, 'Effort-': 62.3, 'Defects-': 568.75, 'Months-\n': 14.094999999999999, 'N': 41.25}
+Baseline for the best group of values of the data set with    93 evals {'Kloc+': 3.5, 'Effort-': 10.8, 'Defects-': 109.0, 'Months-\n': 7.8, 'N': 6}
+Getting cliffsDelta effect size test results...
+Diff in all vs all
+cols vals: {'Kloc+': '=', 'Effort-': '=', 'Defects-': '=', 'Months-': '='}
+Diff in all vs sway1
+cols vals: {'Kloc+': '!=', 'Effort-': '!=', 'Defects-': '!=', 'Months-\n': '!='}
+Diff in all vs sway2
+cols vals: {'Kloc+': '!=', 'Effort-': '!=', 'Defects-': '!=', 'Months-\n': '!='}
+Diff in sway1 vs sway2
+cols vals: {'Kloc+': '!=', 'Effort-': '=', 'Defects-': '=', 'Months-\n': '!=', 'N': '!='}
+Diff in sway1 vs xpln1
+cols vals: {'Kloc+': '!=', 'Effort-': '!=', 'Defects-': '!=', 'Months-\n': '!=', 'N': '!='}
+Diff in sway2 vs xpln2
+cols vals: {'Kloc+': '=', 'Effort-': '=', 'Defects-': '=', 'Months-\n': '=', 'N': '='}
+Diff in sway1 vs top
+cols vals: {'Kloc+': '!=', 'Effort-': '!=', 'Defects-': '!=', 'Months-\n': '!='}
+Diff in sway2 vs top
+cols vals: {'Kloc+': '!=', 'Effort-': '!=', 'Defects-': '!=', 'Months-\n': '!='}
+----------------
+Baseline for the total average of the data set {'Cost-': 322.77, 'Completion+': 0.89, 'Idle-\n': 0.23, 'N': 10000}
+Average of the median values for the sway cluster with {8.0} evals over 20 runs {'Cost-': 278.4825, 'Completion+': 0.9087500000000001, 'Idle-\n': 0.21875, 'N': 78.375}
+Average of the median values for the bisect cluster with {8.0} evals over 20 runs {'Cost-': 138.09950000000003, 'Completion+': 0.8855000000000002, 'Idle-\n': 0.24300000000000002, 'N': 1562.35}
+Average of the median values for the sway explainer with {'Not Applicable'} evals over 20 runs {'Cost-': 351.92125, 'Completion+': 0.8962500000000001, 'Idle-\n': 0.24375, 'N': 8415.875}
+Average of the median values for the bisect explainer with {0.99976} evals over 20 runs {'Cost-': 137.30699999999996, 'Completion+': 0.8870000000000001, 'Idle-\n': 0.2395, 'N': 1562.35}
+Baseline for the best group of values of the data set with 10000 evals {'Cost-': 138.51, 'Completion+': 1.0, 'Idle-\n': 0.0, 'N': 78}
+Getting cliffsDelta effect size test results...
+Diff in all vs all
+cols vals: {'Cost-': '=', 'Completion+': '=', 'Idle-': '='}
+Diff in all vs sway1
+cols vals: {'Cost-': '!=', 'Completion+': '!=', 'Idle-\n': '='}
+Diff in all vs sway2
+cols vals: {'Cost-': '!=', 'Completion+': '!=', 'Idle-\n': '='}
+Diff in sway1 vs sway2
+cols vals: {'Cost-': '!=', 'Completion+': '!=', 'Idle-\n': '=', 'N': '!='}
+Diff in sway1 vs xpln1
+cols vals: {'Cost-': '!=', 'Completion+': '!=', 'Idle-\n': '!=', 'N': '!='}
+Diff in sway2 vs xpln2
+cols vals: {'Cost-': '!=', 'Completion+': '!=', 'Idle-\n': '=', 'N': '='}
+Diff in sway1 vs top
+cols vals: {'Cost-': '!=', 'Completion+': '!=', 'Idle-\n': '!='}
+Diff in sway2 vs top
+cols vals: {'Cost-': '=', 'Completion+': '!=', 'Idle-\n': '!='}
+----------------
+Baseline for the total average of the data set {'NUMBERITERATIONS-': 7.0, 'N': 239360}
+Average of the median values for the sway cluster with {10.0} evals over 20 runs {'NUMBERITERATIONS-': 5.05, 'N': 467.95}
+Average of the median values for the bisect cluster with {8.0} evals over 20 runs {'NUMBERITERATIONS-': 6.0, ' TIMETOSOLUTION-\n': 127.78049999999999, 'N': 214235.0}
+Average of the median values for the sway explainer with {'Not Applicable'} evals over 20 runs {'NUMBERITERATIONS-': 5.55, 'N': 11070.4}
+Average of the median values for the bisect explainer with {0.9998746657754012} evals over 20 runs {'NUMBERITERATIONS-': 6.15, ' TIMETOSOLUTION-\n': 127.035, 'N': 214237.4}
+Baseline for the best group of values of the data set with 239360 evals {'NUMBERITERATIONS-': 3.0, 'N': 468}
+Getting cliffsDelta effect size test results...
+Diff in all vs all
+cols vals: {'NUMBERITERATIONS-': '='}
+Diff in all vs sway1
+cols vals: {'NUMBERITERATIONS-': '!='}
+Diff in all vs sway2
+cols vals: {'NUMBERITERATIONS-': '!='}
+Diff in sway1 vs sway2
+cols vals: {'NUMBERITERATIONS-': '!=', 'N': '!='}
+Diff in sway1 vs xpln1
+cols vals: {'NUMBERITERATIONS-': '!=', 'N': '!='}
+Diff in sway2 vs xpln2
+cols vals: {'NUMBERITERATIONS-': '!=', 'N': '!='}
+Diff in sway1 vs top
+cols vals: {'NUMBERITERATIONS-': '!='}
+Diff in sway2 vs top
+cols vals: {'NUMBERITERATIONS-': '!='}
+----------------
+Baseline for the total average of the data set {'PSNR-': 45.9, ' Energy-\n': 1236.02, 'N': 53662}
+Average of the median values for the sway cluster with {9.0} evals over 20 runs {'PSNR-': 45.022999999999996, ' Energy-\n': 1508.113, 'N': 209.9}
+Average of the median values for the bisect cluster with {8.0} evals over 20 runs {'PSNR-': 45.71500000000001, ' Energy-\n': 1274.5030000000002, 'N': 52981.0}
+Average of the median values for the sway explainer with {'Not Applicable'} evals over 20 runs {'PSNR-': 45.8155, ' Energy-\n': 1473.3939999999998, 'N': 6492.95}
+Average of the median values for the bisect explainer with {1.0} evals over 20 runs {'PSNR-': 45.762499999999996, ' Energy-\n': 1252.962, 'N': 52981.0}
+Baseline for the best group of values of the data set with 53662 evals {'PSNR-': 26.7, ' Energy-\n': 465.94, 'N': 210}
+Getting cliffsDelta effect size test results...
+Diff in all vs all
+cols vals: {'PSNR-': '=', ' Energy-': '='}
+Diff in all vs sway1
+cols vals: {'PSNR-': '=', ' Energy-\n': '='}
+Diff in all vs sway2
+cols vals: {'PSNR-': '=', ' Energy-\n': '!='}
+Diff in sway1 vs sway2
+cols vals: {'PSNR-': '!=', ' Energy-\n': '=', 'N': '!='}
+Diff in sway1 vs xpln1
+cols vals: {'PSNR-': '=', ' Energy-\n': '=', 'N': '!='}
+Diff in sway2 vs xpln2
+cols vals: {'PSNR-': '=', ' Energy-\n': '!=', 'N': '='}
+Diff in sway1 vs top
+cols vals: {'PSNR-': '!=', ' Energy-\n': '!='}
+Diff in sway2 vs top
+cols vals: {'PSNR-': '!=', ' Energy-\n': '!='}
+----------------

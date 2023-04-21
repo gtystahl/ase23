@@ -1,0 +1,133 @@
+Running scitest
+Current run: 0
+Current run: 1
+Current run: 2
+Current run: 3
+Current run: 4
+Current run: 5
+Current run: 6
+Current run: 7
+Current run: 8
+Current run: 9
+Current run: 10
+Current run: 11
+Current run: 12
+Current run: 13
+Current run: 14
+Current run: 15
+Current run: 16
+Current run: 17
+Current run: 18
+Current run: 19
+Average of the median values for the cluster with   8.0 evals over 20 runs {'Par1+': 80.8, 'Par2-\n': 18.45, 'N': 12.35}
+Average of the median values for the explainer with 0.9340000000000002 validation score over 20 runs {'Par1+': 80.85, 'Par2-\n': 17.45, 'N': 11.6}
+Best features extracted:
+Best average Cluster Vals:
+[Par1+]: [81]
+[Par2-
+]: [18]
+[N]: [12]
+Best output found by cluser: [63] with a time of 12.227939367294312 seconds
+Going through the parameters
+Current: 0
+Current: 1
+Current: 2
+Current: 3
+Current: 4
+Current: 5
+Current: 6
+Current: 7
+Current: 8
+Current: 9
+Current: 10
+Current: 11
+Current: 12
+Current: 13
+Current: 14
+Current: 15
+Current: 16
+Current: 17
+Current: 18
+Current: 19
+Current: 20
+Current: 21
+Current: 22
+Current: 23
+Current: 24
+Current: 25
+Current: 26
+Current: 27
+Current: 28
+Current: 29
+Current: 30
+Current: 31
+Current: 32
+Current: 33
+Current: 34
+Current: 35
+Current: 36
+Current: 37
+Current: 38
+Current: 39
+Current: 40
+Current: 41
+Current: 42
+Current: 43
+Current: 44
+Current: 45
+Current: 46
+Current: 47
+Current: 48
+Current: 49
+Current: 50
+Current: 51
+Current: 52
+Current: 53
+Current: 54
+Current: 55
+Current: 56
+Current: 57
+Current: 58
+Current: 59
+Current: 60
+Current: 61
+Current: 62
+Current: 63
+Current: 64
+Current: 65
+Current: 66
+Current: 67
+Current: 68
+Current: 69
+Current: 70
+Current: 71
+Current: 72
+Current: 73
+Current: 74
+Current: 75
+Current: 76
+Current: 77
+Current: 78
+Current: 79
+Current: 80
+Current: 81
+Current: 82
+Current: 83
+Current: 84
+Current: 85
+Current: 86
+Current: 87
+Current: 88
+Current: 89
+Current: 90
+Current: 91
+Current: 92
+Current: 93
+Current: 94
+Current: 95
+Current: 96
+Current: 97
+Current: 98
+Current: 99
+Best average params found by grid search: Par1+ [78] and Par2- [18]
+Best average result found by grid search: [60] with a time of 101.03928351402283 seconds

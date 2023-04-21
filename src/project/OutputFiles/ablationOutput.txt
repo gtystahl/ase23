@@ -1,0 +1,131 @@
+Current run: 0
+Current run: 1
+Current run: 2
+Current run: 3
+Current run: 4
+Current run: 5
+Current run: 6
+Current run: 7
+Current run: 8
+Current run: 9
+Current run: 10
+Current run: 11
+Current run: 12
+Current run: 13
+Current run: 14
+Current run: 15
+Current run: 16
+Current run: 17
+Current run: 18
+Current run: 19
+Average of the median values for the cluster with   8.0 evals over 20 runs {'Lbs-': 1965.0, 'Acc+': 17.0, 'Mpg+\n': 30.0, 'N': 60.0}
+Average of the median values for the explainer with 0.9945 validation score over 20 runs {'Lbs-': 1965.0, 'Acc+': 17.0, 'Mpg+\n': 30.0, 'N': 60.0}
+Best features extracted:
+1. Volume
+2. origin
+3. Model
+Current run: 0
+Current run: 1
+Current run: 2
+Current run: 3
+Current run: 4
+Current run: 5
+Current run: 6
+Current run: 7
+Current run: 8
+Current run: 9
+Current run: 10
+Current run: 11
+Current run: 12
+Current run: 13
+Current run: 14
+Current run: 15
+Current run: 16
+Current run: 17
+Current run: 18
+Current run: 19
+Average of the median values for the cluster with   8.0 evals over 20 runs {'Lbs-': 1965.0, 'Acc+': 17.0, 'Mpg+\n': 30.0, 'N': 60.0}
+Average of the median values for the explainer with 0.9949999999999999 validation score over 20 runs {'Lbs-': 1965.0, 'Acc+': 17.0, 'Mpg+\n': 30.0, 'N': 60.0}
+Best features extracted:
+1. origin
+2. Clndrs
+3. Model
+Current run: 0
+Current run: 1
+Current run: 2
+Current run: 3
+Current run: 4
+Current run: 5
+Current run: 6
+Current run: 7
+Current run: 8
+Current run: 9
+Current run: 10
+Current run: 11
+Current run: 12
+Current run: 13
+Current run: 14
+Current run: 15
+Current run: 16
+Current run: 17
+Current run: 18
+Current run: 19
+Average of the median values for the cluster with   8.0 evals over 20 runs {'Lbs-': 1965.0, 'Acc+': 17.0, 'Mpg+\n': 30.0, 'N': 60.0}
+Average of the median values for the explainer with 0.991 validation score over 20 runs {'Lbs-': 1965.0, 'Acc+': 17.0, 'Mpg+\n': 30.0, 'N': 60.0}
+Best features extracted:
+1. Volume
+2. origin
+3. Clndrs
+4. Model
+Current run: 0
+Current run: 1
+Current run: 2
+Current run: 3
+Current run: 4
+Current run: 5
+Current run: 6
+Current run: 7
+Current run: 8
+Current run: 9
+Current run: 10
+Current run: 11
+Current run: 12
+Current run: 13
+Current run: 14
+Current run: 15
+Current run: 16
+Current run: 17
+Current run: 18
+Current run: 19
+Average of the median values for the cluster with   8.0 evals over 20 runs {'Lbs-': 1965.0, 'Acc+': 17.0, 'Mpg+\n': 30.0, 'N': 60.0}
+Average of the median values for the explainer with 0.994 validation score over 20 runs {'Lbs-': 1965.0, 'Acc+': 17.0, 'Mpg+\n': 30.0, 'N': 60.0}
+Best features extracted:
+1. Volume
+2. origin
+3. Clndrs
+Current run: 0
+Current run: 1
+Current run: 2
+Current run: 3
+Current run: 4
+Current run: 5
+Current run: 6
+Current run: 7
+Current run: 8
+Current run: 9
+Current run: 10
+Current run: 11
+Current run: 12
+Current run: 13
+Current run: 14
+Current run: 15
+Current run: 16
+Current run: 17
+Current run: 18
+Current run: 19
+Average of the median values for the cluster with   8.0 evals over 20 runs {'Lbs-': 1965.0, 'Acc+': 17.0, 'Mpg+\n': 30.0, 'N': 60.0}
+Average of the median values for the explainer with 0.9940000000000001 validation score over 20 runs {'Lbs-': 1965.0, 'Acc+': 17.0, 'Mpg+\n': 30.0, 'N': 60.0}
+Best features extracted:
+1. Volume
+2. Clndrs
+3. Model
